@@ -1,0 +1,61 @@
+/* Font face, covering the most of browser support */
+@font-face {
+    font-family: 'Secular One';
+    src: url('../assets/fonts/SecularOne-Regular.eot');
+    src: url('../assets/fonts/SecularOne-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/SecularOne-Regular.woff2') format('woff2'),
+        url('../assets/fonts/SecularOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.website-wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    /* padding: 0 20px; */
+    width: 100%;
+}
+
+.navigation {
+    min-height: 70px;
+    background-color: #ffebf2;
+    color: #000;
+    padding-right: 1px;
+}
+
+.navigation__logo {
+    padding-top: 18px;
+    padding-bottom: 17px;
+    display: inline-block;
+    font-size: 0px;
+    vertical-align: middle;
+}
+
+.navigation__list {
+    font-size: 0;    
+    margin: 0 24px 0 0;
+}
+
+.navigation__list-item {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 0px;
+    vertical-align: middle;
+    margin-left: 26px;
+}
+
+.navigation__list-item:first-child {
+    margin-left: 166px;
+}
+
+.navigation__list-item__item {
+    font-size: 15px;
+    font-family: "Secular One", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;    
+    letter-spacing: -0.05px;
+    color: #000;
+}
