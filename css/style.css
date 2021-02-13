@@ -51,9 +51,26 @@ a:hover {
 .cart-status {
   color: #f650a0 !important;
 }
+.active-breadcrumb {
+  color: #000 !important;
+}
 .cart-status {
   font-size: 14.3px;
 }
+.heading-one {
+  font-family: "Secular One", Arial, Helvetica, sans-serif;
+  font-size: 55px;
+  letter-spacing: 0.18px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
 /* END modifier classes
 
 /* Font face, covering the most of browser support */
@@ -64,6 +81,17 @@ a:hover {
       format("embedded-opentype"),
     url("../assets/fonts/SecularOne-Regular.woff2") format("woff2"),
     url("../assets/fonts/SecularOne-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Varela Round";
+  src: url("../assets/fonts/VarelaRound.eot");
+  src: url("../assets/fonts/VarelaRound.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/VarelaRound.woff2") format("woff2"),
+    url("../assets/fonts/VarelaRound.woff") format("woff"),
+    url("../assets/fonts/VarelaRound.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -184,3 +212,67 @@ a:hover {
   font-size: 14.3px;
   color: #f650a0;
 }
+
+/* Content after navbar */
+
+.jumbotron {
+  background-image: url(../assets/images/jumbotron-path-image.png);
+  background-position: 0px -69px;
+}
+
+@media only screen and (min-width: 576px) {
+  .jumbotron {
+    padding: 0 2rem;
+    min-height: 268px;
+    padding-top: 5.7rem;
+  }
+}
+
+.jumbotron__paragraph {
+  line-height: 20px;
+  letter-spacing: 0.05px;
+  padding-top: 16px;
+  padding-left: 2px;
+}
+
+@media only screen and (min-width: 992px) {
+  .jumbotron__paragraph {
+    width: 800px;
+  }
+}
+
+.jumbotron,
+.breadcrumb {
+  background-color: #fff;
+}
+
+.breadcrumb {
+  padding: 0;
+  padding-top: 36px;
+  margin: 0;
+}
+
+.breadcrumb__list-item-name {
+  font-size: 12px;
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  color: #999;
+}
+
+.breadcrumb-item + .breadcrumb-item:before {
+  color: #999;
+  content: ">>";
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding-right: 0;
+  padding-left: 4px;
+}
+
+/* .breadcrumb__list-item-name:after {
+  content: ">>";
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.breadcrumb__list-item:last-child :after {
+  content: "";
+} */

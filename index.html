@@ -1,87 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Avocado test - Zeplin</title>
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    <body>
-        <header>
-            <nav class="navigation navbar navbar-expand-lg navbar-light">
-                <button
-                    class="navbar-toggler custom-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target=".navigation__content"
-                    aria-controls="navigation__content"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div
-                    class="navigation__content website-wrapper collapse navbar-collapse"
-                >
-                    <a class="navigation__logo" href="javascript:;"
-                        ><img
-                            src="./assets/images/slatkoteka logo.png"
-                            alt="slatkoteka logo"
-                    /></a>
-                    <ul class="navigation__list">
-                        <li class="navigation__list-item">
-                            <a class="navigation__list-item__item" href="javascript:;">Početna</a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a class="navigation__list-item__item" href="javascript:;">Poručivanje</a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a class="navigation__list-item__item" href="javascript:;">Dostava</a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a class="navigation__list-item__item" href="javascript:;">Lokacije</a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a class="navigation__list-item__item" href="javascript:;">Pokloni</a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a class="navigation__list-item__item" href="javascript:;">Info pult</a>
-                        </li>
-                    </ul>
-                    <ul class="navigation__list__language ml-auto">
-                        <li class="navigation__list__language-item"><a class="navigation__list__language-item-link active" href="javascript:;">Srb</a></li>
-                        <li class="navigation__list__language-item"><a class="navigation__list__language-item-link" href="javascript:;">Eng</a></li>
-                    </ul>
-                    <ul class="navigation__right">
-                        <li class="navigation__right-item"><span class="navigation__right-item-cart icon-cart-icon" href="javascript:;"></span></li>
-                        <li class="navigation__right-item cart-status">(1)</li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
-        <script
-            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avocado test - Zeplin</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navigation navbar navbar-expand-lg navbar-light">
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target=".navigation__content"
+          aria-controls="navigation__content"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="navigation__content website-wrapper collapse navbar-collapse"
+        >
+          <a class="navigation__logo" href="javascript:;"
+            ><img
+              src="./assets/images/slatkoteka logo.png"
+              alt="slatkoteka logo"
+          /></a>
+          <ul class="navigation__list">
+            <li class="navigation__list-item">
+              <a class="navigation__list-item__item" href="javascript:;"
+                >Početna</a
+              >
+            </li>
+            <li class="navigation__list-item">
+              <a class="navigation__list-item__item" href="javascript:;"
+                >Poručivanje</a
+              >
+            </li>
+            <li class="navigation__list-item">
+              <a class="navigation__list-item__item" href="javascript:;"
+                >Dostava</a
+              >
+            </li>
+            <li class="navigation__list-item">
+              <a class="navigation__list-item__item" href="javascript:;"
+                >Lokacije</a
+              >
+            </li>
+            <li class="navigation__list-item">
+              <a class="navigation__list-item__item" href="javascript:;"
+                >Pokloni</a
+              >
+            </li>
+            <li class="navigation__list-item">
+              <a class="navigation__list-item__item" href="javascript:;"
+                >Info pult</a
+              >
+            </li>
+          </ul>
+          <ul class="navigation__list__language ml-auto">
+            <li class="navigation__list__language-item">
+              <a
+                class="navigation__list__language-item-link active"
+                href="javascript:;"
+                >Srb</a
+              >
+            </li>
+            <li class="navigation__list__language-item">
+              <a
+                class="navigation__list__language-item-link"
+                href="javascript:;"
+                >Eng</a
+              >
+            </li>
+          </ul>
+          <ul class="navigation__right">
+            <li class="navigation__right-item">
+              <span
+                class="navigation__right-item-cart icon-cart-icon"
+                href="javascript:;"
+              ></span>
+            </li>
+            <li class="navigation__right-item cart-status">(1)</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section class="jumbotron">
+      <div class="website-wrapper">
+        <h1 class="jumbotron__main-heading heading-one">Lokacije</h1>
+        <p class="jumbotron__paragraph">
+          Savršen spoj ukusa i dekoracije koji za tebe izdvajaju naši
+          krofnoslastičari. Vazdušasto testo smo prelili finom belom čokoladom,
+          dok smo u središte najfinijeg zalogaja smestili kinder jaje ispunjeno
+          kremastim kinder filom i sočnom jagodom.
+        </p>
+        <ol class="breadcrumb">
+          <li class="breadcrumb__list-item breadcrumb-item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a href="javascript:;" itemprop="url">
+              <span class="breadcrumb__list-item-name" itemprop="title">Početna</span>
+            </a>
+          </li>
+          <li class="breadcrumb__list-item breadcrumb-item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a href="javascript:;" itemprop="url">
+              <span class="breadcrumb__list-item-name active-breadcrumb" itemprop="title">Lokacije</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
