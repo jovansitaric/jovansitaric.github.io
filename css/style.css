@@ -210,7 +210,9 @@ p {
 
 .navigation__right-item-cart {
   font-size: 14.3px;
-  color: #f650a0;
+}
+.navigation__right-item-cart:hover:before {
+  color: #f650a0 !important;
 }
 
 /* Content after navbar */
