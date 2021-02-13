@@ -40,7 +40,13 @@
 }
 /* END font icons */
 
-/* BEGIN modifier classes */
+/* BEGIN default styles and modifier classes */
+
+a:hover {
+  color: #f650a0;
+  text-decoration: none;
+}
+
 .active,
 .cart-status {
   color: #f650a0 !important;
@@ -70,20 +76,30 @@
   width: 100%;
 }
 
-.navbar {
-  padding: 0;
-}
-
 .navigation {
   min-height: 70px;
   background-color: #ffebf2;
   color: #000;
-  padding-right: 1px;
   font-family: "Secular One", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
+  text-align: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .navbar {
+    padding: 0;
+  }
+}
+/* Style for mobile hamburger */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(255, 102, 203);
 }
 
 .navigation__logo {
@@ -96,24 +112,34 @@
 
 .navigation__list {
   font-size: 0;
-  margin-left: 166px;
+}
+
+@media only screen and (min-width: 992px) {
+  .navigation__list {
+    margin-left: 166px;
+  }
 }
 
 .navigation__list-item {
   text-transform: uppercase;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 26px;
-}
-
-.navigation__list-item:first-child {
-  margin-left: 0;
+  display: block;
 }
 
 .navigation__list-item__item {
   font-size: 15px;
   letter-spacing: -0.05px;
   color: #000;
+}
+
+@media only screen and (min-width: 992px) {
+  .navigation__list-item {
+    margin-left: 26px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .navigation__list-item:first-child {
+    margin-left: 0;
+  }
 }
 
 .navigation__list__language {
