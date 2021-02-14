@@ -236,6 +236,7 @@ p {
 .jumbotron {
   background-image: url(../assets/images/jumbotron-path-image.png);
   background-position: 0px -69px;
+  margin-bottom: 41px;
 }
 
 @media only screen and (min-width: 576px) {
@@ -292,25 +293,39 @@ p {
   padding: 0 2rem;
 }
 
+.card__location-container {
+  padding-right: 11px;
+  padding-left: 18px;
+}
+
 .card__location-row {
   box-shadow: 0 1px 9px 0 rgba(0, 35, 64, 0.2);
+  min-height: 420px;
+  margin-bottom: 43px;
+}
+
+/* Second location card is bigger than first */
+.card__location-row--height {
+  min-height: 428px;
 }
 
 .card__location-columns {
   font-size: 0;
+  padding-right: 0;
 }
 
 .card__location-first-column {
   max-width: 715px;
-  padding-right: 0;
 }
 .card__location-second-column {
   max-width: 425px;
+  padding-left: 0;
 }
 
 .card__location-body {
   max-width: 597px;
-  padding-left: 30px;
+  padding-left: 28px;
+  padding-top: 11px;
 }
 
 @media only screen and (min-width: 992px) {
@@ -350,11 +365,17 @@ p {
   display: inline-block;
   font-size: 0;
   padding-left: 0;
+  padding-right: 0;
 }
 
 .card__location-body-title {
-  padding-bottom: 12px;
+  padding-bottom: 13px;
   display: block;
+}
+
+/* Second row has little offset, due to perfect pixel design, I am inserting this style */
+.card__location-body-title--height {
+  padding-bottom: 7px;
 }
 
 .card__location-body-contacts {
@@ -375,6 +396,12 @@ p {
 
 /* Categories tags */
 
+@media only screen and (min-width: 992px) {
+  .card__location-body-categories {
+    padding-left: 22px;
+  }
+}
+
 .card__location-body-categories-item {
   display: inline-block;
   vertical-align: middle;
@@ -389,11 +416,89 @@ p {
 .tag--yellow {
   background-color: #fcfa96;
 }
+.tag--purple {
+  background-color: #e0c5ec;
+}
+
+.card__location-body-categories-item-wrapper {
+  margin-top: 9px;
+}
 
 .card__location-body-tags {
   font-family: "Secular One", Arial, Helvetica, sans-serif;
   font-size: 12.9px;
   color: #000;
+  display: inline-block;
   letter-spacing: 0.04px;
   text-transform: uppercase;
+  padding: 7px 7px 4px 7px;
+  margin: 0 8px 9px 0;
+}
+
+.ordering-message {
+  position: relative;
+  margin: 14px 0 19px;
+  text-align: right;
+}
+
+.ordering-message:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10px;
+  border-top: 1px dashed #ddd;
+}
+
+.ordering-message__text {
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.64;
+  background-color: #fff;
+  color: #999;
+  display: inline-block;
+  z-index: 9;
+  padding-right: 9px;
+  position: relative;
+}
+
+/* Location gallery */
+
+.card__location-body__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 123px;
+}
+
+.card__location-body__gallery-item {
+  flex: 25%;
+  max-width: 25%;
+  padding-right: 6px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .card__location-body__gallery-item {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .card__location-body__gallery-item {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.card__location-body__gallery-item-image {
+  width: 100%;
+}
+
+/* Map */
+.card__location-body-columns__map {
+  border: 0;
+  width: 100%;
+  height: 100%;
 }
