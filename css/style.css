@@ -69,22 +69,6 @@ a:hover {
   text-transform: uppercase;
 }
 
-.card__location-heading {
-  font-family: "Secular One", Arial, Helvetica, sans-serif;
-  color: #000;
-  text-transform: uppercase;
-  font-size: 22px;
-  letter-spacing: 0.07px;
-}
-
-.card__location-body-title {
-  font-family: "Secular One", Arial, Helvetica, sans-serif;
-  color: #000;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.05px;
-}
-
 p {
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -350,6 +334,22 @@ p {
   margin-bottom: 0;
 }
 
+.card__location-heading {
+  font-family: "Secular One", Arial, Helvetica, sans-serif;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 0.07px;
+}
+
+.card__location-body-title {
+  font-family: "Secular One", Arial, Helvetica, sans-serif;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.05px;
+}
+
 .card__location-marker {
   font-size: 23px;
 }
@@ -596,4 +596,43 @@ p {
   display: block;
   text-transform: uppercase;
   letter-spacing: 0.15px;
+}
+
+/* Franchise section */
+.franchise {
+  background-image: url(../assets/images/jumbotron-path-image.png);  
+  background-position: 0 -10px;
+  text-align: center;
+}
+
+.franchise__wrapper {
+  min-height: 335px;
+  padding-top: 122px;
+  padding-bottom: 122px;
+}
+
+.franchise__header {
+  font-family: "Secular One", Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  letter-spacing: 0.12px;
+  color: #000;
+  text-transform: uppercase;
+  line-height: normal;
+}
+.franchise__paragraph {
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.05px;
+  line-height: 18px;
+  color: #000;
+  padding-top: 24px;
+}
+
+.franchise__paragraph--pink {
+  color: #f650a0 !important;
+  cursor: pointer;
+}
+
+.franchise__paragraph--pink:hover {
+  opacity: 0.6;
 }
