@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <header>
       <nav class="navigation navbar navbar-expand-lg navbar-light">
@@ -71,7 +72,7 @@
           <ul class="navigation__list__language ml-auto">
             <li class="navigation__list__language-item">
               <a
-                class="navigation__list__language-item-link active"
+                class="navigation__list__language-item-link navigation__list__language-item-link--active"
                 href="javascript:;"
                 >Srb</a
               >
@@ -93,7 +94,11 @@
                 ></span>
               </a>
             </li>
-            <li class="navigation__right-item cart-status">(1)</li>
+            <li
+              class="navigation__right-item navigation__right-item--cart-filled"
+            >
+              (1)
+            </li>
           </ul>
         </div>
       </nav>
@@ -126,13 +131,103 @@
           >
             <a href="javascript:;" itemprop="url">
               <span
-                class="breadcrumb__list-item-name active-breadcrumb"
+                class="breadcrumb__list-item-name breadcrumb__list-item-name--active"
                 itemprop="title"
                 >Lokacije</span
               >
             </a>
           </li>
         </ol>
+      </div>
+    </section>
+    <section class="card card__location">
+      <div class="container website-wrapper">
+        <div class="card__location-row row">
+          <div
+            class="card__location-columns card__location-first-column col-md"
+          >
+            <div class="card__location-body card-body">
+              <div class="card__location-title card-title">
+                <a href="javascript:;">
+                  <span
+                    class="card__location-marker icon-marker-icon"
+                    href="javascript:;"
+                  ></span>
+                </a>
+                <h2 class="card__location-heading">
+                  Slatkoteka Dorćol (Centar)
+                </h2>
+              </div>
+              <hr class="card__location-separator" />
+              <div class="card__location-body-info">
+                <div class="card__location-body-columns col-6">
+                  <ul>
+                    <span class="card__location-body-title">Kontakt:</span>
+                    <li>
+                      <a class="card__location-body-contacts" href="tel:"
+                        >Višnjićeva 5, Beograd</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="card__location-body-contacts"
+                        href="tel:+381653300508"
+                        >065 33 00 508,
+                      </a>
+                      <a
+                        class="card__location-body-contacts"
+                        href="viber://chat/?number=%2B38153300508"
+                        >Viber,
+                      </a>
+                      <a
+                        class="card__location-body-contacts"
+                        href="whatsapp://send?text=Hi!&phone=+38153300508"
+                        >Whatsapp</a
+                      >
+                    </li>
+                  </ul>
+                  <ul class="card__location-body-working-time">
+                    <li class="card__location-body-working-time-item">
+                      Svakog radnog dana od 09h do 22h
+                    </li>
+                    <li class="card__location-body-working-time-item">
+                      Vikendom od 10h do 22h
+                    </li>
+                  </ul>
+                </div>
+                <div class="card__location-body-columns col-6">
+                  <ul class="card__location-body-categories">
+                    <span class="card__location-body-title">Dostupno:</span>
+                    <li class="card__location-body-categories-item">
+                      <a
+                        href="javascript:;"
+                        class="card__location-body-tags tag--pink"
+                        >Krofne</a
+                      >
+                    </li>
+                    <li class="card__location-body-categories-item">
+                      <a
+                        href="javascript:;"
+                        class="card__location-body-tags tag--green"
+                        >Slatkolade</a
+                      >
+                    </li>
+                    <li class="card__location-body-categories-item">
+                      <a
+                        href="javascript:;"
+                        class="card__location-body-tags tag--yellow"
+                        >Slatkoteka iznenađenja*</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card__location-columns card__location-second-column col-md"
+          ></div>
+        </div>
       </div>
     </section>
     <script
