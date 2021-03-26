@@ -527,6 +527,11 @@ p {
   padding-right: 0;
   padding-left: 0;
 }
+@media only screen and (max-width: 767px) {
+  .new-shop__container {
+    display: none;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   .new-shop__container:before {
@@ -610,9 +615,15 @@ p {
 }
 
 .franchise__wrapper {
-  min-height: 335px;
-  padding-top: 122px;
-  padding-bottom: 122px;
+  padding-bottom: 66px;
+}
+
+@media only screen and (min-width: 768px) {
+  .franchise__wrapper {
+    min-height: 335px;
+    padding-top: 122px;
+    padding-bottom: 122px;
+  }
 }
 
 .franchise__header {
