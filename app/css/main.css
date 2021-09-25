@@ -1,0 +1,727 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 10px;
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 25px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Thin.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Thin.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-Thin.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-Thin.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-Thin.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-Thin.svg#Montserrat-Thin") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-SemiBoldItalic.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-SemiBoldItalic.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-SemiBoldItalic.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-SemiBoldItalic.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-SemiBoldItalic.svg#Montserrat-SemiBoldItalic") format("svg");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Regular.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-Regular.svg#Montserrat-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-SemiBold.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-SemiBold.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-SemiBold.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-SemiBold.svg#Montserrat-SemiBold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-MediumItalic.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-MediumItalic.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-MediumItalic.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-MediumItalic.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-MediumItalic.svg#Montserrat-MediumItalic") format("svg");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Black.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Black.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-Black.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-Black.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-Black.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-Black.svg#Montserrat-Black") format("svg");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-BoldItalic.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-BoldItalic.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-BoldItalic.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-BoldItalic.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-BoldItalic.svg#Montserrat-BoldItalic") format("svg");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-BlackItalic.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-BlackItalic.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-BlackItalic.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-BlackItalic.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-BlackItalic.svg#Montserrat-BlackItalic") format("svg");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBold.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBold.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBold.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBold.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBold.svg#Montserrat-ExtraBold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-ThinItalic.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-ThinItalic.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-ThinItalic.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-ThinItalic.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-ThinItalic.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-ThinItalic.svg#Montserrat-ThinItalic") format("svg");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Bold.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Bold.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-Bold.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-Bold.svg#Montserrat-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLightItalic.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLightItalic.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLightItalic.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLightItalic.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLightItalic.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLightItalic.svg#Montserrat-ExtraLightItalic") format("svg");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLight.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLight.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLight.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLight.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraLight.svg#Montserrat-ExtraLight") format("svg");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Medium.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Medium.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-Medium.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-Medium.svg#Montserrat-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Italic.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Italic.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-Italic.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-Italic.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-Italic.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-Italic.svg#Montserrat-Italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBoldItalic.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBoldItalic.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBoldItalic.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-ExtraBoldItalic.svg#Montserrat-ExtraBoldItalic") format("svg");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-LightItalic.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-LightItalic.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-LightItalic.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-LightItalic.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-LightItalic.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-LightItalic.svg#Montserrat-LightItalic") format("svg");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Light.eot");
+  src: url("../../app/assets/fonts/Montserrat/Montserrat-Light.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Montserrat/Montserrat-Light.woff2") format("woff2"), url("../../app/assets/fonts/Montserrat/Montserrat-Light.woff") format("woff"), url("../../app/assets/fonts/Montserrat/Montserrat-Light.ttf") format("truetype"), url("../../app/assets/fonts/Montserrat/Montserrat-Light.svg#Montserrat-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Falling Sky";
+  src: url("../../app/assets/fonts/Falling%20Sky/FallingSkyBd.eot");
+  src: url("../../app/assets/fonts/Falling%20Sky/FallingSkyBd.eot?#iefix") format("embedded-opentype"), url("../../app/assets/fonts/Falling%20Sky/FallingSkyBd.woff2") format("woff2"), url("../../app/assets/fonts/Falling%20Sky/FallingSkyBd.woff") format("woff"), url("../../app/assets/fonts/Falling%20Sky/FallingSkyBd.ttf") format("truetype"), url("../../app/assets/fonts/Falling%20Sky/FallingSkyBd.svg#FallingSkyBd") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+._wr {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 768px) {
+  ._wr {
+    max-width: 720px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  ._wr {
+    max-width: 960px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  ._wr {
+    max-width: 1170px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  ._wr {
+    max-width: 1280px;
+  }
+}
+
+._w {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+@media only screen and (min-width: 576px) {
+  /* For tablets: */
+  ._s1 {
+    width: 8.33%;
+  }
+
+  ._s2 {
+    width: 16.66%;
+  }
+
+  ._s3 {
+    width: 25%;
+  }
+
+  ._s4 {
+    width: 33.33%;
+  }
+
+  ._s5 {
+    width: 41.66%;
+  }
+
+  ._s6 {
+    width: 50%;
+  }
+
+  ._s7 {
+    width: 58.33%;
+  }
+
+  ._s8 {
+    width: 66.66%;
+  }
+
+  ._s9 {
+    width: 75%;
+  }
+
+  ._s10 {
+    width: 83.33%;
+  }
+
+  ._s11 {
+    width: 91.66%;
+  }
+
+  ._s12 {
+    width: 100%;
+  }
+}
+/* Custom tablet breakpoint */
+@media only screen and (min-width: 768px) {
+  /* For tablets: */
+  ._m1 {
+    width: 8.33%;
+  }
+
+  ._m2 {
+    width: 16.66%;
+  }
+
+  ._m3 {
+    width: 25%;
+  }
+
+  ._m4 {
+    width: 33.33%;
+  }
+
+  ._m5 {
+    width: 41.66%;
+  }
+
+  ._m6 {
+    width: 50%;
+  }
+
+  ._m7 {
+    width: 58.33%;
+  }
+
+  ._m8 {
+    width: 66.66%;
+  }
+
+  ._m9 {
+    width: 75%;
+  }
+
+  ._m10 {
+    width: 83.33%;
+  }
+
+  ._m11 {
+    width: 91.66%;
+  }
+
+  ._m12 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* For desktop: */
+  ._l1 {
+    width: 8.33%;
+  }
+
+  ._l2 {
+    width: 16.66%;
+  }
+
+  ._l3 {
+    width: 25%;
+  }
+
+  ._l4 {
+    width: 33.33%;
+  }
+
+  ._l5 {
+    width: 41.66%;
+  }
+
+  ._l6 {
+    width: 50%;
+  }
+
+  ._l7 {
+    width: 58.33%;
+  }
+
+  ._l8 {
+    width: 66.66%;
+  }
+
+  ._l9 {
+    width: 75%;
+  }
+
+  ._l10 {
+    width: 83.33%;
+  }
+
+  ._l11 {
+    width: 91.66%;
+  }
+
+  ._l12 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /* For desktop: */
+  ._xl1 {
+    width: 8.33%;
+  }
+
+  ._xl2 {
+    width: 16.66%;
+  }
+
+  ._xl3 {
+    width: 25%;
+  }
+
+  ._xl4 {
+    width: 33.33%;
+  }
+
+  ._xl5 {
+    width: 41.66%;
+  }
+
+  ._xl6 {
+    width: 50%;
+  }
+
+  ._xl7 {
+    width: 58.33%;
+  }
+
+  ._xl8 {
+    width: 66.66%;
+  }
+
+  ._xl9 {
+    width: 75%;
+  }
+
+  ._xl10 {
+    width: 83.33%;
+  }
+
+  ._xl11 {
+    width: 91.66%;
+  }
+
+  ._xl12 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  /* For desktop: */
+  ._xxl1 {
+    width: 8.33%;
+  }
+
+  ._xxl2 {
+    width: 16.66%;
+  }
+
+  ._xxl3 {
+    width: 25%;
+  }
+
+  ._xxl4 {
+    width: 33.33%;
+  }
+
+  ._xxl5 {
+    width: 41.66%;
+  }
+
+  ._xxl6 {
+    width: 50%;
+  }
+
+  ._xxl7 {
+    width: 58.33%;
+  }
+
+  ._xxl8 {
+    width: 66.66%;
+  }
+
+  ._xxl9 {
+    width: 75%;
+  }
+
+  ._xxl10 {
+    width: 83.33%;
+  }
+
+  ._xxl11 {
+    width: 91.66%;
+  }
+
+  ._xxl12 {
+    width: 100%;
+  }
+}
+/* All devices */
+._1 {
+  width: 8.33%;
+}
+
+._2 {
+  width: 16.66%;
+}
+
+._3 {
+  width: 25%;
+}
+
+._4 {
+  width: 33.33%;
+}
+
+._5 {
+  width: 41.66%;
+}
+
+._6 {
+  width: 50%;
+}
+
+._7 {
+  width: 58.33%;
+}
+
+._8 {
+  width: 66.66%;
+}
+
+._9 {
+  width: 75%;
+}
+
+._10 {
+  width: 83.33%;
+}
+
+._11 {
+  width: 91.66%;
+}
+
+._12 {
+  width: 100%;
+}
+
+.m-navbar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 5rem;
+}
+
+.m-list.-primary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 100%;
+  font-weight: 500;
+  color: #102a42;
+}
+.m-list__item {
+  margin-left: 30px;
+  transition: color 400ms;
+}
+.m-list__item:first-of-type {
+  margin-left: 0;
+}
+.m-list__item:hover {
+  color: #e9be24;
+}
+
+.m-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 5rem;
+  background-color: #fffaeb;
+}
+@media only screen and (min-width: 1200px) {
+  .m-hero {
+    align-items: center;
+  }
+}
+.m-hero ._w {
+  justify-content: center;
+}
+@media only screen and (min-width: 1200px) {
+  .m-hero ._w {
+    justify-content: space-between;
+  }
+}
+.m-hero ._w > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.m-hero ._w > div:last-child {
+  display: none;
+}
+@media only screen and (min-width: 1200px) {
+  .m-hero ._w > div:last-child {
+    display: flex;
+  }
+}
+.m-hero__content {
+  margin-top: 100px;
+  font-family: "Falling Sky", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+@media only screen and (min-width: 1200px) {
+  .m-hero__content {
+    margin-top: 0;
+  }
+}
+.m-hero__content.-second {
+  position: relative;
+  max-width: 360px;
+  max-height: 480px;
+}
+.m-hero__content.-second::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 360px;
+  height: 480px;
+  border: 0.25rem dashed #e9be24;
+  border-radius: 0.5rem;
+}
+.m-hero__content--images {
+  position: relative;
+}
+.m-hero__content--imagesImage {
+  max-width: 180px;
+}
+.m-hero__content--imagesHeading {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 102px;
+  color: #fffaeb;
+  user-select: none;
+  transition: color 400ms, top 1000ms, left 1000ms;
+  transition-delay: 3000ms, 2000ms, 2000ms;
+}
+@media only screen and (min-width: 1200px) {
+  .m-hero__content--imagesHeading {
+    font-size: 132px;
+  }
+}
+.m-hero__content--imagesHeading.-show {
+  color: #000;
+}
+.m-hero__content--imagesHeading::first-letter {
+  background-color: #e9be24;
+  color: #000;
+  opacity: 1;
+}
+.m-hero__content--imagesHeading.-first {
+  position: relative;
+}
+@media only screen and (max-width: 1200px) {
+  .m-hero__content--imagesHeading.-first {
+    left: 0;
+  }
+}
+.m-hero__content--imagesHeading.-first::first-letter {
+  padding-left: 20px;
+}
+.m-hero__content--imagesHeading.-second {
+  position: absolute;
+  top: 0;
+  left: 85px;
+}
+@media only screen and (max-width: 1200px) {
+  .m-hero__content--imagesHeading.-second {
+    left: 70px;
+  }
+}
+.m-hero__content--imagesHeading.-second.-offset {
+  top: 165px;
+}
+@media only screen and (max-width: 1200px) {
+  .m-hero__content--imagesHeading.-second.-offset {
+    top: 129px;
+  }
+}
+.m-hero__content--imagesHeading.-second::first-letter {
+  padding-right: 20px;
+}
+.m-hero__content--image.-profile {
+  position: relative;
+  display: block;
+  width: 360px;
+  height: 480px;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/*# sourceMappingURL=main.css.map */

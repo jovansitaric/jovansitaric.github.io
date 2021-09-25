@@ -1,0 +1,111 @@
+@mixin media-up($value) {
+    @if $value == "_" {
+        @media only screen and (min-width: 120px) {
+            @content;
+        }
+    } @else if $value == "_xs" {
+        @media only screen and (min-width: 400px) {
+            @content;
+        }
+    } @else if $value == "_s" {
+        @media only screen and (min-width: 567px) {
+            @content;
+        }
+    } @else if $value == "_m" {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    } @else if $value == "_l" {
+        @media only screen and (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $value == "_xl" {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $value == "_xxl" {
+        @media only screen and (min-width: 1440px) {
+            @content;
+        }
+    }
+    @else {
+        @media only screen and (min-width: $value) and (max-width: $second-value) {
+            @content;
+        }
+    }
+}
+
+@mixin media-down($value) {
+    @if $value == "_" {
+        @media only screen and (max-width: 120px) {
+            @content;
+        }
+    } @else if $value == "_xs" {
+        @media only screen and (max-width: 400px) {
+            @content;
+        }
+    } @else if $value == "_s" {
+        @media only screen and (max-width: 567px) {
+            @content;
+        }
+    } @else if $value == "_m" {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    } @else if $value == "_l" {
+        @media only screen and (max-width: 992px) {
+            @content;
+        }
+    }
+    @else if $value == "_xl" {
+        @media only screen and (max-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $value == "_xxl" {
+        @media only screen and (max-width: 1440px) {
+            @content;
+        }
+    }
+    @else {
+        @media only screen and (max-width: $value) {
+            @content;
+        }
+    }
+}
+
+@mixin first-of-type-none($property, $value) {
+    #{$property}: $value;
+
+    &:first-of-type {
+        #{$property}: 0;
+    }
+}
+
+@mixin inline-block() {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@mixin padding-vertical($value) {
+    padding-top: $value;
+    padding-bottom: $value;
+}
+
+@mixin padding-horizontal($value) {
+    padding-left: $value;
+    padding-right: $value;
+}
+
+@mixin image-decoration($deg: 90deg, $style: dashed) {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: $profile-image-width;
+    height: $profile-image-height;
+    border: $border-thickness $style $color-primary;
+    border-radius: $radius;
+}

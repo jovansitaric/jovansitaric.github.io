@@ -1,0 +1,143 @@
+.m-hero {
+    // min-height: calc(100vh - #{$navbar-height});
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    padding-top: $navbar-height; // nav offset
+    background-color: $color-white-mild;
+
+    @include media-up('_xl') {
+        align-items: center;
+    }
+
+    & ._w {
+        justify-content: center;
+
+        @include media-up('_xl') {
+            justify-content: space-between;
+        }
+
+        > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        > div:last-child {
+            display: none;
+
+            @include media-up('_xl') {
+                display: flex;
+            }
+        }
+    }
+
+    &__content {
+        margin-top: 100px;
+        font-family: $font-falling-sky;
+
+        @include media-up('_xl') {
+            margin-top: 0;
+        }
+
+        &.-second {
+            position: relative;
+            max-width: $profile-image-width;
+            max-height: $profile-image-height;
+
+            &::before {
+                @include image-decoration;
+            }
+        }
+
+        &--images {
+            position: relative;
+        }
+
+        &--imagesImage {
+            max-width: 180px;
+        }
+
+        &--imagesHeading {
+            @include inline-block;
+            font-size: 102px;
+            color: $color-white-mild;
+            user-select: none;
+            transition: color 400ms, top 1000ms, left 1000ms;
+            transition-delay: 3000ms, 2000ms, 2000ms;
+
+            @include media-up('_xl') {
+                font-size: 132px;
+            }
+
+            &.-show {
+                color: $color-black;
+            }
+
+            &::first-letter {
+                background-color: $color-orange;
+                color: $color-black;
+                opacity: 1;
+            }
+        }
+
+        &--imagesHeading.-first {
+            position: relative;
+
+            @include media-down('_xl') {
+                left: 0;
+            }
+
+            &::first-letter {
+                padding-left: $javascript-logo-offset;
+            }
+
+            &.-offset {
+
+                // @include media-down('_xl') {
+                //     left: -200px;
+                // }
+            }
+        }
+
+        &--imagesHeading.-second {
+            position: absolute;
+            top: 0;
+            left: 65px + $javascript-logo-offset;
+
+            @include media-down('_xl') {
+                left: 70px;
+            }
+
+            &.-offset {
+
+                // @include media-down('_xl') {
+                //     left: 200px;
+                // }
+
+                // @include media-up('_xl') {
+                    top: 165px;
+                // }
+
+                @include media-down('_xl') {
+                    top: 129px;
+                }
+            }
+
+            &::first-letter {
+                padding-right: $javascript-logo-offset;
+            }
+        }
+
+        &--image.-profile {
+            position: relative;
+            display: block;
+            width: $profile-image-width;
+            height: $profile-image-height;
+            margin: 0 auto;
+            border-radius: $radius;
+            object-fit: cover;
+            z-index: 1;
+        }
+    }
+}

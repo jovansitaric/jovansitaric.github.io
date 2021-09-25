@@ -1,0 +1,17 @@
+html {
+    font-family: $font-montserrat;
+    font-size: $font-size-default;
+
+    @include media-up('_m') {
+        font-size: $font-size-default * 2;
+    }
+
+    @include media-up('_l') {
+        font-size: $font-size-default * 2.5;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
