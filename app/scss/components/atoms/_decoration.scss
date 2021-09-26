@@ -1,0 +1,16 @@
+.a-decoration {
+
+    &.-left {
+
+        &::before {
+            @include image-decoration('left');
+        }
+    }
+
+    &.-right {
+
+        &::before {
+            @include image-decoration;
+        }
+    }
+}

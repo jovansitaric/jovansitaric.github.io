@@ -2,7 +2,7 @@
     // min-height: calc(100vh - #{$navbar-height});
     min-height: 100vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     padding-top: $navbar-height; // nav offset
     background-color: $color-white-mild;
 
@@ -44,10 +44,6 @@
             position: relative;
             max-width: $profile-image-width;
             max-height: $profile-image-height;
-
-            &::before {
-                @include image-decoration;
-            }
         }
 
         &--images {
@@ -60,14 +56,14 @@
 
         &--imagesHeading {
             @include inline-block;
-            font-size: 102px;
+            font-size: 72px;
             color: $color-white-mild;
             user-select: none;
-            transition: color 400ms, top 1000ms, left 1000ms;
+            transition: color 400ms, margin-left 1000ms, left 1000ms;
             transition-delay: 3000ms, 2000ms, 2000ms;
 
             @include media-up('_xl') {
-                font-size: 132px;
+                font-size: 92px;
             }
 
             &.-show {
@@ -84,44 +80,20 @@
         &--imagesHeading.-first {
             position: relative;
 
-            @include media-down('_xl') {
-                left: 0;
-            }
-
             &::first-letter {
                 padding-left: $javascript-logo-offset;
             }
 
             &.-offset {
-
-                // @include media-down('_xl') {
-                //     left: -200px;
-                // }
             }
         }
 
         &--imagesHeading.-second {
-            position: absolute;
-            top: 0;
-            left: 65px + $javascript-logo-offset;
-
-            @include media-down('_xl') {
-                left: 70px;
-            }
+            position: relative;
+            left: -6px;
 
             &.-offset {
-
-                // @include media-down('_xl') {
-                //     left: 200px;
-                // }
-
-                // @include media-up('_xl') {
-                    top: 165px;
-                // }
-
-                @include media-down('_xl') {
-                    top: 129px;
-                }
+                margin-left: 30px;
             }
 
             &::first-letter {
@@ -129,15 +101,13 @@
             }
         }
 
-        &--image.-profile {
-            position: relative;
-            display: block;
-            width: $profile-image-width;
-            height: $profile-image-height;
-            margin: 0 auto;
-            border-radius: $radius;
-            object-fit: cover;
-            z-index: 1;
+        &--imagesText {
+            margin-top: 20px + $javascript-logo-letter-offset;
+            color: $color-gray-1;
+
+            @include media-up('_xl') {
+                font-size: 28px;
+            }
         }
     }
 }

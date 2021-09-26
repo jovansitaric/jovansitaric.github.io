@@ -1,0 +1,10 @@
+.a-image {
+    position: relative;
+    display: block;
+    width: $profile-image-width;
+    height: $profile-image-height;
+    margin: 0 auto;
+    border-radius: $radius;
+    object-fit: cover;
+    z-index: 1;
+}

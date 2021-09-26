@@ -84,6 +84,14 @@
     }
 }
 
+@mixin first-child-none($property, $value) {
+    #{$property}: $value;
+
+    &:first-child {
+        #{$property}: 0;
+    }
+}
+
 @mixin inline-block() {
     display: inline-block;
     vertical-align: middle;
@@ -99,11 +107,17 @@
     padding-right: $value;
 }
 
-@mixin image-decoration($deg: 90deg, $style: dashed) {
+@mixin image-decoration($direction: 'right', $deg: 90deg, $style: dashed) {
     content: '';
     position: absolute;
-    top: 2rem;
-    left: 2rem;
+    @if ($direction == 'left') {
+        top: 2rem;
+        left: -2rem;
+    }
+    @else {
+        top: 2rem;
+        left: 2rem;
+    }
     width: $profile-image-width;
     height: $profile-image-height;
     border: $border-thickness $style $color-primary;

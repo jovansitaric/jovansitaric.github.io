@@ -1,0 +1,16 @@
+.m-about {
+    
+    & ._w > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+        position: relative;
+
+        > * {
+            @include first-child-none('margin-top', 30px); 
+        }
+    }
+}

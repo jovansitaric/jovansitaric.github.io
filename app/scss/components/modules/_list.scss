@@ -5,16 +5,26 @@
         align-items: center;
         justify-content: flex-end;
         flex-wrap: wrap;
+        font-weight: 600;
         width: 100%;
         font-weight: 500;
         color: $color-black-1;
-        // text-transform: uppercase;
+
+        @include media-up('_m') {
+            font-size: 22px;
+        }
+    }
+
+    &.-social {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
     }
 
     &__item {
         @include first-of-type-none('margin-left', 30px);
         transition: color 400ms;
-        
+
         &:hover {
             color: $color-primary;
         }

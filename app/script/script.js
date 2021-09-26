@@ -11,8 +11,15 @@
             add: () => {
                 const el = document.querySelectorAll('.js-heroText');
 
-                el.forEach(item => {
+                el.forEach((item, index) => {
                     item.classList.add('-show', '-offset');
+                    
+                    // Add rest of the name to first heading
+                    if(index == 0) {
+                        setTimeout( () => {
+                            item.innerHTML += 'ovan';
+                        } ,2500)
+                    }
                 });
             }
         }

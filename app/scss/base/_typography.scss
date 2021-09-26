@@ -3,15 +3,26 @@ html {
     font-size: $font-size-default;
 
     @include media-up('_m') {
-        font-size: $font-size-default * 2;
+        font-size: $font-size-default * 1.3;
     }
 
     @include media-up('_l') {
-        font-size: $font-size-default * 2.5;
+        font-size: $font-size-default * 1.6;
     }
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+h2 {
+    font-family: $font-falling-sky;
+    font-size: 40px;
+    letter-spacing: 3px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
 }
