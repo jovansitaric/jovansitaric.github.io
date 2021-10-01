@@ -73,7 +73,7 @@ html {
 }
 @media only screen and (min-width: 992px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -641,6 +641,30 @@ p {
   border: 0.25rem dashed #e9be24;
   border-radius: 0.5rem;
 }
+.a-decoration.-spray {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.a-decoration.-spray::after {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: -1rem;
+  width: 0;
+  height: 100%;
+  background-color: #e9be24;
+  transition: width 1000ms ease-in-out;
+  transition-delay: 2000ms;
+  z-index: -1;
+}
+.aos-animate .a-decoration.-spray::after {
+  width: 100%;
+}
+
+.a-heading {
+  position: relative;
+}
 
 .m-navbar {
   position: fixed;
@@ -648,6 +672,7 @@ p {
   align-items: center;
   width: 100%;
   min-height: 5rem;
+  z-index: 3;
 }
 
 .m-list.-primary {
@@ -669,6 +694,7 @@ p {
   display: flex;
   align-items: center;
   margin-top: 30px;
+  font-size: 22px;
 }
 .m-list__item {
   margin-left: 30px;
@@ -795,7 +821,7 @@ p {
   position: relative;
 }
 .m-about__content > * {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .m-about__content > *:first-child {
   margin-top: 0;

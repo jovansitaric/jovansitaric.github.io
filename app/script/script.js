@@ -9,9 +9,10 @@
             },
 
             add: () => {
-                const el = document.querySelectorAll('.js-heroText');
+                const heroText = document.querySelectorAll('.js-heroText');
+                const headings = document.querySelectorAll('.js-headings');
 
-                el.forEach((item, index) => {
+                heroText.forEach((item, index) => {
                     item.classList.add('-show', '-offset');
                     
                     // Add rest of the name to first heading
@@ -21,11 +22,16 @@
                         } ,2500)
                     }
                 });
+
+                headings.forEach(item => {
+                    item.classList.add('-animate');
+                });
             }
         }
 
         AOS.init({
-            duration: 800
+            duration: 800,
+            animatedClassName: 'aos-animate', // class applied on animation
         });
 
         add.init();

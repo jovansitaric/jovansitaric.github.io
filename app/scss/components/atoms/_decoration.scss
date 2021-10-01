@@ -13,4 +13,29 @@
             @include image-decoration;
         }
     }
+
+    &.-spray {
+        @include inline-block;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: .5rem;
+            left: -1rem;
+            width: 0;
+            height: 100%;
+            background-color: $color-primary;
+            transition: width 1000ms ease-in-out;
+            transition-delay: 2000ms;
+            z-index: -1;
+        }
+
+        .aos-animate & {
+            
+            &::after {
+                width: 100%;
+            }
+        }
+    }
 }
