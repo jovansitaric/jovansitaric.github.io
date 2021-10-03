@@ -3,7 +3,7 @@
     &.-primary {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         flex-wrap: wrap;
         font-weight: 600;
         width: 100%;
@@ -18,13 +18,30 @@
     &.-social {
         display: flex;
         align-items: center;
-        margin-top: 30px;
-        font-size: 22px;
+
+        @include media-up('_m') {
+            font-size: 22px;
+        }
+
+        &.-offset {
+            margin-top: 30px;
+        }
     }
 
     &__item {
-        @include first-of-type-none('margin-left', 30px);
         transition: color 400ms;
+
+        .-primary & {
+            @include first-of-type-none('margin-left', 40px);
+        }
+        
+        .-social & {
+            @include first-of-type-none('margin-left', 20px);
+        }
+
+        .-offset & {
+            @include first-of-type-none('margin-left', 30px);
+        }
 
         &:hover {
             color: $color-primary;

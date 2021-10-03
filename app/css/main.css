@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -68,7 +67,7 @@ html {
 }
 @media only screen and (min-width: 768px) {
   html {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -247,8 +246,8 @@ p {
 }
 @font-face {
   font-family: "icomoon";
-  src: url("../../app/assets/icons/icomoon.eot?ehy4zk");
-  src: url("../../app/assets/icons/icomoon.eot?ehy4zk#iefix") format("embedded-opentype"), url("../../app/assets/icons/icomoon.ttf?ehy4zk") format("truetype"), url("../../app/assets/icons/icomoon.woff?ehy4zk") format("woff"), url("../../app/assets/icons/icomoon.svg?ehy4zk#icomoon") format("svg");
+  src: url("../../app/assets/icons/icomoon.eot?hcgpym");
+  src: url("../../app/assets/icons/icomoon.eot?hcgpym#iefix") format("embedded-opentype"), url("../../app/assets/icons/icomoon.ttf?hcgpym") format("truetype"), url("../../app/assets/icons/icomoon.woff?hcgpym") format("woff"), url("../../app/assets/icons/icomoon.svg?hcgpym#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -267,20 +266,38 @@ p {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-book:before {
+  content: "\e91f";
+}
+
+.icon-books:before {
+  content: "\e920";
+}
+
+.icon-library:before {
+  content: "\e921";
+}
+
 .icon-github:before {
-  content: "";
+  content: "\eab0";
 }
 
 .icon-linkedin:before {
-  content: "";
+  content: "\eac9";
 }
 
 ._wr {
   width: 100%;
+  max-width: 280px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+}
+@media only screen and (min-width: 400px) {
+  ._wr {
+    max-width: 500px;
+  }
 }
 @media only screen and (min-width: 768px) {
   ._wr {
@@ -672,13 +689,21 @@ p {
   align-items: center;
   width: 100%;
   min-height: 5rem;
+  transition: background-color 500ms, box-shadow 1000ms;
   z-index: 3;
+}
+.m-navbar.-sticky {
+  background-color: #fff;
+  box-shadow: 0 -15px 25px 0 #000;
+}
+.m-navbar ._w {
+  flex-wrap: nowrap;
 }
 
 .m-list.-primary {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   flex-wrap: wrap;
   font-weight: 600;
   width: 100%;
@@ -693,14 +718,34 @@ p {
 .m-list.-social {
   display: flex;
   align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .m-list.-social {
+    font-size: 22px;
+  }
+}
+.m-list.-social.-offset {
   margin-top: 30px;
-  font-size: 22px;
 }
 .m-list__item {
-  margin-left: 30px;
   transition: color 400ms;
 }
-.m-list__item:first-of-type {
+.-primary .m-list__item {
+  margin-left: 40px;
+}
+.-primary .m-list__item:first-of-type {
+  margin-left: 0;
+}
+.-social .m-list__item {
+  margin-left: 20px;
+}
+.-social .m-list__item:first-of-type {
+  margin-left: 0;
+}
+.-offset .m-list__item {
+  margin-left: 30px;
+}
+.-offset .m-list__item:first-of-type {
   margin-left: 0;
 }
 .m-list__item:hover {
@@ -809,22 +854,40 @@ p {
 }
 
 .m-sections {
-  padding: 100px 0;
+  padding: 50px 0;
 }
-
-.m-about ._w > div {
+.m-sections.-first {
+  padding-top: 100px;
+}
+.m-sections:last-of-type {
+  padding-bottom: 100px;
+}
+.m-sections ._w {
+  justify-content: center;
+}
+@media only screen and (min-width: 992px) {
+  .m-sections ._w {
+    justify-content: flex-start;
+  }
+}
+.m-sections ._w > div {
+  margin-top: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.m-sections ._w > div:first-of-type {
+  margin-top: 0;
+}
+
 .m-about__content {
   position: relative;
 }
-.m-about__content > * {
-  margin-top: 50px;
+.m-about__content p {
+  margin-top: 20px;
 }
-.m-about__content > *:first-child {
-  margin-top: 0;
+.m-about__content p:first-of-type {
+  margin-top: 50px;
 }
 
 /*# sourceMappingURL=main.css.map */

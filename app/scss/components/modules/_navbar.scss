@@ -4,5 +4,15 @@
     align-items: center;
     width: 100%;
     min-height: $navbar-height;
+    transition: background-color 500ms, box-shadow 1000ms;
     z-index: 3;
+
+    &.-sticky {
+        background-color: $color-white;
+        box-shadow: 0 -15px 25px 0 $color-black;
+    }
+    
+    & ._w {
+        flex-wrap: nowrap;
+    }
 }

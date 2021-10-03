@@ -1,16 +1,14 @@
 .m-about {
-    
-    & ._w > div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 
     &__content {
         position: relative;
 
-        > * {
-            @include first-child-none('margin-top', 50px); 
+        p {
+            margin-top: 20px;
+
+            &:first-of-type {
+                margin-top: 50px;
+            }
         }
     }
 }
