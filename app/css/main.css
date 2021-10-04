@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -267,23 +268,23 @@ p {
 }
 
 .icon-book:before {
-  content: "\e91f";
+  content: "";
 }
 
 .icon-books:before {
-  content: "\e920";
+  content: "";
 }
 
 .icon-library:before {
-  content: "\e921";
+  content: "";
 }
 
 .icon-github:before {
-  content: "\eab0";
+  content: "";
 }
 
 .icon-linkedin:before {
-  content: "\eac9";
+  content: "";
 }
 
 ._wr {
@@ -703,7 +704,7 @@ p {
 .m-list.-primary {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
   font-weight: 600;
   width: 100%;
@@ -712,6 +713,7 @@ p {
 }
 @media only screen and (min-width: 768px) {
   .m-list.-primary {
+    margin-right: 50px;
     font-size: 22px;
   }
 }
@@ -736,20 +738,23 @@ p {
 .-primary .m-list__item:first-of-type {
   margin-left: 0;
 }
+.-primary .m-list__item:hover {
+  color: #e9be24;
+}
 .-social .m-list__item {
   margin-left: 20px;
 }
 .-social .m-list__item:first-of-type {
   margin-left: 0;
 }
+.-social .m-list__item:hover {
+  color: #e9be24;
+}
 .-offset .m-list__item {
   margin-left: 30px;
 }
 .-offset .m-list__item:first-of-type {
   margin-left: 0;
-}
-.m-list__item:hover {
-  color: #e9be24;
 }
 
 .m-hero {
@@ -870,13 +875,13 @@ p {
     justify-content: flex-start;
   }
 }
-.m-sections ._w > div {
+.m-sections__column {
   margin-top: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.m-sections ._w > div:first-of-type {
+.m-sections__column:first-of-type {
   margin-top: 0;
 }
 
@@ -888,6 +893,70 @@ p {
 }
 .m-about__content p:first-of-type {
   margin-top: 50px;
+}
+
+.m-skills__item {
+  width: calc(100% * (425 / 1280));
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.m-tabs.-work {
+  position: relative;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 20px;
+  z-index: 2;
+}
+@media only screen and (min-width: 768px) {
+  .m-tabs.-work {
+    font-size: 32px;
+  }
+}
+.m-tabs.-categories {
+  position: relative;
+  top: -2px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-weight: 500;
+  padding: 20px 0;
+  border: 1px solid #617d98;
+  border-top: 1px solid transparent;
+  z-index: 1;
+}
+@media only screen and (min-width: 768px) {
+  .m-tabs.-categories {
+    font-size: 28px;
+  }
+}
+.m-tabs__item {
+  cursor: pointer;
+}
+.-work .m-tabs__item {
+  padding: 20px 40px;
+  background-color: #f2f2f2;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 -1px 6px -3px #000;
+  transition: border-color 400ms, color 400ms, background-color 400ms, box-shadow 400ms;
+}
+.-work .m-tabs__item.-active, .-work .m-tabs__item:hover, .-work .m-tabs__item:focus {
+  color: #e9be24;
+  background-color: #fff;
+  box-shadow: 0 -1px 1px 0 #000;
+}
+.-categories .m-tabs__item {
+  width: 50%;
+  padding: 20px 30px;
+  border-right: 3px solid transparent;
+}
+.-categories .m-tabs__item.-active, .-categories .m-tabs__item:hover, .-categories .m-tabs__item:focus {
+  border-right: 3px solid #e9be24;
+  color: #e9be24;
 }
 
 /*# sourceMappingURL=main.css.map */

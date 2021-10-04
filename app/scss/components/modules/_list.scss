@@ -3,7 +3,7 @@
     &.-primary {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         flex-wrap: wrap;
         font-weight: 600;
         width: 100%;
@@ -11,6 +11,7 @@
         color: $color-black-1;
 
         @include media-up('_m') {
+            margin-right: 50px;
             font-size: 22px;
         }
     }
@@ -33,18 +34,22 @@
 
         .-primary & {
             @include first-of-type-none('margin-left', 40px);
+
+            &:hover {
+                color: $color-primary;
+            }
         }
         
         .-social & {
             @include first-of-type-none('margin-left', 20px);
+
+            &:hover {
+                color: $color-primary;
+            }
         }
 
         .-offset & {
             @include first-of-type-none('margin-left', 30px);
-        }
-
-        &:hover {
-            color: $color-primary;
-        }
+        }        
     }
 }

@@ -15,12 +15,12 @@
         @include media-up('_l') {
             justify-content: flex-start;
         }
+    }
 
-        > div {
-            @include first-of-type-none('margin-top', 70px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    &__column {
+        @include first-of-type-none('margin-top', 70px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

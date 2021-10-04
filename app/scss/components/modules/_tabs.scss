@@ -1,0 +1,68 @@
+.m-tabs { 
+    
+    &.-work {
+        position: relative;
+        justify-content: flex-end;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 20px;
+        z-index: 2;
+    
+        @include media-up('_m') {
+            font-size: 32px;
+        }
+    }
+
+    &.-categories {
+        position: relative;
+        top: -2px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        font-weight: 500;
+        padding: 20px 0;
+        border: 1px solid $color-gray-1;
+        border-top: 1px solid transparent;
+        z-index: 1;
+
+        @include media-up('_m') {
+            font-size: 28px;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+    
+        .-work & {
+            padding: 20px 40px;
+            background-color: $color-gray-2;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            box-shadow: 0 -1px 6px -3px $color-black;
+            transition: border-color 400ms, color 400ms, background-color 400ms, box-shadow 400ms;
+
+            &.-active,
+            &:hover,
+            &:focus {
+                color: $color-primary;
+                background-color: $color-white;
+                box-shadow: 0 -1px 1px 0 $color-black;
+            }
+        }
+
+        .-categories & {
+            width: 50%;
+            padding: 20px 30px;
+            border-right: 3px solid transparent;
+
+            &.-active,
+            &:hover,
+            &:focus {
+                border-right: 3px solid $color-primary;
+                color: $color-primary;
+            }
+        }
+    }
+}
