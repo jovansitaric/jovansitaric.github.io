@@ -1,0 +1,6 @@
+.a-tags {
+    @include inline-block;
+    padding: 8px 20px;
+    background: $color-primary-mono-2;
+    border-radius: 10px;
+}

@@ -29,6 +29,13 @@
         }
     }
 
+    &.-work {
+
+        & > * {
+            @include first-child-none('margin-top', 20px);
+        }
+    }
+
     &__item {
         transition: color 400ms;
 
@@ -39,7 +46,7 @@
                 color: $color-primary;
             }
         }
-        
+
         .-social & {
             @include first-of-type-none('margin-left', 20px);
 
@@ -50,6 +57,20 @@
 
         .-offset & {
             @include first-of-type-none('margin-left', 30px);
-        }        
+        }
+
+        .-work & {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+
+            @include media-up('_m') {
+                font-size: 18px;
+            }
+
+            & .a-icon {
+                width: 150px;
+            }
+        }
     }
 }

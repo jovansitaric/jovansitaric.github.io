@@ -40,3 +40,26 @@
 .icon-linkedin:before {
   content: "\eac9";
 }
+
+.icon-doubleArrow {
+  @include inline-block;
+  position: relative;
+  width: $icon-arrow-size;
+  height: $icon-arrow-size;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: $icon-arrow-size / 2;
+    height: $icon-arrow-size / 2;
+    transform: rotate(45deg);
+    border: 1px solid $color-primary;
+    border-left: 0;
+    border-bottom: 0;
+  }
+
+  &::after {
+    left: 10px;
+  }
+}

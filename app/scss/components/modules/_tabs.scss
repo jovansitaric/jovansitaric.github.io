@@ -1,16 +1,17 @@
-.m-tabs { 
-    
+.m-tabs {
+
     &.-work {
         position: relative;
-        justify-content: flex-end;
+        left: -1px;
+        justify-content: space-between;
         display: flex;
         align-items: center;
         font-weight: 700;
         font-size: 20px;
         z-index: 2;
-    
+
         @include media-up('_m') {
-            font-size: 32px;
+            font-size: 26px;
         }
     }
 
@@ -23,45 +24,78 @@
         justify-content: center;
         font-weight: 500;
         padding: 20px 0;
-        border: 1px solid $color-gray-1;
+        box-shadow: 0 0 4px 1px $color-primary;
         border-top: 1px solid transparent;
+        background-color: $color-white;
         z-index: 1;
 
         @include media-up('_m') {
-            font-size: 28px;
+            font-size: 26px;
         }
     }
 
     &__item {
         cursor: pointer;
-    
+
         .-work & {
-            padding: 20px 40px;
-            background-color: $color-gray-2;
+            position: relative;
+            left: 1px;
+            padding: 20px 25px;
+            color: $color-primary-mono-3;
+            background-color: $color-white;
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
-            box-shadow: 0 -1px 6px -3px $color-black;
+            box-shadow: 0 0 4px 1px $color-primary;
             transition: border-color 400ms, color 400ms, background-color 400ms, box-shadow 400ms;
 
             &.-active,
             &:hover,
             &:focus {
-                color: $color-primary;
-                background-color: $color-white;
-                box-shadow: 0 -1px 1px 0 $color-black;
+                // color: $color-primary;
+                // background-color: $color-white;
+                box-shadow: 0 -1px 1px 0 $color-primary;
+
+                &:first-of-type {
+                    box-shadow: -1px -1px 1px 0 $color-primary;
+                }
+
+                &:last-of-type {
+                    box-shadow: 1px -1px 1px 0 $color-primary;
+                }
+
+                > a {
+                    border-bottom: 1px solid $color-primary;
+                }
             }
         }
 
         .-categories & {
-            width: 50%;
-            padding: 20px 30px;
+            position: relative;
+            width: 100%;
+            padding: 20px 26px;
             border-right: 3px solid transparent;
+            color: $color-primary-mono-3;
+            transition: color 400ms;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 3px;
+                height: 40px;
+                top: 50%;
+                right: 30px;
+                transform: translateY(-50%);
+                transition: background-color 400ms, color 400ms;
+            }
 
             &.-active,
             &:hover,
             &:focus {
-                border-right: 3px solid $color-primary;
                 color: $color-primary;
+
+                &::after {
+                    background-color: $color-primary;
+                }
             }
         }
     }
