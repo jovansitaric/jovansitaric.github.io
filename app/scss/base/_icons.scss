@@ -44,7 +44,6 @@
 .icon-doubleArrow {
   @include inline-block;
   position: relative;
-  width: $icon-arrow-size;
   height: $icon-arrow-size;
 
   &::before,

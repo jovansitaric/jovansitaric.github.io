@@ -1,0 +1,29 @@
+.m-slider {
+
+    &__pagination {
+        text-align: center !important;
+        margin-top: 30px !important;
+
+        > * {
+            background-color: $color-primary !important;
+        }
+    }
+
+    &__navigation {
+
+        &--arrows {
+            color: $color-primary !important;
+        }
+    }
+}
+
+.m-slider.-work {
+    overflow: hidden;
+
+    .swiper-slide {
+
+        & > * {
+            @include first-child-none('margin-top', 20px);
+        }
+    }
+}

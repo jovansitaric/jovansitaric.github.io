@@ -85,13 +85,35 @@
                 const getAllLinks = document.querySelectorAll('a');
 
                 getAllLinks.forEach(item => {
-                    
+
                     if (item.attributes.href.value === '#') {
-                        
+
                         item.addEventListener('click', (event) => {
                             event.preventDefault();
                         });
                     }
+                });
+            }
+        };
+
+        const swiper = {
+
+            init: () => {
+                swiper.slider();
+            },
+
+            slider: () => {
+
+                new Swiper('.js-internshipSlider', {
+
+                    pagination: {
+                        el: '.js-internshipPagination'
+                    },
+
+                    navigation: {
+                        nextEl: '.js-nextNavigation',
+                        prevEl: '.js-prevNavigation',
+                    },
                 });
             }
         };
@@ -110,6 +132,7 @@
         add.init();
         sections.init();
         disableLinks.init();
+        swiper.init();
 
         window.addEventListener('scroll', () => {
             navbar.init();

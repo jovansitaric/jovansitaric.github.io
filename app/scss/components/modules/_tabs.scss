@@ -7,11 +7,11 @@
         display: flex;
         align-items: center;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 18px;
         z-index: 2;
 
         @include media-up('_m') {
-            font-size: 26px;
+            font-size: 22px;
         }
     }
 
@@ -30,7 +30,7 @@
         z-index: 1;
 
         @include media-up('_m') {
-            font-size: 26px;
+            font-size: 22px;
         }
     }
 

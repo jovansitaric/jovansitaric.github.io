@@ -3,10 +3,6 @@
     
     &__content {
 
-        & > * {
-            @include first-child-none('margin-top', 20px);
-        }
-
         &--heading {
             font-family: inherit;
             font-weight: 500;
