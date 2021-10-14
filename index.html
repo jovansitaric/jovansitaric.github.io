@@ -79,7 +79,7 @@
                                 About
                             </h2>
                             <p>Hello World! My name is Jovan Sitaric, Web Developer, Web and Graphic Designer.</p>
-                            <p>I live and work in Serbia, Novi Sad. At my day job, I develop web applications and websites. Mostly building custom websites and apps that you can’t get from a template.</p>
+                            <p>I have been in love with web development since I stopped being crazy about cartoons. Always willing to go an extra mile to make a website neater and prettier. Currently, I spend most of my time working on the front-end frameworks like GatsbyJS and REST API...</p>
                         </div>                            
                     </div>
                 </div>
@@ -93,32 +93,65 @@
                         <div class="_l3">
                             <div class="m-skills__item">
                                 <ul class="m-tabs -work">
-                                    <li class="m-tabs__item">
+                                    <li class="m-tabs__item -active js-sliderSwitch" data-switch="work">
                                         <a href="#">Work</a>
                                     </li>
-                                    <li class="m-tabs__item">
+                                    <li class="m-tabs__item js-sliderSwitch" data-switch="internship">
                                         <a href="#">Internship</a>
                                     </li>
                                 </ul>
-                                <ul class="m-tabs -categories">
-                                    <li class="m-tabs__item">
+                                <ul class="m-tabs -categories -works -active js-tabCategories" data-category="work">
+                                    <li class="m-tabs__item js-sliderCategorySwitch">
                                         <a href="#">Test test-</a>
                                     </li>
-                                    <li class="m-tabs__item">
+                                    <li class="m-tabs__item js-sliderCategorySwitch">
                                         <a href="#">Test test</a>
                                     </li>
-                                    <li class="m-tabs__item">
+                                    <li class="m-tabs__item js-sliderCategorySwitch">
                                         <a href="#">Test test</a>
                                     </li>
-                                    <li class="m-tabs__item">
+                                    <li class="m-tabs__item js-sliderCategorySwitch">
                                         <a href="#">Test test</a>
+                                    </li>
+                                </ul>
+                                <ul class="m-tabs -categories -internships js-tabCategories" data-category="internship">
+                                    <li class="m-tabs__item js-sliderCategorySwitch">
+                                        <a href="#">intern intern-</a>
+                                    </li>
+                                    <li class="m-tabs__item js-sliderCategorySwitch">
+                                        <a href="#">intern intern</a>
+                                    </li>
+                                    <li class="m-tabs__item js-sliderCategorySwitch">
+                                        <a href="#">intern intern</a>
+                                    </li>
+                                    <li class="m-tabs__item js-sliderCategorySwitch">
+                                        <a href="#">intern intern</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="_l8">
-                            <div class="m-work m-slider -work js-internshipSlider">
+                        <div class="_l8 -relative">
+                            <div class="m-work m-slider -work js-workSlider js-workSliders -active" data-slider="work">
                                 <div class="m-work__content swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h2 class="m-work__content--heading">Front-end developer</h2>
+                                        <h3 class="m-work__content--position a-tags -work">fSD Ltd.</h3>
+                                        <p class="m-work__content--date">June 2021 - September 2021</p>
+                                        <ul class="m-list -work">
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>Internship started from June 1st, and ended on September 1st. The main goal was to learn Front-end techniques like pixel-perfect design, ABEM methodology, and vanilla Javascript.</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>First month was mostly learning ABEM, methodology derived from popular BEM. Later, I would create a website using that method. Second month was learning advanced Javascript, Wordpress and ACF plugin. By the end of second month, I managed to learn and develop custom WP sites and understand JS better. Last month, I learned React and Gatsby JS integration with headless CMS Strapi.</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>This was the best internship I had. My mentors were very helpful and they taught me much. I passed internship successfully and got a job as junior front-end developer.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
                                     <div class="swiper-slide">
                                         <h2 class="m-work__content--heading">Salesforce developer</h2>
                                         <h3 class="m-work__content--position a-tags -work">Bee IT</h3>
@@ -141,11 +174,11 @@
                                     <div class="swiper-slide">
                                         <h2 class="m-work__content--heading">Front-end developer</h2>
                                         <h3 class="m-work__content--position a-tags -work">Vega IT</h3>
-                                        <p class="m-work__content--date">May 2021 - May 2021</p>
+                                        <p class="m-work__content--date">May 2020 - May 2020</p>
                                         <ul class="m-list -work">
                                             <li class="m-list__item">
                                                 <span class="a-icon icon-doubleArrow"></span>
-                                                <p>Internship started fron May 6th, and ended on May 29th. Company gave me mentor David Milivojev who monitored my progress and helped me learn. The main goal was to learn Front-end techniques like pixel-perfect design, psd to html, and UI</p>
+                                                <p>Internship started from May 6th, and ended on May 29th. Company gave me mentor David Milivojev who monitored my progress and helped me learn. The main goal was to learn Front-end techniques like pixel-perfect design, psd to html, and UI</p>
                                             </li>
                                             <li class="m-list__item">
                                                 <span class="a-icon icon-doubleArrow"></span>
@@ -157,12 +190,116 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    <div class="swiper-slide">
+                                        <h2 class="m-work__content--heading">Full-stack developer</h2>
+                                        <h3 class="m-work__content--position a-tags -work">IT Engine</h3>
+                                        <p class="m-work__content--date">November 2020 - November 2020</p>
+                                        <ul class="m-list -work">
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>Internship started from November 1st, and ended on November 9th. With a help of a mentor, my task was to develop To-do app using Laravel REST API and VueJS with Axios. The main goal was to learn Full-stack app development</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>It was daunting. Only seven days to complete To-do app with no previous knowledge. My mentor was very helpful with giving me right direction of learning so my first two days was mostly learning Laravel REST API and how to connect with it using Axios. My efforts paid off. I managed to complete my task and create a working web application.</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>One of the best experience ever. Inspite it's short duration, I learned a lot and had a great time. Mentor was very helpful. I passed internship successfully.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="m-slider__pagination js-internshipPagination"></div>
-                                <div class="m-slider__navigation">
+                                <div class="m-slider__pagination js-workPagination"></div>
+                                <!-- <div class="m-slider__navigation">
                                     <div class="m-slider__navigation--arrows -prev js-prevNavigation swiper-button-prev"></div>
                                     <div class="m-slider__navigation--arrows -next js-nextNavigation swiper-button-next"></div>
+                                </div> -->
+                            </div>
+                            <div class="m-work m-slider -work js-internshipSlider js-workSliders" data-slider="internship">
+                                <div class="m-work__content swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h2 class="m-work__content--heading">Front-end developer</h2>
+                                        <h3 class="m-work__content--position a-tags -work">fSD Ltd.</h3>
+                                        <p class="m-work__content--date">June 2021 - September 2021</p>
+                                        <ul class="m-list -work">
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>Internship started from June 1st, and ended on September 1st. The main goal was to learn Front-end techniques like pixel-perfect design, ABEM methodology, and vanilla Javascript.</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>First month was mostly learning ABEM, methodology derived from popular BEM. Later, I would create a website using that method. Second month was learning advanced Javascript, Wordpress and ACF plugin. By the end of second month, I managed to learn and develop custom WP sites and understand JS better. Last month, I learned React and Gatsby JS integration with headless CMS Strapi.</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>This was the best internship I had. My mentors were very helpful and they taught me much. I passed internship successfully and got a job as junior front-end developer.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h2 class="m-work__content--heading">Salesforce developer</h2>
+                                        <h3 class="m-work__content--position a-tags -work">Bee IT</h3>
+                                        <p class="m-work__content--date">January 2021 - January 2021</p>
+                                        <ul class="m-list -work">
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>Internship started fron January 4th, and ended on January 25th. I was in team with two more students. We were working on salesforce boilerplate code, developing custom webshop. We were given fifteen tasks to finish by the end of 3rd week with a help of mentor.</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>First week was mostly learning basic salesforce. Setting up project, and working with storefront. Tasks were really difficult and mostly unclear of what to do. Second week consisted of code review and more work. By the end of Third week, I managed to complete seven out of fifteen tasks.</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>I had a feeling like it was pretty hard and confusing. Mentor was not very cooperative and most of the time, we had to do tasks by ourself. I passed the internship and all in all it was a good experience.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h2 class="m-work__content--heading">Front-end developer</h2>
+                                        <h3 class="m-work__content--position a-tags -work">Vega IT</h3>
+                                        <p class="m-work__content--date">May 2020 - May 2020</p>
+                                        <ul class="m-list -work">
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>Internship started from May 6th, and ended on May 29th. Company gave me mentor David Milivojev who monitored my progress and helped me learn. The main goal was to learn Front-end techniques like pixel-perfect design, psd to html, and UI</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>First was developing a website from given psd solution. I managed to complete it within a two days. Next task was to recreate a website, but using old techniques like floats and IE support. Second week consisted of tips and tricks for better development. By the end of Third week, I managed to complete six projects and increase my Front-end skill.</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>I believe this was one of the best internships I had. Mentor was very helpful and he taught me much. I passed internship successfully.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h2 class="m-work__content--heading">Full-stack developer</h2>
+                                        <h3 class="m-work__content--position a-tags -work">IT Engine</h3>
+                                        <p class="m-work__content--date">November 2020 - November 2020</p>
+                                        <ul class="m-list -work">
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>Internship started from November 1st, and ended on November 9th. With a help of a mentor, my task was to develop To-do app using Laravel REST API and VueJS with Axios. The main goal was to learn Full-stack app development</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>It was daunting. Only seven days to complete To-do app with no previous knowledge. My mentor was very helpful with giving me right direction of learning so my first two days was mostly learning Laravel REST API and how to connect with it using Axios. My efforts paid off. I managed to complete my task and create a working web application.</p>
+                                            </li>
+                                            <li class="m-list__item">
+                                                <span class="a-icon icon-doubleArrow"></span>
+                                                <p>One of the best experience ever. Inspite it's short duration, I learned a lot and had a great time. Mentor was very helpful. I passed internship successfully.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
+                                <div class="m-slider__pagination js-internshipPagination"></div>
+                                <!-- <div class="m-slider__navigation">
+                                    <div class="m-slider__navigation--arrows -prev js-prevNavigation swiper-button-prev"></div>
+                                    <div class="m-slider__navigation--arrows -next js-nextNavigation swiper-button-next"></div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

@@ -950,6 +950,7 @@ p {
   margin: 0 auto;
 }
 .m-skills__item {
+  position: relative;
   min-width: 285px;
   flex-direction: column;
   align-items: flex-start;
@@ -976,18 +977,26 @@ p {
   }
 }
 .m-tabs.-categories {
-  position: relative;
-  top: -2px;
+  position: absolute;
+  top: 62px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  width: 100%;
   font-weight: 500;
   padding: 20px 0;
   box-shadow: 0 0 4px 1px #e9be24;
   border-top: 1px solid transparent;
   background-color: #fff;
   z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms;
+}
+.m-tabs.-categories.-active {
+  opacity: 1;
+  pointer-events: all;
 }
 @media only screen and (min-width: 768px) {
   .m-tabs.-categories {
@@ -1012,10 +1021,10 @@ p {
   box-shadow: 0 -1px 1px 0 #e9be24;
 }
 .-work .m-tabs__item.-active:first-of-type, .-work .m-tabs__item:hover:first-of-type, .-work .m-tabs__item:focus:first-of-type {
-  box-shadow: -1px -1px 1px 0 #e9be24;
+  box-shadow: 0 -1px 1px 1px #e9be24;
 }
 .-work .m-tabs__item.-active:last-of-type, .-work .m-tabs__item:hover:last-of-type, .-work .m-tabs__item:focus:last-of-type {
-  box-shadow: 1px -1px 1px 0 #e9be24;
+  box-shadow: 0 -1px 1px 1px #e9be24;
 }
 .-work .m-tabs__item.-active > a, .-work .m-tabs__item:hover > a, .-work .m-tabs__item:focus > a {
   border-bottom: 1px solid #e9be24;
@@ -1076,6 +1085,19 @@ p {
   }
 }
 
+.m-slider {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(200%);
+  pointer-events: none;
+  transition: transform 1000ms, opacity 400ms;
+}
+.m-slider.-active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+}
 .m-slider__pagination {
   text-align: center !important;
   margin-top: 30px !important;
@@ -1820,6 +1842,10 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
+.-relative {
+  position: relative;
+}
+
 .-flex {
   display: flex;
 }
@@ -1831,6 +1857,10 @@ button.swiper-pagination-bullet {
 .-pv100 {
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.-hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -96,6 +96,32 @@
             }
         };
 
+        const toggleClass = {
+
+            init: () => {
+                toggleClass.toggle();
+            },
+
+            toggle: () => {
+                const tabSwitch = document.querySelectorAll('.js-sliderSwitch');
+
+                const clickHandler = (event) => {
+                    event.preventDefault();
+                    const active = document.querySelector('.js-sliderSwitch.-active');
+
+                    if (active) {
+                        active.classList.remove('-active');
+                    }
+
+                    event.currentTarget.classList.add('-active');
+                };
+
+                tabSwitch.forEach(item => {
+                    item.addEventListener('click', clickHandler);
+                });
+            }
+        }
+
         const swiper = {
 
             init: () => {
@@ -103,17 +129,61 @@
             },
 
             slider: () => {
+                const workSlider = document.querySelector('.js-workSlider');
+                const internshipSlider = document.querySelector('.js-internshipSlider');
 
-                new Swiper('.js-internshipSlider', {
+                const workSliders = document.querySelectorAll('.js-workSliders');
+
+                new Swiper(internshipSlider, {
 
                     pagination: {
                         el: '.js-internshipPagination'
                     },
 
-                    navigation: {
-                        nextEl: '.js-nextNavigation',
-                        prevEl: '.js-prevNavigation',
+                    // navigation: {
+                    //     nextEl: '.js-nextNavigation',
+                    //     prevEl: '.js-prevNavigation',
+                    // },
+                });
+
+                new Swiper(workSlider, {
+
+                    pagination: {
+                        el: '.js-workPagination'
                     },
+
+                    // navigation: {
+                    //     nextEl: '.js-nextNavigation',
+                    //     prevEl: '.js-prevNavigation',
+                    // },
+                });
+
+                const sliderSwitch = document.querySelectorAll('.js-sliderSwitch');
+                const tabCategories = document.querySelectorAll('.js-tabCategories');
+
+                const clickHandler = event => {
+                    const currentItem = event.currentTarget;
+                    const currentItemDataAttr = currentItem.getAttribute('data-switch');
+
+                    workSliders.forEach(slider => {
+                        slider.classList.remove('-active')
+
+                        if (slider.getAttribute('data-slider') === currentItemDataAttr) {
+                            slider.classList.add('-active');
+                        }
+                    });
+
+                    tabCategories.forEach(tab => {
+                        tab.classList.remove('-active')
+
+                        if (tab.getAttribute('data-category') === currentItemDataAttr) {
+                            tab.classList.add('-active');
+                        }
+                    });
+                };
+
+                sliderSwitch.forEach(sliderSwitch => {
+                    sliderSwitch.addEventListener('click', clickHandler);
                 });
             }
         };
@@ -132,6 +202,7 @@
         add.init();
         sections.init();
         disableLinks.init();
+        toggleClass.init();
         swiper.init();
 
         window.addEventListener('scroll', () => {
