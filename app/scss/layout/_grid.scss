@@ -30,7 +30,7 @@
 ._w {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  // width: 100%;
   margin-left: -$grid-gutter;
   margin-right: -$grid-gutter;
 }
@@ -273,3 +273,12 @@
   ._12 {
     width: 100%;
   }
+
+div[class^='_s'],
+div[class^='_m'],
+div[class^='_l'],
+div[class^='_xl'],
+div[class^='_xxl'] {
+  padding-left: $grid-gutter;
+  padding-right: $grid-gutter;
+}

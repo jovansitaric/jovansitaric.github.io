@@ -1,0 +1,61 @@
+.m-projects {
+    position: relative;
+    min-height: $projects-height;
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &.-left {
+        background-position: left;
+    }
+
+    &.-fh {
+        // multiply by number of rows
+        min-height: ($projects-height + $grid-gutter) * 2;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        opacity: 1;
+        border-radius: inherit;
+        background-image: linear-gradient(-45deg, $color-black, transparent 90%),
+            linear-gradient(10deg, $color-black, transparent 40%);
+        transition: opacity 400ms;
+    }
+
+    &:hover {
+
+        &::after {
+            opacity: 0;
+        }
+
+        .m-projects__content {
+            opacity: 1;
+            pointer-events: all;
+            background-color: transparentize(
+                $color: $color-primary,
+                $amount: 0.15
+            );
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: inherit;
+        min-height: inherit;
+        padding: 50px;
+        opacity: 0;
+        pointer-events: none;
+        border-radius: inherit;
+        background-color: transparent;
+        color: $color-white;
+        transition: opacity 400ms, background-color 400ms;
+    }
+}

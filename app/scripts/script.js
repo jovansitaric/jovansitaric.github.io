@@ -134,10 +134,30 @@
 
                 const workSliders = document.querySelectorAll('.js-workSliders');
 
+                workSliders.forEach((slider, index) => {
+
+                    if (index > 0) {
+                        slider.classList.add('-onTop');
+                    }
+                });
+
+                const workTab = document.querySelector('.js-tabCategoryWork');
+                const internshipTab = document.querySelector('.js-tabCategoryInternship');
+
+                console.log(workTab, internshipTab);
+
+                // Init thumb tab slider like behavior
+                const thumbSliderWork = new Swiper(workTab);
+                const thumbSliderInternship = new Swiper(internshipTab);
+
                 new Swiper(internshipSlider, {
 
                     pagination: {
                         el: '.js-internshipPagination'
+                    },
+
+                    thumbs: {
+                        swiper: thumbSliderInternship 
                     },
 
                     // navigation: {
@@ -150,6 +170,10 @@
 
                     pagination: {
                         el: '.js-workPagination'
+                    },
+
+                    thumbs: {
+                        swiper: thumbSliderWork 
                     },
 
                     // navigation: {
@@ -165,7 +189,7 @@
                     const currentItem = event.currentTarget;
                     const currentItemDataAttr = currentItem.getAttribute('data-switch');
 
-                    workSliders.forEach(slider => {
+                    workSliders.forEach((slider, index) => {
                         slider.classList.remove('-active')
 
                         if (slider.getAttribute('data-slider') === currentItemDataAttr) {

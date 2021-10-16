@@ -1,10 +1,15 @@
 .m-slider {
-    position: absolute;
+    position: relative;
     width: 100%;
     opacity: 0;
     transform: translateX(200%);
     pointer-events: none;
     transition: transform 1000ms, opacity 400ms;
+    
+    &.-onTop {
+        position: absolute;
+        top: 0;
+    }
 
     &.-active {
         transform: translateX(0);

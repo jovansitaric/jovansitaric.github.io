@@ -299,7 +299,7 @@ p {
   width: 15px;
   height: 15px;
   transform: rotate(45deg);
-  border: 1px solid #e9be24;
+  border: 3px solid #e9be24;
   border-left: 0;
   border-bottom: 0;
 }
@@ -344,7 +344,6 @@ p {
 ._w {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   margin-left: -15px;
   margin-right: -15px;
 }
@@ -649,6 +648,15 @@ p {
   width: 100%;
 }
 
+div[class^=_s],
+div[class^=_m],
+div[class^=_l],
+div[class^=_xl],
+div[class^=_xxl] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .a-image {
   position: relative;
   display: block;
@@ -943,6 +951,9 @@ p {
   margin-top: 50px;
 }
 
+.m-skills {
+  overflow: hidden;
+}
 .m-skills ._w {
   justify-content: space-between;
 }
@@ -961,6 +972,9 @@ p {
   }
 }
 
+.m-tabs .swiper-wrapper {
+  flex-direction: column;
+}
 .m-tabs.-work {
   position: relative;
   left: -1px;
@@ -1047,10 +1061,10 @@ p {
   transform: translateY(-50%);
   transition: background-color 400ms, color 400ms;
 }
-.-categories .m-tabs__item.-active, .-categories .m-tabs__item:hover, .-categories .m-tabs__item:focus {
+.-categories .m-tabs__item.swiper-slide-thumb-active, .-categories .m-tabs__item.-active, .-categories .m-tabs__item:hover, .-categories .m-tabs__item:focus {
   color: #e9be24;
 }
-.-categories .m-tabs__item.-active::after, .-categories .m-tabs__item:hover::after, .-categories .m-tabs__item:focus::after {
+.-categories .m-tabs__item.swiper-slide-thumb-active::after, .-categories .m-tabs__item.-active::after, .-categories .m-tabs__item:hover::after, .-categories .m-tabs__item:focus::after {
   background-color: #e9be24;
 }
 
@@ -1086,12 +1100,16 @@ p {
 }
 
 .m-slider {
-  position: absolute;
+  position: relative;
   width: 100%;
   opacity: 0;
   transform: translateX(200%);
   pointer-events: none;
   transition: transform 1000ms, opacity 400ms;
+}
+.m-slider.-onTop {
+  position: absolute;
+  top: 0;
 }
 .m-slider.-active {
   transform: translateX(0);
@@ -1116,6 +1134,84 @@ p {
   margin-top: 20px;
 }
 .m-slider.-work .swiper-slide > *:first-child {
+  margin-top: 0;
+}
+
+.m-projects {
+  position: relative;
+  min-height: 400px;
+  border-radius: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.m-projects.-left {
+  background-position: left;
+}
+.m-projects.-fh {
+  min-height: 830px;
+}
+.m-projects::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  opacity: 1;
+  border-radius: inherit;
+  background-image: linear-gradient(-45deg, #000, transparent 90%), linear-gradient(10deg, #000, transparent 40%);
+  transition: opacity 400ms;
+}
+.m-projects:hover::after {
+  opacity: 0;
+}
+.m-projects:hover .m-projects__content {
+  opacity: 1;
+  pointer-events: all;
+  background-color: rgba(233, 190, 36, 0.85);
+}
+.m-projects__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: inherit;
+  min-height: inherit;
+  padding: 50px;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background-color: transparent;
+  color: #fff;
+  transition: opacity 400ms, background-color 400ms;
+}
+
+.m-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: 0 60px;
+  border-radius: 20px;
+  text-align: center;
+  color: #e9be24;
+  box-shadow: 0 0 28px -8px #e9be24;
+  transition: box-shadow 400ms;
+}
+.m-cards:hover {
+  box-shadow: 0 0 4px 0;
+}
+.m-cards__content--heading {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.m-cardContainer {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+}
+.m-cardContainer:first-of-type {
   margin-top: 0;
 }
 
@@ -1853,6 +1949,13 @@ button.swiper-pagination-bullet {
 .-jcsb {
   justify-content: space-between;
 }
+.-jcc {
+  justify-content: center !important;
+}
+
+.-w100 {
+  width: 100%;
+}
 
 .-pv100 {
   padding-top: 100px;
@@ -1861,6 +1964,27 @@ button.swiper-pagination-bullet {
 
 .-hidden {
   display: none;
+}
+
+.-mhc {
+  margin-left: auto;
+  margin-right: auto;
+}
+.-mh0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+.-mtGutter {
+  margin-top: 30px;
+}
+
+.-pr0 {
+  padding-right: 0 !important;
+}
+
+.-noGutters {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /*# sourceMappingURL=main.css.map */

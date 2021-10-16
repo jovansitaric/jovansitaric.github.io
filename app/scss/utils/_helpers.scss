@@ -11,6 +11,17 @@
     &sb {
         justify-content: space-between;
     }
+
+    &c {
+        justify-content: center !important;
+    }
+}
+
+.-w {
+
+    &100 {
+        width: 100%;
+    }
 }
 
 .-pv {
@@ -23,4 +34,42 @@
 
 .-hidden {
     display: none;
+}
+
+.-m {
+    // Horizontal
+    &h {
+
+        &c {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &0 {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    &t {
+
+        &Gutter {
+            margin-top: $grid-gutter * 2;
+        }
+    }
+}
+
+.-p {
+
+    &r {
+
+        &0 {
+            padding-right: 0 !important;
+        }
+    }
+}
+
+.-noGutters {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
