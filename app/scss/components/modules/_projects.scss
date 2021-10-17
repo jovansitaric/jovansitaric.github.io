@@ -23,8 +23,7 @@
         bottom: 0;
         opacity: 1;
         border-radius: inherit;
-        background-image: linear-gradient(-45deg, $color-black, transparent 90%),
-            linear-gradient(10deg, $color-black, transparent 40%);
+        background-image: linear-gradient(-45deg, transparentize($color-black, .7), transparentize($color-black, .7));
         transition: opacity 400ms;
     }
 

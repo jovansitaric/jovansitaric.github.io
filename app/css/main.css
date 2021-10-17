@@ -341,6 +341,14 @@ p {
   }
 }
 
+._wr-f {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 ._w {
   display: flex;
   flex-wrap: wrap;
@@ -952,6 +960,7 @@ div[class^=_xxl] {
 }
 
 .m-skills {
+  max-height: 810px;
   overflow: hidden;
 }
 .m-skills ._w {
@@ -1159,7 +1168,7 @@ div[class^=_xxl] {
   bottom: 0;
   opacity: 1;
   border-radius: inherit;
-  background-image: linear-gradient(-45deg, #000, transparent 90%), linear-gradient(10deg, #000, transparent 40%);
+  background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   transition: opacity 400ms;
 }
 .m-projects:hover::after {
@@ -1186,24 +1195,9 @@ div[class^=_xxl] {
 }
 
 .m-cards {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px;
-  padding: 0 60px;
-  border-radius: 20px;
-  text-align: center;
-  color: #e9be24;
-  box-shadow: 0 0 28px -8px #e9be24;
-  transition: box-shadow 400ms;
-}
-.m-cards:hover {
-  box-shadow: 0 0 4px 0;
-}
-.m-cards__content--heading {
-  font-size: 28px;
-  text-transform: uppercase;
-  font-weight: 500;
+  justify-content: space-between;
 }
 
 .m-cardContainer {
@@ -1985,6 +1979,10 @@ button.swiper-pagination-bullet {
 .-noGutters {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+.-overflowX0 {
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */
