@@ -3,6 +3,11 @@
 
     &.-first {
         padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    &.-odd {
+        background-color: $color-white-mild;
     }
 
     &:last-of-type {

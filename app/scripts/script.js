@@ -144,8 +144,6 @@
                 const workTab = document.querySelector('.js-tabCategoryWork');
                 const internshipTab = document.querySelector('.js-tabCategoryInternship');
 
-                console.log(workTab, internshipTab);
-
                 // Init thumb tab slider like behavior
                 const thumbSliderWork = new Swiper(workTab);
                 const thumbSliderInternship = new Swiper(internshipTab);
@@ -157,7 +155,7 @@
                     },
 
                     thumbs: {
-                        swiper: thumbSliderInternship 
+                        swiper: thumbSliderInternship
                     },
 
                     // navigation: {
@@ -173,7 +171,7 @@
                     },
 
                     thumbs: {
-                        swiper: thumbSliderWork 
+                        swiper: thumbSliderWork
                     },
 
                     // navigation: {
@@ -212,6 +210,29 @@
             }
         };
 
+        const manipulate = {
+
+            init: () => {
+                manipulate.manipulate();
+            },
+
+            manipulate: () => {
+                const overlayHeading = document.querySelector('.m-cards > div:first-of-type .a-heading');
+                const overlay = document.querySelectorAll('.m-cards__content');
+
+                overlay.forEach(element => {
+
+                    element.addEventListener('mouseover', () => {
+                        overlayHeading.style.opacity = '0'
+                    });
+
+                    element.addEventListener('mouseout', () => {
+                        overlayHeading.style.opacity = '1'
+                    });
+                });
+            }
+        };
+
         const parallax = {};
 
         /**
@@ -228,6 +249,7 @@
         disableLinks.init();
         toggleClass.init();
         swiper.init();
+        manipulate.init();
 
         window.addEventListener('scroll', () => {
             navbar.init();

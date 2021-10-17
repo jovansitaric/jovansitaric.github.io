@@ -1,5 +1,85 @@
 .m-cards {
+    position: relative;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &:hover {
+
+        .a-heading {
+            opacity: 0;
+        }
+    }
+
+    > div:first-of-type {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        pointer-events: none;
+
+        &:hover {
+
+            .a-heading {
+                opacity: 0;
+                z-index: 1;
+            }
+        }
+
+        > .a-heading {
+            color: $color-white;
+            font-size: 32px;
+            opacity: 1;
+            transition: opacity 400ms;
+            z-index: 0;
+
+            @include media-up('_m') {
+                font-size: 92px;
+            }
+
+            @include media-up('_xl') {
+                font-size: 132px;
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background-image:
+            linear-gradient(180deg, transparentize($color-black, .1), transparent),
+            linear-gradient(0, transparentize($color-black, .1), transparent);
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 400ms;
+    }
+
+    &:hover::before {
+        opacity: 0;
+    }
+
+    &__content {
+        width: 20%;
+        min-height: 250px;
+        overflow: hidden;
+
+        &--image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 600ms;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
 }

@@ -61,6 +61,17 @@
 
 .-p {
 
+    &0 {
+        padding: 0 !important;
+    }
+
+    &t {
+        
+        &100 {
+            padding-top: 100px;
+        }
+    }
+
     &r {
 
         &0 {
