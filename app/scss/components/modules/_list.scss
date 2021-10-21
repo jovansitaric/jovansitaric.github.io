@@ -5,13 +5,13 @@
         align-items: center;
         justify-content: flex-end;
         flex-wrap: wrap;
+        margin-right: 50px;
         font-weight: 600;
         width: 100%;
         font-weight: 500;
         color: $color-black-1;
 
         @include media-up('_m') {
-            margin-right: 50px;
             font-size: 22px;
         }
     }
@@ -33,6 +33,19 @@
 
         & > * {
             @include first-child-none('margin-top', 20px);
+        }
+    }
+
+    &.-icons {
+        display: flex;
+        align-items: center;
+
+        > * {
+            @include first-of-type-none('margin-left', 20px);
+        }
+
+        a {
+            text-align: center;
         }
     }
 

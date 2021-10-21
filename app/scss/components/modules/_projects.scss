@@ -1,6 +1,7 @@
 .m-projects {
     position: relative;
     min-height: $projects-height;
+    max-height: $projects-height;
     border-radius: 20px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,6 +16,11 @@
         min-height: ($projects-height + $grid-gutter) * 2;
     }
 
+    &.-hh {
+        // Half height
+        min-height: $projects-height;
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -23,6 +29,7 @@
         bottom: 0;
         opacity: 1;
         border-radius: inherit;
+        pointer-events: none;
         background-image: linear-gradient(-45deg, transparentize($color-black, .7), transparentize($color-black, .7));
         transition: opacity 400ms;
     }
@@ -38,7 +45,7 @@
             pointer-events: all;
             background-color: transparentize(
                 $color: $color-primary,
-                $amount: 0.15
+                $amount: 0.05
             );
         }
     }
@@ -48,6 +55,7 @@
         flex-direction: column;
         justify-content: center;
         width: inherit;
+        max-height: inherit;
         min-height: inherit;
         padding: 50px;
         opacity: 0;
@@ -56,5 +64,18 @@
         background-color: transparent;
         color: $color-white;
         transition: opacity 400ms, background-color 400ms;
+
+        > * {
+            @include first-child-none('margin-top', 35px);
+        }
+
+        &--heading {
+            font-size: 32px;
+            font-weight: 400;
+        }
+
+        &--text {
+            font-size: 20px;
+        }
     }
 }

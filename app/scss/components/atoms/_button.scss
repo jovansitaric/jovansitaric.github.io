@@ -1,0 +1,28 @@
+.a-button {
+
+    &.-projects {
+        display: flex;
+        align-items: center;
+        min-height: 60px;
+        padding: 15px 30px;
+        font-size: 22px;
+        font-weight: 600;
+        text-transform: uppercase;
+        background-color: $color-white;
+        color: $color-primary;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: color 400ms, background-color 400ms, border 400ms;
+
+        &:hover {
+            background-color: transparent;
+            color: $color-white;
+            border: 1px solid $color-white;
+        }
+
+        a {
+            text-transform: inherit;
+        }
+    }
+}
