@@ -5,7 +5,7 @@
         flex-direction: column;
         top: 0;
         bottom: 0;
-        width: 65vw;
+        width: $mobile-menu-width;        ;
         right: 0;
         margin-right: 0;
         padding: 50px;
@@ -21,6 +21,7 @@
         box-shadow: 0 0 18px -11px $color-black;
         transform: translateX(100%);
         transition: transform 800ms;
+        z-index: 1;
         
         @include media-up('_m') {
             position: static;
@@ -36,6 +37,7 @@
         }
 
         &.-open {
+            font-size: 2rem;
             transform: translateX(0);
         }
     }

@@ -1,0 +1,14 @@
+.a-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw - $mobile-menu-width;    
+    background-color: transparentize($color-black, .5);
+    transition: transform 800ms;
+    transform: translateX(300%);
+
+    &.-open {
+        transform: translateX(0);
+    }
+}
