@@ -58,6 +58,7 @@
         opacity: 1;
         transition: opacity 400ms;
         backdrop-filter: blur(5px);
+        z-index: 1;
     }
 
     &:hover::before {

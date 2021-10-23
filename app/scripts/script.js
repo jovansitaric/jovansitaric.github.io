@@ -48,6 +48,26 @@
             }
         };
 
+        const mobileMenu = {
+
+            init: () => {
+                mobileMenu.menu();
+            },
+
+            menu: () => {
+                const hamburger = document.querySelector('.js-hamburger');
+                const menu = document.querySelector('.js-menu');
+
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('-open');
+                    
+                    hamburger.classList.contains('-open')
+                        ? menu.classList.add('-open')
+                        : menu.classList.remove('-open');
+                });
+            }
+        };
+
         const sections = {
 
             init: () => {
@@ -145,8 +165,12 @@
                 const internshipTab = document.querySelector('.js-tabCategoryInternship');
 
                 // Init thumb tab slider like behavior
-                const thumbSliderWork = new Swiper(workTab);
-                const thumbSliderInternship = new Swiper(internshipTab);
+                const thumbSliderWork = new Swiper(workTab, {
+                    allowTouchMove: false
+                });
+                const thumbSliderInternship = new Swiper(internshipTab, {
+                    allowTouchMove: false
+                });
 
                 new Swiper(internshipSlider, {
 
@@ -245,6 +269,7 @@
         });
 
         add.init();
+        mobileMenu.init();
         sections.init();
         disableLinks.init();
         toggleClass.init();
