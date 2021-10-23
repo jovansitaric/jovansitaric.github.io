@@ -15,6 +15,10 @@
         top: 2rem;
     }
 
+    @include media-up('_l') {
+        display: none;
+    }
+
     span {
         position: absolute;
         right: 0;

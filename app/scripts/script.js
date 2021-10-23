@@ -59,12 +59,13 @@
                 const mobileHamburger = document.querySelector('.js-mobileHamburger');
                 const backdrop = document.querySelector('.js-backdrop');
                 const menu = document.querySelector('.js-menu');
+                const menuLinks = menu.querySelectorAll('a');
 
                 hamburger.addEventListener('click', () => {
                     hamburger.classList.toggle('-open');
                     mobileHamburger.classList.remove('-open');
                     backdrop.classList.add('-open');
-                    
+
                     hamburger.classList.contains('-open')
                         ? menu.classList.add('-open')
                         : menu.classList.remove('-open');
@@ -76,7 +77,7 @@
                     mobileHamburger.classList.toggle('-open');
                     hamburger.classList.remove('-open');
                     backdrop.classList.remove('-open');
-                    
+
                     if (mobileHamburger.classList.contains('-open') && menu.classList.contains('-open')) {
                         menu.classList.add('-open')
                         menu.classList.remove('-open');
@@ -90,6 +91,18 @@
                     menu.classList.remove('-open');
                     hamburger.classList.remove('-open');
                     mobileHamburger.classList.remove('-open');
+                    document.body.classList.remove('-scrollY0');
+                });
+
+                menuLinks.forEach(item => {
+                    
+                    item.addEventListener('click', () => {
+                        backdrop.classList.remove('-open');
+                        menu.classList.remove('-open');
+                        hamburger.classList.remove('-open');
+                        mobileHamburger.classList.remove('-open');
+                        document.body.classList.remove('-scrollY0');
+                    });
                 });
             }
         };

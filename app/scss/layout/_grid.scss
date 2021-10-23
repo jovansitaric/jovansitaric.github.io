@@ -43,6 +43,44 @@
   margin-right: -$grid-gutter;
 }
 
+  /* All devices */
+  ._1 {
+    width: 8.33%;
+  }
+  ._2 {
+    width: 16.66%;
+  }
+  ._3 {
+    width: 25%;
+  }
+  ._4 {
+    width: 33.33%;
+  }
+  ._5 {
+    width: 41.66%;
+  }
+  ._6 {
+    width: 50%;
+  }
+  ._7 {
+    width: 58.33%;
+  }
+  ._8 {
+    width: 66.66%;
+  }
+  ._9 {
+    width: 75%;
+  }
+  ._10 {
+    width: 83.33%;
+  }
+  ._11 {
+    width: 91.66%;
+  }
+  ._12 {
+    width: 100%;
+  }
+
 @media only screen and (min-width: 576px) {
     /* For tablets: */
     ._s1 {
@@ -82,7 +120,7 @@
       width: 100%;
     }
   }
-  
+
   /* Custom tablet breakpoint */
   @media only screen and (min-width: 768px) {
     /* For tablets: */
@@ -123,7 +161,7 @@
       width: 100%;
     }
   }
-  
+
   @media only screen and (min-width: 992px) {
     /* For desktop: */
     ._l1 {
@@ -242,44 +280,6 @@
     ._xxl12 {
       width: 100%;
     }
-  }
-  
-  /* All devices */
-  ._1 {
-    width: 8.33%;
-  }
-  ._2 {
-    width: 16.66%;
-  }
-  ._3 {
-    width: 25%;
-  }
-  ._4 {
-    width: 33.33%;
-  }
-  ._5 {
-    width: 41.66%;
-  }
-  ._6 {
-    width: 50%;
-  }
-  ._7 {
-    width: 58.33%;
-  }
-  ._8 {
-    width: 66.66%;
-  }
-  ._9 {
-    width: 75%;
-  }
-  ._10 {
-    width: 83.33%;
-  }
-  ._11 {
-    width: 91.66%;
-  }
-  ._12 {
-    width: 100%;
   }
 
 div[class^='_s'],

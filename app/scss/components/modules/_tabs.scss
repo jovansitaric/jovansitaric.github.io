@@ -7,14 +7,14 @@
     &.-work {
         position: relative;
         left: -1px;
-        justify-content: space-between;
         display: flex;
         align-items: center;
         font-weight: 700;
         font-size: 18px;
         z-index: 2;
 
-        @include media-up('_m') {
+        @include media-up('_l') {
+            justify-content: space-between;
             font-size: 22px;
         }
     }

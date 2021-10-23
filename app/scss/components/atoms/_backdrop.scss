@@ -8,6 +8,10 @@
     transition: transform 800ms;
     transform: translateX(300%);
 
+    @include media-up('_l') {
+        display: none;
+    }
+
     &.-open {
         transform: translateX(0);
     }

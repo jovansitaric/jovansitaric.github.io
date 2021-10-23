@@ -360,6 +360,55 @@ p {
   margin-right: -15px;
 }
 
+/* All devices */
+._1 {
+  width: 8.33%;
+}
+
+._2 {
+  width: 16.66%;
+}
+
+._3 {
+  width: 25%;
+}
+
+._4 {
+  width: 33.33%;
+}
+
+._5 {
+  width: 41.66%;
+}
+
+._6 {
+  width: 50%;
+}
+
+._7 {
+  width: 58.33%;
+}
+
+._8 {
+  width: 66.66%;
+}
+
+._9 {
+  width: 75%;
+}
+
+._10 {
+  width: 83.33%;
+}
+
+._11 {
+  width: 91.66%;
+}
+
+._12 {
+  width: 100%;
+}
+
 @media only screen and (min-width: 576px) {
   /* For tablets: */
   ._s1 {
@@ -611,55 +660,6 @@ p {
     width: 100%;
   }
 }
-/* All devices */
-._1 {
-  width: 8.33%;
-}
-
-._2 {
-  width: 16.66%;
-}
-
-._3 {
-  width: 25%;
-}
-
-._4 {
-  width: 33.33%;
-}
-
-._5 {
-  width: 41.66%;
-}
-
-._6 {
-  width: 50%;
-}
-
-._7 {
-  width: 58.33%;
-}
-
-._8 {
-  width: 66.66%;
-}
-
-._9 {
-  width: 75%;
-}
-
-._10 {
-  width: 83.33%;
-}
-
-._11 {
-  width: 91.66%;
-}
-
-._12 {
-  width: 100%;
-}
-
 div[class^=_s],
 div[class^=_m],
 div[class^=_l],
@@ -684,6 +684,11 @@ div[class^=_xxl] {
 .a-hamburger.-inner {
   position: absolute;
   top: 2rem;
+}
+@media only screen and (min-width: 992px) {
+  .a-hamburger {
+    display: none;
+  }
 }
 .a-hamburger span {
   position: absolute;
@@ -837,6 +842,11 @@ div[class^=_xxl] {
   transition: transform 800ms;
   transform: translateX(300%);
 }
+@media only screen and (min-width: 992px) {
+  .a-backdrop {
+    display: none;
+  }
+}
 .a-backdrop.-open {
   transform: translateX(0);
 }
@@ -881,7 +891,7 @@ div[class^=_xxl] {
   transition: transform 800ms;
   z-index: 1;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .m-list.-primary {
     position: static;
     width: 100%;
@@ -939,9 +949,10 @@ div[class^=_xxl] {
 .-primary .m-list__item:first-of-type {
   margin-top: 0;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .-primary .m-list__item {
     margin-left: 40px;
+    margin-top: 0;
   }
   .-primary .m-list__item:first-of-type {
     margin-left: 0;
@@ -1128,12 +1139,21 @@ div[class^=_xxl] {
 .m-skills ._w {
   justify-content: space-between;
 }
+.m-skills .m-skills__column {
+  margin: 0 auto;
+}
+@media only screen and (min-width: 992px) {
+  .m-skills .m-skills__column {
+    margin: 0;
+  }
+}
 .m-skills .a-heading {
   margin: 0 auto;
 }
 .m-skills__item {
   position: relative;
   min-width: 285px;
+  min-height: 350px;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -1149,15 +1169,15 @@ div[class^=_xxl] {
 .m-tabs.-work {
   position: relative;
   left: -1px;
-  justify-content: space-between;
   display: flex;
   align-items: center;
   font-weight: 700;
   font-size: 18px;
   z-index: 2;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .m-tabs.-work {
+    justify-content: space-between;
     font-size: 22px;
   }
 }

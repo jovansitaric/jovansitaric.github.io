@@ -23,7 +23,7 @@
         transition: transform 800ms;
         z-index: 1;
         
-        @include media-up('_m') {
+        @include media-up('_l') {
             position: static;
             width: 100%;
             flex-direction: row;
@@ -81,8 +81,9 @@
         .-primary & {
             @include first-of-type-none('margin-top', 20px);
 
-            @include media-up('_m') {
+            @include media-up('_l') {
                 @include first-of-type-none('margin-left', 40px);
+                margin-top: 0;
             }
 
             &:hover {
