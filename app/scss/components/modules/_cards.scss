@@ -67,9 +67,17 @@
 
     &__content {
         position: relative;
-        width: 20%;
         min-height: 250px;
         overflow: hidden;
+        width: 100%;
+
+        @include media-up('_xs') {
+            width: 50%;
+        }
+
+        @include media-up('_m') {
+            width: 20%;
+        }
 
         &::after {
             content: '';
@@ -120,13 +128,16 @@
             font-weight: 700;
             line-height: 40px;
             text-align: center;
-            border: 8px dashed $color-white;
             color: $color-white;
             opacity: 0;
             pointer-events: none;
             transition: opacity 400ms;
             transform: translate(-50%, -50%);
             z-index: 1;
+
+            @include media-up('_l') {
+                border: 8px dashed $color-white;
+            }
         }
     }
 }

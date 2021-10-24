@@ -1456,9 +1456,19 @@ div[class^=_xxl] {
 }
 .m-cards__content {
   position: relative;
-  width: 20%;
   min-height: 250px;
   overflow: hidden;
+  width: 100%;
+}
+@media only screen and (min-width: 400px) {
+  .m-cards__content {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .m-cards__content {
+    width: 20%;
+  }
 }
 .m-cards__content::after {
   content: "";
@@ -1501,13 +1511,17 @@ div[class^=_xxl] {
   font-weight: 700;
   line-height: 40px;
   text-align: center;
-  border: 8px dashed #fff;
   color: #fff;
   opacity: 0;
   pointer-events: none;
   transition: opacity 400ms;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+@media only screen and (min-width: 992px) {
+  .m-cards__content--text {
+    border: 8px dashed #fff;
+  }
 }
 
 .m-cardContainer {
