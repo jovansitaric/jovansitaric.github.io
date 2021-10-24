@@ -670,8 +670,8 @@ div[class^=_xxl] {
 }
 
 .a-hamburger {
-  width: 40px;
-  height: 30px;
+  width: 30px;
+  height: 15px;
   position: relative;
   margin-left: auto;
   padding: 0;
@@ -695,7 +695,7 @@ div[class^=_xxl] {
   right: 0;
   display: block;
   width: 100%;
-  height: 5px;
+  height: 3px;
   border-radius: 9px;
   opacity: 1;
   background: #e9be24;
@@ -707,10 +707,10 @@ div[class^=_xxl] {
 }
 .a-hamburger span:nth-child(2) {
   width: 70%;
-  top: 10px;
+  top: 6px;
 }
 .a-hamburger span:nth-child(3) {
-  top: 20px;
+  top: 12px;
 }
 .a-hamburger.-close span:nth-child(1) {
   top: 18px;
@@ -736,25 +736,29 @@ div[class^=_xxl] {
   z-index: 1;
 }
 
-.a-decoration.-left::before {
-  content: "";
-  position: absolute;
-  top: 2rem;
-  left: -2rem;
-  width: 360px;
-  height: 480px;
-  border: 0.25rem dashed #e9be24;
-  border-radius: 0.5rem;
+@media only screen and (min-width: 400px) {
+  .a-decoration.-left::before {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    left: -2rem;
+    width: 360px;
+    height: 480px;
+    border: 0.25rem dashed #e9be24;
+    border-radius: 0.5rem;
+  }
 }
-.a-decoration.-right::before {
-  content: "";
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  width: 360px;
-  height: 480px;
-  border: 0.25rem dashed #e9be24;
-  border-radius: 0.5rem;
+@media only screen and (min-width: 400px) {
+  .a-decoration.-right::before {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 360px;
+    height: 480px;
+    border: 0.25rem dashed #e9be24;
+    border-radius: 0.5rem;
+  }
 }
 .a-decoration.-spray {
   display: inline-block;

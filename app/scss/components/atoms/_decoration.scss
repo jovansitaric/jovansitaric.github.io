@@ -3,14 +3,20 @@
     &.-left {
 
         &::before {
-            @include image-decoration('left');
+
+            @include media-up('_xs') {
+                @include image-decoration('left');
+            }
         }
     }
 
     &.-right {
 
         &::before {
-            @include image-decoration;
+
+            @include media-up('_xs') {
+                @include image-decoration;
+            }
         }
     }
 
@@ -32,7 +38,7 @@
         }
 
         .aos-animate & {
-            
+
             &::after {
                 width: 100%;
             }
