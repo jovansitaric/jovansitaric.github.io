@@ -6,7 +6,7 @@
     width: 100vw - $mobile-menu-width;    
     background-color: transparentize($color-black, .5);
     transition: transform 800ms;
-    transform: translateX(300%);
+    transform: translateX(500%);
 
     @include media-up('_l') {
         display: none;

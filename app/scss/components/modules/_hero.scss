@@ -102,11 +102,11 @@
         }
 
         &--imagesText {
-            margin-top: 20px + $javascript-logo-letter-offset;
+            margin-top: calc(1.25rem + $javascript-logo-letter-offset);
             color: $color-gray-1;
 
             @include media-up('_xl') {
-                font-size: 28px;
+                font-size: 1.75rem;
             }
         }
     }

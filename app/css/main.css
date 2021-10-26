@@ -68,11 +68,11 @@ img {
 
 html {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 10px;
+  font-size: 15px;
 }
 @media only screen and (min-width: 768px) {
   html {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -88,7 +88,7 @@ a {
 
 h2 {
   font-family: "Falling Sky", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 42px;
+  font-size: 2.625rem;
   letter-spacing: 3px;
 }
 
@@ -409,6 +409,14 @@ p {
   width: 100%;
 }
 
+._xs1, ._xs2, ._xs3, ._xs4, ._xs5, ._xs6, ._xs7, ._xs8, ._xs9, ._xs10, ._xs11, ._xs12,
+._s1, ._s2, ._s3, ._s4, ._s5, ._s6, ._s7, ._s8, ._s9, ._s10, ._s11, ._s12,
+._m1, ._m2, ._m3, ._m4, ._m5, ._m6, ._m7, ._m8, ._m9, ._m10, ._m11, ._m12,
+._l1, ._l2, ._l3, ._l4, ._l5, ._l6, ._l7, ._l8, ._l9, ._l10, ._l11, ._l12,
+._xl1, ._xl2, ._xl3, ._xl4, ._xl5, ._xl6, ._xl7, ._xl8, ._xl9, ._xl10, ._xl11, ._xl12 {
+  width: 100%;
+}
+
 @media only screen and (min-width: 576px) {
   /* For tablets: */
   ._s1 {
@@ -671,7 +679,7 @@ div[class^=_xxl] {
 
 .a-hamburger {
   width: 30px;
-  height: 15px;
+  height: 20px;
   position: relative;
   margin-left: auto;
   padding: 0;
@@ -707,10 +715,10 @@ div[class^=_xxl] {
 }
 .a-hamburger span:nth-child(2) {
   width: 70%;
-  top: 6px;
+  top: 8px;
 }
 .a-hamburger span:nth-child(3) {
-  top: 12px;
+  top: 16px;
 }
 .a-hamburger.-close span:nth-child(1) {
   top: 18px;
@@ -841,10 +849,10 @@ div[class^=_xxl] {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 35vw;
+  width: 25vw;
   background-color: rgba(0, 0, 0, 0.5);
   transition: transform 800ms;
-  transform: translateX(300%);
+  transform: translateX(500%);
 }
 @media only screen and (min-width: 992px) {
   .a-backdrop {
@@ -861,6 +869,7 @@ div[class^=_xxl] {
   align-items: center;
   width: 100%;
   min-height: 5rem;
+  padding: 0 15px;
   transition: background-color 500ms, box-shadow 1000ms;
   z-index: 3;
 }
@@ -877,7 +886,7 @@ div[class^=_xxl] {
   flex-direction: column;
   top: 0;
   bottom: 0;
-  width: 65vw;
+  width: 75vw;
   right: 0;
   margin-right: 0;
   padding: 50px;
@@ -892,7 +901,7 @@ div[class^=_xxl] {
   background-color: #fffaeb;
   box-shadow: 0 0 18px -11px #000;
   transform: translateX(100%);
-  transition: transform 800ms;
+  transition: transform 800ms, font-size 400ms;
   z-index: 1;
 }
 @media only screen and (min-width: 992px) {
@@ -902,7 +911,7 @@ div[class^=_xxl] {
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 50px;
-    font-size: 22px;
+    font-size: 1.375rem;
     border-radius: 0;
     transform: translateX(0);
     background-color: transparent;
@@ -919,7 +928,7 @@ div[class^=_xxl] {
 }
 @media only screen and (min-width: 768px) {
   .m-list.-social {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 }
 .m-list.-social.-offset {
@@ -1086,12 +1095,12 @@ div[class^=_xxl] {
   padding-right: 20px;
 }
 .m-hero__content--imagesText {
-  margin-top: 30px;
+  margin-top: calc(1.25rem + 10px);
   color: #617d98;
 }
 @media only screen and (min-width: 1200px) {
   .m-hero__content--imagesText {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 }
 
@@ -1125,6 +1134,25 @@ div[class^=_xxl] {
 .m-sections__column:first-of-type {
   margin-top: 0;
 }
+.m-sections .-flex {
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 1200px) {
+  .m-sections .-flex {
+    flex-wrap: nowrap;
+  }
+}
+.m-sections .-flex > * {
+  margin-top: 30px;
+}
+.m-sections .-flex > *:first-child {
+  margin-top: 0;
+}
+@media only screen and (min-width: 1200px) {
+  .m-sections .-flex > * {
+    margin-top: 0;
+  }
+}
 
 .m-about__content {
   position: relative;
@@ -1137,8 +1165,12 @@ div[class^=_xxl] {
 }
 
 .m-skills {
-  max-height: 920px;
   overflow: hidden;
+}
+@media only screen and (min-width: 992px) {
+  .m-skills {
+    max-height: 920px;
+  }
 }
 .m-skills ._w {
   justify-content: space-between;
@@ -1197,11 +1229,19 @@ div[class^=_xxl] {
   padding: 20px 0;
   box-shadow: 0 0 4px 1px #e9be24;
   border-top: 1px solid transparent;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
   background-color: #fff;
   z-index: 1;
   opacity: 0;
   pointer-events: none;
   transition: opacity 400ms;
+}
+@media only screen and (min-width: 992px) {
+  .m-tabs.-categories {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 .m-tabs.-categories.-active {
   opacity: 1;
@@ -1264,33 +1304,39 @@ div[class^=_xxl] {
 }
 
 .m-work {
+  margin-top: 60px;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+@media only screen and (min-width: 992px) {
+  .m-work {
+    margin-top: 0;
+  }
 }
 .m-work__content--heading {
   font-family: inherit;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.325rem;
 }
 @media only screen and (min-width: 768px) {
   .m-work__content--heading {
-    font-size: 38px;
+    font-size: 2.5rem;
   }
 }
 .m-work__content--position {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 @media only screen and (min-width: 768px) {
   .m-work__content--position {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
 .m-work__content--date {
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .m-work__content--date {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 
@@ -1334,18 +1380,24 @@ div[class^=_xxl] {
 
 .m-projects {
   position: relative;
-  min-height: 650px;
   max-height: 650px;
   border-radius: 20px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
+@media only screen and (min-width: 992px) {
+  .m-projects {
+    min-height: 650px;
+  }
+}
 .m-projects.-left {
   background-position: left;
 }
-.m-projects.-fh {
-  min-height: 1330px;
+@media only screen and (min-width: 1200px) {
+  .m-projects.-fh {
+    min-height: 1330px;
+  }
 }
 .m-projects.-hh {
   min-height: 650px;
@@ -1392,11 +1444,11 @@ div[class^=_xxl] {
   margin-top: 0;
 }
 .m-projects__content--heading {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 400;
 }
 .m-projects__content--text {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .m-cards {
@@ -1414,23 +1466,30 @@ div[class^=_xxl] {
   bottom: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  margin-top: 2rem;
   pointer-events: none;
+}
+@media only screen and (min-width: 992px) {
+  .m-cards > div:first-of-type {
+    align-items: center;
+    margin-top: 0;
+  }
 }
 .m-cards > div:first-of-type:hover .a-heading {
   opacity: 0;
   z-index: 1;
 }
 .m-cards > div:first-of-type > .a-heading {
-  font-size: 32px;
+  font-size: 2rem;
   opacity: 1;
   transition: opacity 400ms;
   z-index: 1;
 }
 @media only screen and (min-width: 768px) {
   .m-cards > div:first-of-type > .a-heading {
-    font-size: 92px;
+    font-size: 5.75rem;
   }
 }
 @media only screen and (min-width: 1200px) {

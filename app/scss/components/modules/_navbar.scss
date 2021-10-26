@@ -4,6 +4,7 @@
     align-items: center;
     width: 100%;
     min-height: $navbar-height;
+    padding: 0 $grid-gutter;
     transition: background-color 500ms, box-shadow 1000ms;
     z-index: 3;
 

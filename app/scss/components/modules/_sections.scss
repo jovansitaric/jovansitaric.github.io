@@ -28,4 +28,20 @@
         align-items: center;
         justify-content: center;
     }
+
+    .-flex {
+        flex-wrap: wrap;
+
+        @include media-up('_xl') {
+            flex-wrap: nowrap;
+        }
+
+        > * {
+            @include first-child-none('margin-top', $grid-gutter * 2);
+
+            @include media-up('_xl') {
+                margin-top: 0;
+            }
+        }
+    }
 }

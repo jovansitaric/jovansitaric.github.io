@@ -1,9 +1,9 @@
 html {
     font-family: $font-montserrat;
-    font-size: $font-size-default;
+    font-size: $font-size-default * 1.5;
 
     @include media-up('_m') {
-        font-size: $font-size-default * 1.5;
+        font-size: $font-size-default * 1.7;
     }
 
     @include media-up('_l') {
@@ -18,7 +18,7 @@ a {
 
 h2 {
     font-family: $font-falling-sky;
-    font-size: 42px;
+    font-size: 2.625rem;
     letter-spacing: 3px;
 }
 

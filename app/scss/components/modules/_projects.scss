@@ -1,11 +1,14 @@
 .m-projects {
     position: relative;
-    min-height: $projects-height;
     max-height: $projects-height;
     border-radius: 20px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    @include media-up('_l') {
+        min-height: $projects-height;
+    }
 
     &.-left {
         background-position: left;
@@ -13,7 +16,9 @@
 
     &.-fh {
         // multiply by number of rows
-        min-height: ($projects-height + $grid-gutter) * 2;
+        @include media-up('_xl') {
+            min-height: ($projects-height + $grid-gutter) * 2;
+        }
     }
 
     &.-hh {
@@ -70,12 +75,12 @@
         }
 
         &--heading {
-            font-size: 32px;
+            font-size: 2rem;
             font-weight: 400;
         }
 
         &--text {
-            font-size: 20px;
+            font-size: 1.25rem;
         }
     }
 }

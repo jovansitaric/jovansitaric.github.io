@@ -1,6 +1,9 @@
 .m-skills {
-    max-height: 920px;
     overflow: hidden;
+    
+    @include media-up('_l') {
+        max-height: 920px;
+    }
 
     & ._w {
         justify-content: space-between;

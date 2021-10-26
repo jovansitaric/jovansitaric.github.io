@@ -31,12 +31,19 @@
         padding: 20px 0;
         box-shadow: 0 0 4px 1px $color-primary;
         border-top: 1px solid transparent;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
         background-color: $color-white;
         z-index: 1;
         // affected by js
         opacity: 0;
         pointer-events: none;
         transition: opacity 400ms;
+
+        @include media-up('_l') {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
 
         &.-active {
             opacity: 1;

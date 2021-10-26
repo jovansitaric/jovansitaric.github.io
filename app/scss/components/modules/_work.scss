@@ -1,32 +1,37 @@
 .m-work {
+    margin-top: 60px;
     font-family: $font-montserrat;
+
+    @include media-up('_l') {
+        margin-top: 0;
+    }
     
     &__content {
 
         &--heading {
             font-family: inherit;
             font-weight: 500;
-            font-size: 20px;
+            font-size: 1.325rem;
 
             @include media-up('_m') {
-                font-size: 38px;
+                font-size: 2.5rem;
             }
         }
 
         &--position {
-            font-size: 18px;
+            font-size: 1.125rem;
 
             @include media-up('_m') {
-                font-size: 32px;
+                font-size: 2rem;
             }
         }
 
         &--date {
             font-weight: 300;
-            font-size: 16px;
+            font-size: 1rem;
 
             @include media-up('_m') {
-                font-size: 24px;
+                font-size: 1.5rem;
             }
         }
     }
