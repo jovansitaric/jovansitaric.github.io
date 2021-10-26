@@ -68,16 +68,16 @@ img {
 
 html {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 15px;
+  font-size: 17px;
 }
 @media only screen and (min-width: 768px) {
   html {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 @media only screen and (min-width: 992px) {
   html {
-    font-size: 18px;
+    font-size: 19px;
   }
 }
 
@@ -942,13 +942,27 @@ div[class^=_xxl] {
 }
 .m-list.-icons {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 .m-list.-icons > * {
-  margin-left: 20px;
+  margin-top: 20px;
+  margin-left: 0;
 }
 .m-list.-icons > *:first-of-type {
-  margin-left: 0;
+  margin-top: 0;
+}
+@media only screen and (min-width: 567px) {
+  .m-list.-icons {
+    flex-wrap: nowrap;
+  }
+  .m-list.-icons > * {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+  .m-list.-icons > *:first-of-type {
+    margin-left: 0;
+  }
 }
 .m-list.-icons a {
   text-align: center;
@@ -1380,11 +1394,15 @@ div[class^=_xxl] {
 
 .m-projects {
   position: relative;
-  max-height: 650px;
   border-radius: 20px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+@media only screen and (min-width: 567px) {
+  .m-projects {
+    max-height: 650px;
+  }
 }
 @media only screen and (min-width: 992px) {
   .m-projects {
@@ -1429,7 +1447,7 @@ div[class^=_xxl] {
   width: inherit;
   max-height: inherit;
   min-height: inherit;
-  padding: 50px;
+  padding: 30px;
   opacity: 0;
   pointer-events: none;
   border-radius: inherit;
@@ -1442,6 +1460,11 @@ div[class^=_xxl] {
 }
 .m-projects__content > *:first-child {
   margin-top: 0;
+}
+@media only screen and (min-width: 567px) {
+  .m-projects__content {
+    padding: 50px;
+  }
 }
 .m-projects__content--heading {
   font-size: 2rem;

@@ -1,10 +1,13 @@
 .m-projects {
     position: relative;
-    max-height: $projects-height;
     border-radius: 20px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    @include media-up('_s') {
+        max-height: $projects-height;
+    }
 
     @include media-up('_l') {
         min-height: $projects-height;
@@ -62,7 +65,7 @@
         width: inherit;
         max-height: inherit;
         min-height: inherit;
-        padding: 50px;
+        padding: 30px;
         opacity: 0;
         pointer-events: none;
         border-radius: inherit;
@@ -72,6 +75,10 @@
 
         > * {
             @include first-child-none('margin-top', 35px);
+        }
+        
+        @include media-up('_s') {
+            padding: 50px;
         }
 
         &--heading {

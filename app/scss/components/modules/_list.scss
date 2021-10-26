@@ -64,10 +64,21 @@
 
     &.-icons {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-
+        
         > * {
-            @include first-of-type-none('margin-left', 20px);
+            @include first-of-type-none('margin-top', 20px);
+            margin-left: 0;
+        }
+
+        @include media-up('_s') {
+            flex-wrap: nowrap;
+
+            > * {
+                @include first-of-type-none('margin-left', 20px);
+                margin-top: 0;
+            }
         }
 
         a {

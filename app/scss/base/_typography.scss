@@ -1,13 +1,13 @@
 html {
     font-family: $font-montserrat;
-    font-size: $font-size-default * 1.5;
+    font-size: $font-size-default * 1.7;
 
     @include media-up('_m') {
-        font-size: $font-size-default * 1.7;
+        font-size: $font-size-default * 1.8;
     }
 
     @include media-up('_l') {
-        font-size: $font-size-default * 1.8;
+        font-size: $font-size-default * 1.9;
     }
 }
 
