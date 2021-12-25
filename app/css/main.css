@@ -825,7 +825,7 @@ div[class^=_xxl] {
   align-items: center;
   min-height: 60px;
   padding: 15px 30px;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
   background-color: #fff;
@@ -883,17 +883,17 @@ div[class^=_xxl] {
 
 .m-list.-primary {
   position: fixed;
-  flex-direction: column;
   top: 0;
   bottom: 0;
-  width: 75vw;
   right: 0;
-  margin-right: 0;
-  padding: 50px;
   display: flex;
+  flex-direction: column;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  width: 75vw;
+  margin-right: 0;
+  padding: 50px;
   flex-wrap: wrap;
   font-weight: 500;
   border-radius: 32px ​0 0 32px;
@@ -911,7 +911,7 @@ div[class^=_xxl] {
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 50px;
-    font-size: 1.375rem;
+    font-size: 1rem;
     border-radius: 0;
     transform: translateX(0);
     background-color: transparent;
@@ -928,7 +928,7 @@ div[class^=_xxl] {
 }
 @media only screen and (min-width: 768px) {
   .m-list.-social {
-    font-size: 1.375rem;
+    font-size: 1rem;
   }
 }
 .m-list.-social.-offset {
@@ -1114,7 +1114,7 @@ div[class^=_xxl] {
 }
 @media only screen and (min-width: 1200px) {
   .m-hero__content--imagesText {
-    font-size: 1.75rem;
+    font-size: 1.45rem;
   }
 }
 
@@ -1463,15 +1463,15 @@ div[class^=_xxl] {
 }
 @media only screen and (min-width: 567px) {
   .m-projects__content {
-    padding: 50px;
+    padding: 15px 30px;
   }
 }
 .m-projects__content--heading {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 400;
 }
 .m-projects__content--text {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .m-cards {

@@ -78,16 +78,16 @@
         }
         
         @include media-up('_s') {
-            padding: 50px;
+            padding: 15px 30px;
         }
 
         &--heading {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 400;
         }
 
         &--text {
-            font-size: 1.25rem;
+            font-size: 1rem;
         }
     }
 }

@@ -2,17 +2,17 @@
 
     &.-primary {
         position: fixed;
-        flex-direction: column;
         top: 0;
         bottom: 0;
-        width: $mobile-menu-width;
         right: 0;
-        margin-right: 0;
-        padding: 50px;
         display: flex;
+        flex-direction: column;
         flex-direction: column;
         align-items: flex-end;
         justify-content: center;
+        width: $mobile-menu-width;
+        margin-right: 0;
+        padding: 50px;
         flex-wrap: wrap;
         font-weight: 500;
         border-radius: 32px ​0 0 32px;
@@ -29,7 +29,7 @@
             flex-direction: row;
             justify-content: flex-end;
             margin-right: 50px;
-            font-size: 1.375rem;
+            font-size: 1rem;
             border-radius: 0;
             transform: translateX(0);
             background-color: transparent;
@@ -47,7 +47,7 @@
         align-items: center;
 
         @include media-up('_m') {
-            font-size: 1.375rem;
+            font-size: 1rem;
         }
 
         &.-offset {
