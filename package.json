@@ -4,7 +4,8 @@
   "description": "My personal portfolio website",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.22.0"
+    "axios": "^0.22.0",
+    "pug": "^3.0.2"
   },
   "devDependencies": {},
   "scripts": {

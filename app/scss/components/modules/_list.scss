@@ -110,6 +110,13 @@
             }
         }
 
+        .-icons & {
+
+            > * > * {
+                @include first-of-type-none('margin-left', 5px);
+            }
+        }
+
         .-offset & {
             @include first-of-type-none('margin-left', 30px);
         }
