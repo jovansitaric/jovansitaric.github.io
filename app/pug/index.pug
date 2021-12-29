@@ -1,0 +1,272 @@
+-
+  const navbarLinks = [
+    {
+      'text': 'About me',
+      'action': '#about'
+    },
+    {
+      'text': 'Experience',
+      'action': '#experience'
+    },
+    {
+      'text': 'Portfolio',
+      'action': '#portfolio'
+    },
+    {
+      'text': 'Skills',
+      'action': '#skills'
+    },
+    {
+      'text': 'Contact',
+      'action': '#contact'
+    }
+  ]
+
+-
+  const socials = {
+    'github': 'https://github.com/jovansitaric',
+    'linkedin': 'https://rs.linkedin.com/in/jovan-sitaric'
+  }
+
+-
+  const aos = {
+    'effects': [
+      'zoom-in-up',
+      'zoom-in-down'
+    ],
+    'delay': [
+      900
+    ]
+  }
+
+-
+  const tabs = [
+    {
+      'name': 'Work',
+      'type': 'work',
+      'action': '#',
+      'isActive': true
+    },
+    {
+      'name': 'Internship',
+      'type': 'internship',
+      'action': '#',
+      'isActive': false
+    }
+  ]
+
+-
+  const jobs = [
+    {
+      "company": "fSD Ltd.",
+      "position": "Front-end developer",
+      "date": "September 2021 - Present",
+      "infos": {
+        "icon": "icon-doubleArrow",
+        "intro": "I started working from September 1st, and I am still. Right after I finished my three-month internship, company offered me contract to work as junior Front-end developer which I gladly accepted.",
+        "elaboration": "My day in fSD starts with morning coffee and tea. After that, I check on current, ongoing and new projects. I am in team with web developers calling themself Webgators (Cool right? It&apos;s because our teamleader like lacosta aligator.). My projects consist mostly of web applications - SPA (Sigle Page Application) and Wordpress",
+        "conclusion": "Technology I work with: HTML, CSS, SCSS, JS, JQuery, AJAX, Wordpress - ACF, WPML, React, GatsbyJS, Alpine JS, PHP, Symphony...",
+      }
+    },
+    {
+      "company": "ApaOne Ltd.",
+      "position": "Full-stack developer",
+      "date": "March 2021 - April 2021",
+      "infos": {
+        "icon": "icon-doubleArrow",
+        "intro": "I started working on 1st March, and gave resignation on April 22th. I found an ad looking for Full-stack developers and tried my luck. After I demonstrated my earlier work and skills, they gave me an offer for a job.",
+        "elaboration": "I was working on every project since I was the only developer in the company. At one moment, I had fourteen projects in the same time. On the Back-end, company worked with their custom CMS written in Laravel and plain PHP and Wordpress with MySQL DB. On the Front-end, VueJS, HTML, CSS and JQuery.",
+        "conclusion": "I was in this company for one month and twenty-two days.",
+      }
+    },
+    {
+      "company": "Dotkom blog",
+      "position": "Wordpress developer",
+      "date": "February 2017 - Present (part-time)",
+      "infos": {
+        "icon": "icon-doubleArrow",
+        "intro": "My journey started way back in 2017. The website existed in 2015, but I started working on it in 2017 and still am. How I got into dotkom team is that my friend started this blog and he needed a help maintaining their website after their friend developer departed.",
+        "elaboration": "Website was made using Wordpress so mostly I was working with it. SEO optimisation and Front-end changes were really frequent. In that time, everything was quite challenging. Since Dotkom is unprofitable organization, time was not crucial in web development.",
+        "conclusion": "Every task I get from Dotkom is a honor for me. Their.. actually our goal is to raise the awarness of underground music, culture and art.",
+      }
+    },
+    {
+      "company": "TapeNS Group Ltd.",
+      "position": "Web Development and Graphic Design",
+      "date": "February 2018 - August 2019",
+      "infos": {
+        "icon": "icon-doubleArrow",
+        "intro": "I started working on 22nd February 2018, until August 13th. After my graduation, I found an ad looking for Web developers. After short interview and small test, they took me into their team",
+        "elaboration": "Company is working with adhesive tapes and since I was the only developer, it was quite daunting to approach any kind of project. I had one more colleague who was working as Graphic Designer who knew few tricks in web development which he passed to me. He later taught me Graphic Design.",
+        "conclusion": "My job was to develop websites for my company. We were working in many regions so demands were quite big. Technology stack was mostly Wordpress with HTML CSS and JQuery. Later, my job was also to create vector files for printed tapes using graphic design tools like Adobe Photoshop and Illustrator.",
+      }
+    }
+  ]
+
+-
+  const internships = [
+    {
+      "company": "fSD Ltd.",
+      "position": "Front-end developer",
+      "date": "June 2021 - September 2021",
+      "infos": {
+        "icon": "icon-doubleArrow",
+        "intro": "Internship started from June 1st, and ended on September 1st. The main goal was to learn Front-end techniques like pixel-perfect design, ABEM methodology, and vanilla Javascript.",
+        "elaboration": "First month was mostly learning ABEM, methodology derived from popular BEM. Later, I would create a website using that method. Second month was learning advanced Javascript, Wordpress and ACF plugin. By the end of second month, I managed to learn and develop custom WP sites and understand JS better. Last month, I learned React and Gatsby JS integration with headless CMS Strapi.",
+        "conclusion": "This was the best internship I had. My mentors were very helpful and they taught me much. I passed internship successfully and got a job as junior front-end developer.",
+      }
+    },
+    {
+      "company": "Bee IT Ltd.",
+      "position": "Salesforce developer",
+      "date": "January 2021 - January 2021",
+      "infos": {
+        "icon": "icon-doubleArrow",
+        "intro": "Internship started fron January 4th, and ended on January 25th. I was in team with two more students. We were working on salesforce boilerplate code, developing custom webshop. We were given fifteen tasks to finish by the end of 3rd week with a help of mentor.",
+        "elaboration": "First week was mostly learning basic salesforce. Setting up project, and working with storefront. Tasks were really difficult and mostly unclear of what to do. Second week consisted of code review and more work. By the end of Third week, I managed to complete seven out of fifteen tasks.",
+        "conclusion": "I had a feeling like it was pretty hard and confusing. Mentor was not very cooperative and most of the time, we had to do tasks by ourself. I passed the internship and all in all it was a good experience.",
+      }
+    },
+    {
+      "company": "Vega IT Ltd.",
+      "position": "Front-end developer",
+      "date": "May 2020 - May 2020",
+      "infos": {
+        "icon": "icon-doubleArrow",
+        "intro": "Internship started from May 6th, and ended on May 29th. Company gave me mentor David Milivojev who monitored my progress and helped me learn. The main goal was to learn Front-end techniques like pixel-perfect design, psd to html, and UI",
+        "elaboration": "First was developing a website from given psd solution. I managed to complete it within a two days. Next task was to recreate a website, but using old techniques like floats and IE support. Second week consisted of tips and tricks for better development. By the end of Third week, I managed to complete six projects and increase my Front-end skill.",
+        "conclusion": "I believe this was one of the best internships I had. Mentor was very helpful and he taught me much. I passed internship successfully.",
+      }
+    },
+    {
+      "company": "IT Engine Ltd.",
+      "position": "Full-stack developer",
+      "date": "November 2020 - November 2020",
+      "infos": {
+        "icon": "icon-doubleArrow",
+        "intro": "Internship started from November 1st, and ended on November 9th. With a help of a mentor, my task was to develop To-do app using Laravel REST API and VueJS with Axios. The main goal was to learn Full-stack app development",
+        "elaboration": "It was daunting. Only seven days to complete To-do app with no previous knowledge. My mentor was very helpful with giving me right direction of learning so my first two days was mostly learning Laravel REST API and how to connect with it using Axios. My efforts paid off. I managed to complete my task and create a working web application.",
+        "conclusion": "One of the best experience ever. Inspite it&apos;s short duration, I learned a lot and had a great time. Mentor was very helpful. I passed internship successfully.",
+      }
+    },
+  ]
+
+//- Navbar
+nav.m-navbar.js-navbar
+  ._wr
+    ._w
+      .a-backdrop.js-backdrop
+      ul.m-list.-primary.js-menu
+        button.a-hamburger.-close.-inner.js-mobileHamburger
+          span
+          span
+          span
+        each link in navbarLinks         
+          li.m-list__item
+            a(href=link.action)= link.text
+            -break
+      ul.m-list.-social
+        each val, key in socials
+          li.m-list__item.-social
+            a(class=`icon-${key}` href=val)
+            -break
+      button.a-hamburger.js-hamburger
+        span
+        span
+        span
+
+//- Hero
+section.m-hero
+  ._wr
+    ._w
+      ._l12._xl6(data-aos=aos.effects[1])
+        .m-hero__content
+          .m-hero__content--images.js-textLogo
+            h2.m-hero__content--imagesHeading.-first.js-heroText J
+            h2.m-hero__content--imagesHeading.-second.js-heroText Sitaric
+            p.m-hero__content--imagesText Web Developer, Web &amp; Graphic Designer
+            ul.m-list.-social.-offset
+              each val, key in socials
+                li.m-list__item.-social
+                  a(class=`icon-${key}` href=val)
+                  -break
+      ._l12._xl5(data-aos=aos.effects[0] data-aos-delay=aos.delay[0])
+        .m-hero__content.-second.a-decoration.-right
+          img.a-image.-profile(src='app/assets/images/jovan-sitaric.jpg' alt='Jovan Sitaric')
+
+//- About
+section#about.m-about.m-sections.js-sections
+  ._wr
+    ._w
+      ._l6.m-sections__column(data-aos=aos.effects[1])
+        .m-about__content.a-decoration.-left
+          img.a-image.-about(src='app/assets/images/about.jpg' alt='Web Developer')
+      ._l6.m-sections__column(data-aos='zoom-in-down' data-aos-delay=aos.delay[0])
+        .m-about__content
+          h2.a-heading.a-decoration.-spray.js-headings
+            | About
+          p Hello World! My name is Jovan Sitaric, Web Developer, Web and Graphic Designer.
+          p
+            | I have been in love with web development since I stopped being crazy about cartoons. Always willing to go an extra mile to make a website neater and prettier. Currently, I spend most of my time working on the front-end frameworks like GatsbyJS and REST API...
+
+//- Skills
+section#experience.m-skills.m-sections.js-sections(data-aos=aos.effects[1])
+  ._wr
+    ._w
+      h2.m-skills__heading.a-heading.a-decoration.-spray Experience
+      ._w.-pv100.-mh0.-w100
+        ._l3._12.m-skills__column
+          .m-skills__item
+            ul.m-tabs.-work
+              each tab in tabs
+                if tab.isActive
+                  li.m-tabs__item.-active.js-sliderSwitch(data-switch=tab.type)
+                    a(href=tab.action)= tab.name
+                else
+                  li.m-tabs__item.js-sliderSwitch(data-switch=tab.type)
+                    a(href=tab.action)= tab.name
+                    -break
+            ul.m-tabs.-categories.-works.-active.js-tabCategories.js-tabCategoryWork.swiper-slider(data-category='work')
+              .swiper-wrapper
+                each job in jobs
+                  li.m-tabs__item.js-sliderCategorySwitch.swiper-slide
+                    a(href='#')= job.company
+                    -break
+            ul.m-tabs.-categories.-internships.js-tabCategories.js-tabCategoryInternship.swiper-slider(data-category='internship')
+              .swiper-wrapper
+                each internship in internships
+                  li.m-tabs__item.js-sliderCategorySwitch.swiper-slide
+                    a(href='#')= internship.company
+                    -break
+        ._l8._12.m-skills__column.-relative
+          div
+            .m-work.m-slider.-work.js-workSlider.js-workSliders.-active(data-slider='work')
+              .m-work__content.swiper-wrapper
+                each job in jobs
+                  .swiper-slide
+                    h2.m-work__content--heading= job.position
+                    h3.m-work__content--position.a-tags.-work= job.company
+                    p.m-work__content--date= job.date
+                    ul.m-list.-work
+                      each key, val in job.infos
+                        li.m-list__item
+                          span(class=`.a-icon.${val}`)
+                          p= val
+                          -break
+                        -break
+              .m-slider__pagination.js-workPagination
+            .m-work.m-slider.-work.js-internshipSlider.js-workSliders(data-slider='internship')
+              .m-work__content.swiper-wrapper
+                .swiper-slide
+                  each internship in internships
+                    h2.m-work__content--heading= internship.position
+                    h3.m-work__content--position.a-tags.-work= internship.company
+                    p.m-work__content--date= internship.date
+                    ul.m-list.-work
+                      each key, val in internship.infos
+                        li.m-list__item
+                          span(class=`.a-icon.${val}`)
+                          p= val
+                          -break
+                        -break
+              .m-slider__pagination.js-internshipPagination

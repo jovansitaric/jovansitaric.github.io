@@ -11,7 +11,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "sass --watch app/scss:app/css",
-    "minify": "sass --watch --style=compressed app/scss:app/css"
+    "minify": "sass --watch --style=compressed app/scss:app/css",
+    "pug": "pug -w app/pug -o ./html -P"
   },
   "repository": {
     "type": "git",
