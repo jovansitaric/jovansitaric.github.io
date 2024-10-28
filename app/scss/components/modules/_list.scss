@@ -91,9 +91,11 @@
 
         .-primary & {
             @include first-of-type-none('margin-top', 20px);
+            font-size: 1.4rem;
 
             @include media-up('_l') {
                 @include first-of-type-none('margin-left', 40px);
+                font-size: 2rem;
                 margin-top: 0;
             }
 
@@ -131,7 +133,12 @@
             }
 
             & .a-icon {
+                display: none;
                 margin-right: 70px;
+
+                @include media-up('_s') {
+                    display: block;
+                }
             }
         }
     }
