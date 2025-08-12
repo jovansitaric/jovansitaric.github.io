@@ -1,27 +1,24 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "description": "My personal portfolio website",
-  "main": "index.js",
-  "dependencies": {
-    "axios": "^0.22.0",
-    "pug": "^3.0.2"
-  },
-  "devDependencies": {},
+  "name": "portfolio-website",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sass --watch app/scss:app/css",
-    "minify": "sass --watch --style=compressed app/scss:app/css",
-    "pug": "pug -w app/pug -o ./html -P"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jovansitaric/portfolio.git"
+  "dependencies": {
+    "next": "15.4.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
-  "author": "Jovan Sitaric",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jovansitaric/portfolio/issues"
-  },
-  "homepage": "https://github.com/jovansitaric/portfolio#readme"
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6",
+    "gh-pages": "^6.3.0",
+    "tailwindcss": "^4"
+  }
 }

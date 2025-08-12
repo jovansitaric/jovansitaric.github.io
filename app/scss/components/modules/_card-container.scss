@@ -1,5 +1,0 @@
-.m-cardContainer {
-    @include first-of-type-none('margin-top', $grid-gutter * 2);
-    display: flex;
-    width: 100%;
-}
