@@ -1,0 +1,29 @@
+{
+    "name": "jovan-sitaric-portfolio",
+    "version": "2.0.0",
+    "description": "Jovan Sitaric's personal portfolio, built with Astro and Vue.",
+    "type": "module",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "check": "astro check"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.9.10",
+        "@astrojs/vue": "latest",
+        "astro": "latest",
+        "typescript": "^6.0.3",
+        "vue": "latest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jovansitaric/portfolio.git"
+    },
+    "author": "Jovan Sitaric",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jovansitaric/portfolio/issues"
+    },
+    "homepage": "https://github.com/jovansitaric/portfolio#readme"
+}
