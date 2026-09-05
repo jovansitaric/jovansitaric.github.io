@@ -1,5 +1,6 @@
 ---
 import ExperienceTabs from "../components/ExperienceTabs.vue";
+import { skillList, skills } from "../data/skills";
 import "../styles/global.css";
 
 const socialLinks = [
@@ -7,57 +8,66 @@ const socialLinks = [
     { label: "LinkedIn", href: "https://rs.linkedin.com/in/jovan-sitaric" },
 ];
 
-const skills = [
-    "HTML",
-    "CSS / SCSS",
-    "JavaScript",
-    "Vue",
-    "Astro",
-    "Angular",
-    "React",
-    "RxJS",
-    "Gatsby",
-    "WordPress",
-    "PHP",
-    "Laravel",
-    "REST APIs",
-    "Git",
-    "Figma",
-];
-
 const projects = [
     {
-        number: "01",
+        title: "Stopnwrap",
+        type: "Custom WordPress website",
+        year: "2024",
+        description:
+            "Automotive and car wrap experience website based on WordPress custom theme and ACF plugin.",
+        technologies: [skills.wordpress, skills.php, skills.acf, skills.figma],
+        image: "/assets/images/projects/Stopnwrap.png",
+        href: "https://stopnwrap.rs/",
+    },
+    {
         title: "Avocado",
-        type: "Web application",
+        type: "Custom website",
         year: "2024",
         description:
             "A playful product experience with a bright visual system and a focused browsing flow.",
-        technologies: ["Vue", "JavaScript", "CSS"],
+        technologies: [skills.vue, skills.javascript, skills.css],
         image: "/assets/images/projects/Avocado-Zeplin.png",
-        href: "https://github.com/jovansitaric",
+        href: "https://jovansitaric.github.io/Slatkoteka/",
     },
     {
-        number: "02",
         title: "Quiz app",
         type: "Interactive experience",
         year: "2023",
         description:
             "A fast quiz interface designed around readable questions, clear feedback, and simple progression.",
-        technologies: ["HTML", "JavaScript", "SCSS"],
+        technologies: [skills.html, skills.javascript, skills.css],
         image: "/assets/images/projects/Quiz.png",
-        href: "https://github.com/jovansitaric",
+        href: "https://jovansitaric.github.io/simple-quiz/",
     },
     {
-        number: "03",
-        title: "Gradnja Topli Dom",
+        title: "Topli Dom",
         type: "Business website",
         year: "2022",
         description:
             "A warm, practical web presence for a construction company, balancing trust with useful information.",
-        technologies: ["WordPress", "PHP", "SEO"],
+        technologies: [skills.wordpress, skills.php, skills.seo],
         image: "/assets/images/projects/Gradnja-Topli-Dom.png",
-        href: "https://github.com/jovansitaric",
+        href: "#",
+    },
+    {
+        title: "Zlatara Letic",
+        type: "Business website",
+        year: "2020",
+        description:
+            "Jewelry store website with a clean and elegant design, optimized for search engines and user experience.",
+        technologies: [skills.wordpress, skills.php, skills.seo, skills.figma],
+        image: "/assets/images/projects/ZlataraLetic.jpg",
+        href: "https://zlataraletic.rs/",
+    },
+    {
+        title: "Dotkom",
+        type: "Entertainment website",
+        year: "2020",
+        description:
+            "A WordPress blog/website for a local entertainment company, featuring news, events, and multimedia content.",
+        technologies: [skills.wordpress, skills.php, skills.seo],
+        image: "/assets/images/projects/dotkom.jpg",
+        href: "https://dotkomsite.wordpress.com/",
     },
 ];
 ---
@@ -149,7 +159,11 @@ const projects = [
                 id="about"
                 data-reveal
             >
-                <div class="section-label" data-i18n="sections.about">
+                <div
+                    class="section-label"
+                    data-i18n="sections.about"
+                    data-reveal="heading"
+                >
                     01 / About
                 </div>
                 <div class="about-image motion-card" data-tilt>
@@ -178,10 +192,14 @@ const projects = [
                 id="experience"
                 data-reveal
             >
-                <div class="section-label" data-i18n="sections.experience">
+                <div
+                    class="section-label"
+                    data-i18n="sections.experience"
+                    data-reveal="heading"
+                >
                     02 / Experience
                 </div>
-                <div class="section-heading" data-reveal="delay">
+                <div class="section-heading" data-reveal="heading">
                     <p class="eyebrow" data-i18n="experience.eyebrow">
                         A history of making things
                     </p><h2 data-i18n="experience.heading">
@@ -191,26 +209,28 @@ const projects = [
                 <ExperienceTabs client:load />
             </section>
 
-            <section
-                class="portfolio motion-section"
-                id="portfolio"
-                data-reveal
-            >
-                <div class="section-label" data-i18n="sections.portfolio">
+            <section class="portfolio motion-section" id="portfolio">
+                <div
+                    class="section-label"
+                    data-i18n="sections.portfolio"
+                    data-reveal="heading"
+                >
                     03 / Portfolio
                 </div>
-                <div class="section-heading" data-reveal="delay">
+                <div class="section-heading" data-reveal="heading">
                     <p class="eyebrow" data-i18n="portfolio.eyebrow">
                         A few things I have built
                     </p><h2 data-i18n="portfolio.heading">
                         Selected<br /><em>projects.</em>
                     </h2>
                 </div>
-                <div class="project-grid" data-reveal="delay">
+                <div class="project-grid">
                     {
-                        projects.map((project) => (
+                        projects.map((project, index) => (
                             <a
                                 class="project-card"
+                                data-reveal
+                                style={`--reveal-delay: ${Math.min(index, 5) * 90}ms`}
                                 href={project.href}
                                 target="_blank"
                                 rel="noreferrer"
@@ -221,14 +241,14 @@ const projects = [
                                         alt={`${project.title} project`}
                                     />
                                     <span class="project-index">
-                                        {project.number}
+                                        {index + 1}
                                     </span>
                                     <span class="project-arrow">↗</span>
                                 </div>
                                 <div class="project-meta">
                                     <div class="project-title-row">
                                         <h3
-                                            data-i18n={`project.${project.number}.title`}
+                                            data-i18n={`project.${index + 1}.title`}
                                         >
                                             {project.title}
                                         </h3>
@@ -236,13 +256,13 @@ const projects = [
                                     </div>
                                     <p
                                         class="project-type"
-                                        data-i18n={`project.${project.number}.type`}
+                                        data-i18n={`project.${index + 1}.type`}
                                     >
                                         {project.type}
                                     </p>
                                     <p
                                         class="project-description"
-                                        data-i18n={`project.${project.number}.description`}
+                                        data-i18n={`project.${index + 1}.description`}
                                     >
                                         {project.description}
                                     </p>
@@ -258,6 +278,13 @@ const projects = [
                         ))
                     }
                 </div>
+                <p
+                    class="portfolio-more"
+                    data-reveal="heading"
+                    data-i18n="portfolio.more"
+                >
+                    And many more
+                </p>
             </section>
 
             <section
@@ -265,19 +292,23 @@ const projects = [
                 id="skills"
                 data-reveal
             >
-                <div class="section-label" data-i18n="sections.skills">
+                <div
+                    class="section-label"
+                    data-i18n="sections.skills"
+                    data-reveal="heading"
+                >
                     04 / Skills
-                </div><div class="skills-copy" data-reveal="delay">
+                </div><div class="skills-copy" data-reveal="heading">
                     <p class="eyebrow" data-i18n="skills.eyebrow">
                         Tools of the trade
                     </p><h2 data-i18n="skills.heading">
                         Good tools.<br /><em>Better intent.</em>
                     </h2><div class="skill-cloud">
                         {
-                            skills.map((skill, index) => (
+                            skillList.map((skill, index) => (
                                 <span>
                                     <i>0{index + 1}</i>
-                                    {skill}
+                                    {skills[skill]}
                                 </span>
                             ))
                         }
@@ -286,9 +317,13 @@ const projects = [
             </section>
 
             <section class="contact motion-section" id="contact" data-reveal>
-                <div class="section-label" data-i18n="sections.contact">
+                <div
+                    class="section-label"
+                    data-i18n="sections.contact"
+                    data-reveal="heading"
+                >
                     05 / Contact
-                </div><div>
+                </div><div data-reveal="heading">
                     <p class="eyebrow" data-i18n="contact.eyebrow">
                         Have a project in mind?
                     </p><h2 data-i18n="contact.heading">
@@ -355,6 +390,7 @@ const projects = [
                     "experience.heading": "Work that<br /><em>moved me.</em>",
                     "portfolio.eyebrow": "A few things I have built",
                     "portfolio.heading": "Selected<br /><em>projects.</em>",
+                    "portfolio.more": "And many more",
                     "skills.eyebrow": "Tools of the trade",
                     "skills.heading":
                         "Good tools.<br /><em>Better intent.</em>",
@@ -374,6 +410,18 @@ const projects = [
                     "project.03.type": "Business website",
                     "project.03.description":
                         "A warm, practical web presence for a construction company, balancing trust with useful information.",
+                    "project.04.title": "Topli Dom",
+                    "project.04.type": "Business website",
+                    "project.04.description":
+                        "A warm, practical web presence for a construction company, balancing trust with useful information.",
+                    "project.05.title": "Zlatara Letic",
+                    "project.05.type": "Business website",
+                    "project.05.description":
+                        "Jewelry store website with a clean and elegant design, optimized for search engines and user experience.",
+                    "project.06.title": "Dotkom",
+                    "project.06.type": "Entertainment website",
+                    "project.06.description":
+                        "A WordPress blog and website for a local entertainment company, featuring news, events, and multimedia content.",
                 },
                 sr: {
                     "nav.about": "O meni",
@@ -400,6 +448,7 @@ const projects = [
                     "experience.heading": "Rad koji me<br /><em>pokreće.</em>",
                     "portfolio.eyebrow": "Neki od mojih radova",
                     "portfolio.heading": "Odabrani<br /><em>projekti.</em>",
+                    "portfolio.more": "I još mnogo toga",
                     "skills.eyebrow": "Alati zanata",
                     "skills.heading":
                         "Dobri alati.<br /><em>Bolja namera.</em>",
@@ -419,6 +468,18 @@ const projects = [
                     "project.03.type": "Poslovni sajt",
                     "project.03.description":
                         "Toplo i praktično web prisustvo građevinske kompanije koje spaja poverenje sa korisnim informacijama.",
+                    "project.04.title": "Topli Dom",
+                    "project.04.type": "Poslovni sajt",
+                    "project.04.description":
+                        "Toplo i praktično web prisustvo građevinske kompanije koje spaja poverenje sa korisnim informacijama.",
+                    "project.05.title": "Zlatara Letic",
+                    "project.05.type": "Poslovni sajt",
+                    "project.05.description":
+                        "Sajt zlatarske radnje sa čistim i elegantnim dizajnom, optimizovan za pretraživače i korisničko iskustvo.",
+                    "project.06.title": "Dotkom",
+                    "project.06.type": "Zabavni sajt",
+                    "project.06.description":
+                        "WordPress blog i sajt lokalne entertainment kompanije sa vestima, događajima i multimedijalnim sadržajem.",
                 },
             };
             const languageToggle = document.querySelector<HTMLButtonElement>(

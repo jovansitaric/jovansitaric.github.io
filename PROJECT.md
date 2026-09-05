@@ -41,6 +41,7 @@ src/
     ExperienceTabs.vue   Vue experience browser
   data/
     i18n.ts              Shared locale labels and date formatting
+    skills.ts            Canonical skill and technology labels
   pages/
     index.astro          Main page and static content
   styles/
@@ -103,6 +104,14 @@ The header contains two lightweight controls:
 
 This is intentionally a small translation layer rather than a URL-based routing system. It is ready for more languages: add a new language dictionary, extend the `Language` union, add month names in `src/data/i18n.ts`, and add locale overrides for the experience records in the Vue island. Project names, technologies, and proper nouns remain unchanged between locales. The current approach keeps locale switching client-side, so it does not create separate translated URLs or server-rendered locale pages. Experience dates remain one English source string and are formatted through `translateExperienceDate()`, which translates month names and `Present` at render time.
 
+### Translation audit rule
+
+Whenever new visible content is added, add its `data-i18n` key to both the English and Serbian dictionaries in `src/pages/index.astro`. New Experience UI labels belong in `src/data/i18n.ts`, and new Experience descriptions belong in the Serbian partial overrides in `ExperienceTabs.vue`. Project titles, types, and descriptions must have entries for every project index in both dictionaries.
+
+### Canonical skills
+
+Technology labels live in `src/data/skills.ts`. The page and project data reference `skills.wordpress`, `skills.php`, and similar constants instead of typing display strings repeatedly. Add a new technology once to that registry, then use its key everywhere. This prevents visual inconsistencies such as `Wordpress` versus `WordPress`.
+
 ## Motion system
 
 The motion is deliberately small and physical rather than a collection of constant effects.
@@ -111,7 +120,7 @@ The motion is deliberately small and physical rather than a collection of consta
 
 Elements with `data-reveal` start slightly lower and transparent. An `IntersectionObserver` adds `is-visible` once an element enters the viewport. This means the animation happens at the moment the content becomes relevant, rather than on every page load or with a long list of unrelated delays.
 
-`data-reveal="delay"` adds a short 120ms offset for a nearby heading or content block. The easing curve, `cubic-bezier(.22, 1, .36, 1)`, gives the movement a quick settle similar to native interface motion.
+`data-reveal="delay"` adds a short 120ms offset for a nearby heading or content block. Section labels and headings use `data-reveal="heading"` for their own entrance. Portfolio cards each have their own `data-reveal` target and a position-based delay, so a second row waits until its cards actually enter the viewport instead of becoming visible when the grid's first row is observed. The easing curve, `cubic-bezier(.22, 1, .36, 1)`, gives the movement a quick settle similar to native interface motion.
 
 ### Pointer response
 
