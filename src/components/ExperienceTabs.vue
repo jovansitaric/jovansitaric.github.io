@@ -122,6 +122,12 @@ const experienceTranslations: Record<
     sr: {
         work: [
             {
+                position: "Angular front-end developer",
+                summary:
+                    "Pridružio sam se timu kako bih razvijao i održavao jednu od najuspešnijih aplikacija za praćenje vremena, Clockify.",
+                detail: "Aktivno radim sa Angularom, RxJS-om, HTML-om, CSS-om i JavaScriptom. Svaki dan počinje dnevnim sastankom, a status zadataka pratimo u aplikaciji Plaky.",
+            },
+            {
                 position: "Medior front-end developer",
                 summary:
                     "Pridružio sam se OEC timu na izradi i održavanju e-commerce iskustava za Telekom, za B2B i B2C proizvode.",
