@@ -117,7 +117,15 @@ const projects = [
                     type="button"
                     aria-label="Switch theme"
                     aria-pressed="false"
-                    data-theme-toggle></button>
+                    data-theme-toggle
+                >
+                    <span class="theme-icon theme-icon-sun" aria-hidden="true"
+                        >☼</span
+                    >
+                    <span class="theme-icon theme-icon-moon" aria-hidden="true"
+                        >☾</span
+                    >
+                </button>
             </div>
             <button
                 class="menu-toggle"
@@ -141,7 +149,7 @@ const projects = [
                         >Scroll to explore <span>↓</span></a
                     >
                 </div>
-                <div class="hero-image reveal-delay">
+                <div class="hero-image" data-parallax="0.12">
                     <img
                         src="/assets/images/jovan-sitaric.jpg"
                         alt="Jovan Sitaric"
@@ -163,10 +171,15 @@ const projects = [
                     class="section-label"
                     data-i18n="sections.about"
                     data-reveal="heading"
+                    data-parallax="0.125"
                 >
                     01 / About
                 </div>
-                <div class="about-image motion-card" data-tilt>
+                <div
+                    class="about-image motion-card"
+                    data-tilt
+                    data-parallax="0.045"
+                >
                     <img
                         src="/assets/images/about.jpg"
                         alt="Jovan working at a desk"
@@ -196,6 +209,7 @@ const projects = [
                     class="section-label"
                     data-i18n="sections.experience"
                     data-reveal="heading"
+                    data-parallax="0.125"
                 >
                     02 / Experience
                 </div>
@@ -214,6 +228,7 @@ const projects = [
                     class="section-label"
                     data-i18n="sections.portfolio"
                     data-reveal="heading"
+                    data-parallax="0.125"
                 >
                     03 / Portfolio
                 </div>
@@ -296,6 +311,7 @@ const projects = [
                     class="section-label"
                     data-i18n="sections.skills"
                     data-reveal="heading"
+                    data-parallax="0.125"
                 >
                     04 / Skills
                 </div><div class="skills-copy" data-reveal="heading">
@@ -321,6 +337,7 @@ const projects = [
                     class="section-label"
                     data-i18n="sections.contact"
                     data-reveal="heading"
+                    data-parallax="0.125"
                 >
                     05 / Contact
                 </div><div data-reveal="heading">
@@ -357,10 +374,42 @@ const projects = [
             );
 
             const header = document.querySelector(".site-header");
+            const parallaxItems =
+                document.querySelectorAll<HTMLElement>("[data-parallax]");
+            const reduceMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)",
+            );
+            let scrollFrame = 0;
             const updateHeader = () =>
                 header?.classList.toggle("is-scrolled", window.scrollY > 12);
-            updateHeader();
-            window.addEventListener("scroll", updateHeader, { passive: true });
+            const updateParallax = () => {
+                if (reduceMotion.matches) return;
+                parallaxItems.forEach((item) => {
+                    const intensity = Number(item.dataset.parallax || 0);
+                    const bounds = item.getBoundingClientRect();
+                    const progress =
+                        (window.innerHeight / 2 -
+                            (bounds.top + bounds.height / 2)) *
+                        intensity;
+                    item.style.setProperty(
+                        "--parallax-y",
+                        `${Math.max(-18, Math.min(18, progress))}px`,
+                    );
+                });
+            };
+            const updateScrollState = () => {
+                updateHeader();
+                if (!scrollFrame) {
+                    scrollFrame = requestAnimationFrame(() => {
+                        updateParallax();
+                        scrollFrame = 0;
+                    });
+                }
+            };
+            updateScrollState();
+            window.addEventListener("scroll", updateScrollState, {
+                passive: true,
+            });
 
             type Language = "en" | "sr";
             type Theme = "light" | "dark";
@@ -515,9 +564,15 @@ const projects = [
             setLanguage(storedLanguage === "sr" ? "sr" : "en");
 
             const themeToggle = document.querySelector("[data-theme-toggle]");
-            const themeLabels: Record<Theme, string> = {
-                light: "Switch to dark theme",
-                dark: "Switch to light theme",
+            const themeLabels: Record<Language, Record<Theme, string>> = {
+                en: {
+                    light: "Switch to dark theme",
+                    dark: "Switch to light theme",
+                },
+                sr: {
+                    light: "Prebaci na tamnu temu",
+                    dark: "Prebaci na svetlu temu",
+                },
             };
             const setTheme = (theme: Theme) => {
                 document.documentElement.dataset.theme = theme;
@@ -525,7 +580,12 @@ const projects = [
                     "aria-pressed",
                     String(theme === "dark"),
                 );
-                themeToggle?.setAttribute("aria-label", themeLabels[theme]);
+                const currentLanguage =
+                    document.documentElement.lang === "sr" ? "sr" : "en";
+                themeToggle?.setAttribute(
+                    "aria-label",
+                    themeLabels[currentLanguage][theme],
+                );
                 localStorage.setItem("portfolio-theme", theme);
             };
             themeToggle?.addEventListener("click", () => {
