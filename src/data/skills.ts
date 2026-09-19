@@ -16,6 +16,7 @@ export const skills = {
     figma: "Figma",
     acf: "ACF",
     seo: "SEO",
+    pixelPerfect: "Pixel Perfect",
 } as const;
 
 export type SkillKey = keyof typeof skills;
