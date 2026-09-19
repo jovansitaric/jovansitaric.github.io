@@ -547,7 +547,8 @@ img {
     margin-top: 0;
 }
 .project-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     min-width: 0;
     height: 100%;
     border-top: 1px solid rgba(243, 239, 231, 0.35);
@@ -599,6 +600,10 @@ img {
     background: var(--rust);
 }
 .project-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 auto;
     padding: 22px 0 8px;
 }
 .project-title-row {

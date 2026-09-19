@@ -10,6 +10,18 @@ const socialLinks = [
 
 const projects = [
     {
+        translationKey: "portfolio",
+        title: "Jovan Sitaric Portfolio",
+        type: "Astro presentational website",
+        year: "2021",
+        description:
+            "Portfolio website built with Astro, Vue, CSS and JS, showcasing my work and skills as a front-end developer and designer.",
+        technologies: [skills.astro, skills.vue, skills.css, skills.javascript],
+        image: "/assets/images/projects/jovan-sitaric-portfolio.png",
+        href: "https://jovansitaric.github.io/",
+    },
+    {
+        translationKey: "stopnwrap",
         title: "Stopnwrap",
         type: "Custom WordPress website",
         year: "2024",
@@ -20,6 +32,7 @@ const projects = [
         href: "https://stopnwrap.rs/",
     },
     {
+        translationKey: "avocado",
         title: "Avocado",
         type: "Custom website",
         year: "2024",
@@ -30,6 +43,7 @@ const projects = [
         href: "https://jovansitaric.github.io/Slatkoteka/",
     },
     {
+        translationKey: "quiz",
         title: "Quiz app",
         type: "Interactive experience",
         year: "2023",
@@ -40,26 +54,54 @@ const projects = [
         href: "https://jovansitaric.github.io/simple-quiz/",
     },
     {
+        translationKey: "topliDom",
         title: "Topli Dom",
         type: "Business website",
         year: "2022",
         description:
             "A warm, practical web presence for a construction company, balancing trust with useful information.",
-        technologies: [skills.wordpress, skills.php, skills.seo],
-        image: "/assets/images/projects/Gradnja-Topli-Dom.png",
+        technologies: [
+            skills.html,
+            skills.css,
+            skills.javascript,
+            skills.wordpress,
+            skills.php,
+            skills.seo,
+        ],
+        image: "/assets/images/projects/topli-dom-project.png",
         href: "#",
     },
     {
+        translationKey: "stanNaDan",
+        title: "Stan na dan",
+        type: "Apartment rental website",
+        year: "2022",
+        description:
+            "A simple and effective website for a short-term apartment rental business, with clear information and booking options.",
+        technologies: [
+            skills.html,
+            skills.css,
+            skills.javascript,
+            skills.wordpress,
+            skills.php,
+            skills.seo,
+        ],
+        image: "/assets/images/projects/stan-na-dan-project.png",
+        href: "#",
+    },
+    {
+        translationKey: "zlataraLetic",
         title: "Zlatara Letic",
         type: "Business website",
         year: "2020",
         description:
             "Jewelry store website with a clean and elegant design, optimized for search engines and user experience.",
         technologies: [skills.wordpress, skills.php, skills.seo, skills.figma],
-        image: "/assets/images/projects/ZlataraLetic.jpg",
+        image: "/assets/images/projects/zlatara-letic-project.jpg",
         href: "https://zlataraletic.rs/",
     },
     {
+        translationKey: "dotkom",
         title: "Dotkom",
         type: "Entertainment website",
         year: "2020",
@@ -262,22 +304,18 @@ const projects = [
                                 </div>
                                 <div class="project-meta">
                                     <div class="project-title-row">
-                                        <h3
-                                            data-i18n={`project.${index + 1}.title`}
-                                        >
-                                            {project.title}
-                                        </h3>
+                                        <h3>{project.title}</h3>
                                         <span>{project.year}</span>
                                     </div>
                                     <p
                                         class="project-type"
-                                        data-i18n={`project.${index + 1}.type`}
+                                        data-i18n={`project.${project.translationKey}.type`}
                                     >
                                         {project.type}
                                     </p>
                                     <p
                                         class="project-description"
-                                        data-i18n={`project.${index + 1}.description`}
+                                        data-i18n={`project.${project.translationKey}.description`}
                                     >
                                         {project.description}
                                     </p>
@@ -447,29 +485,29 @@ const projects = [
                     "contact.heading":
                         "Let's make<br /><em>something real.</em>",
                     "footer.credit": "Designed & built with care",
-                    "project.01.title": "Avocado",
-                    "project.01.type": "Web application",
-                    "project.01.description":
+                    "project.portfolio.type": "Astro presentation website",
+                    "project.portfolio.description":
+                        "Portfolio website built with Astro, Vue, CSS and JavaScript, showcasing my work and skills as a front-end developer and designer.",
+                    "project.stopnwrap.type": "Custom WordPress website",
+                    "project.stopnwrap.description":
+                        "Automotive and car wrap experience website based on a custom WordPress theme and ACF plugin.",
+                    "project.avocado.type": "Custom website",
+                    "project.avocado.description":
                         "A playful product experience with a bright visual system and a focused browsing flow.",
-                    "project.02.title": "Quiz app",
-                    "project.02.type": "Interactive experience",
-                    "project.02.description":
+                    "project.quiz.type": "Interactive experience",
+                    "project.quiz.description":
                         "A fast quiz interface designed around readable questions, clear feedback, and simple progression.",
-                    "project.03.title": "Gradnja Topli Dom",
-                    "project.03.type": "Business website",
-                    "project.03.description":
-                        "A warm, practical web presence for a construction company, balancing trust with useful information.",
-                    "project.04.title": "Topli Dom",
-                    "project.04.type": "Business website",
-                    "project.04.description":
-                        "A warm, practical web presence for a construction company, balancing trust with useful information.",
-                    "project.05.title": "Zlatara Letic",
-                    "project.05.type": "Business website",
-                    "project.05.description":
+                    "project.zlataraLetic.type": "Business website",
+                    "project.zlataraLetic.description":
                         "Jewelry store website with a clean and elegant design, optimized for search engines and user experience.",
-                    "project.06.title": "Dotkom",
-                    "project.06.type": "Entertainment website",
-                    "project.06.description":
+                    "project.topliDom.type": "Business website",
+                    "project.topliDom.description":
+                        "A warm, practical web presence for a construction company, balancing trust with useful information.",
+                    "project.stanNaDan.type": "Apartment rental website",
+                    "project.stanNaDan.description":
+                        "A simple and effective website for a short-term apartment rental business, with clear information and booking options.",
+                    "project.dotkom.type": "Entertainment website",
+                    "project.dotkom.description":
                         "A WordPress blog and website for a local entertainment company, featuring news, events, and multimedia content.",
                 },
                 sr: {
@@ -505,29 +543,29 @@ const projects = [
                     "contact.heading":
                         "Hajde da napravimo<br /><em>nešto stvarno.</em>",
                     "footer.credit": "Dizajnirano i izrađeno s pažnjom",
-                    "project.01.title": "Avocado",
-                    "project.01.type": "Web aplikacija",
-                    "project.01.description":
+                    "project.portfolio.type": "Prezentacioni Astro sajt",
+                    "project.portfolio.description":
+                        "Portfolio sajt napravljen uz Astro, Vue, CSS i JavaScript, koji prikazuje moj rad i veštine front-end developera i dizajnera.",
+                    "project.stopnwrap.type": "Prilagođeni WordPress sajt",
+                    "project.stopnwrap.description":
+                        "Sajt o automobilima i car wrap uslugama zasnovan na prilagođenoj WordPress temi i ACF pluginu.",
+                    "project.avocado.type": "Prilagođeni sajt",
+                    "project.avocado.description":
                         "Razigrano produktno iskustvo sa vedrim vizuelnim sistemom i fokusiranim tokom pregledanja.",
-                    "project.02.title": "Kviz aplikacija",
-                    "project.02.type": "Interaktivno iskustvo",
-                    "project.02.description":
+                    "project.quiz.type": "Interaktivno iskustvo",
+                    "project.quiz.description":
                         "Brz kviz interfejs zasnovan na čitljivim pitanjima, jasnim povratnim informacijama i jednostavnom napretku.",
-                    "project.03.title": "Gradnja Topli Dom",
-                    "project.03.type": "Poslovni sajt",
-                    "project.03.description":
-                        "Toplo i praktično web prisustvo građevinske kompanije koje spaja poverenje sa korisnim informacijama.",
-                    "project.04.title": "Topli Dom",
-                    "project.04.type": "Poslovni sajt",
-                    "project.04.description":
-                        "Toplo i praktično web prisustvo građevinske kompanije koje spaja poverenje sa korisnim informacijama.",
-                    "project.05.title": "Zlatara Letic",
-                    "project.05.type": "Poslovni sajt",
-                    "project.05.description":
+                    "project.zlataraLetic.type": "Poslovni sajt",
+                    "project.zlataraLetic.description":
                         "Sajt zlatarske radnje sa čistim i elegantnim dizajnom, optimizovan za pretraživače i korisničko iskustvo.",
-                    "project.06.title": "Dotkom",
-                    "project.06.type": "Zabavni sajt",
-                    "project.06.description":
+                    "project.topliDom.type": "Poslovni sajt",
+                    "project.topliDom.description":
+                        "Toplo i praktično web prisustvo građevinske kompanije koje spaja poverenje sa korisnim informacijama.",
+                    "project.stanNaDan.type": "Sajt za izdavanje apartmana",
+                    "project.stanNaDan.description":
+                        "Jednostavan i efikasan sajt za kratkoročno izdavanje apartmana, sa jasnim informacijama i opcijama za rezervaciju.",
+                    "project.dotkom.type": "Zabavni sajt",
+                    "project.dotkom.description":
                         "WordPress blog i sajt lokalne entertainment kompanije sa vestima, događajima i multimedijalnim sadržajem.",
                 },
             };
