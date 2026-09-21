@@ -20,7 +20,7 @@ const experiences: Record<"work" | "internship", Experience[]> = {
         {
             company: "Cake.com",
             position: "Angular Front-end Developer",
-            date: "November 2025 - Present",
+            date: "November 2025 - September 2026",
             summary:
                 "Joined the team one to build and maintain one of the most successful tracking app 'Clockify'.",
             detail: "Actively working with Angular, RxJS, HTML, CSS and JavaScript. Each day starts with daily meetings and tracking the tasks status in 'Plaky' application.",
