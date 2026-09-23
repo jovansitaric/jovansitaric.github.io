@@ -32,8 +32,25 @@ const projects = [
         href: "https://stopnwrap.rs/",
     },
     {
+        translationKey: "poslasticarnicaM",
+        title: 'Pastry shop "M"',
+        type: "Custom WordPress website",
+        year: "2021",
+        description:
+            "A playful website experience with a bright visual and playful elements, designed to showcase pastry shop products and services.",
+        technologies: [
+            skills.html,
+            skills.css,
+            skills.javascript,
+            skills.wordpress,
+            skills.acf,
+        ],
+        image: "/assets/images/projects/poslasticarnica-m-devices.png",
+        href: "https://poslasticarnicam.com/",
+    },
+    {
         translationKey: "avocado",
-        title: "Avocado",
+        title: "Avocado pastry shop",
         type: "Custom website",
         year: "2024",
         description:
@@ -50,31 +67,13 @@ const projects = [
     {
         translationKey: "quiz",
         title: "Quiz app",
-        type: "Interactive experience",
+        type: "Interactive app",
         year: "2023",
         description:
             "A fast quiz interface designed around readable questions, clear feedback, and simple progression.",
         technologies: [skills.html, skills.javascript, skills.css],
         image: "/assets/images/projects/simple-quiz-devices.png",
         href: "https://jovansitaric.github.io/simple-quiz/",
-    },
-    {
-        translationKey: "topliDom",
-        title: "Topli Dom",
-        type: "Business website",
-        year: "2022",
-        description:
-            "A warm, practical web presence for a construction company, balancing trust with useful information.",
-        technologies: [
-            skills.html,
-            skills.css,
-            skills.javascript,
-            skills.wordpress,
-            skills.php,
-            skills.seo,
-        ],
-        image: "/assets/images/projects/topli-dom-project.png",
-        href: "#",
     },
     {
         translationKey: "stanNaDan",
@@ -291,9 +290,17 @@ const projects = [
                         projects.map((project, index) => (
                             <a
                                 class="project-card"
+                                class:list={[
+                                    "project-card",
+                                    { "is-unavailable": project.href === "#" },
+                                ]}
                                 data-reveal
                                 style={`--reveal-delay: ${Math.min(index, 5) * 90}ms`}
-                                href={project.href}
+                                href={
+                                    project.href === "#"
+                                        ? undefined
+                                        : project.href
+                                }
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -305,7 +312,9 @@ const projects = [
                                     <span class="project-index">
                                         {index + 1}
                                     </span>
-                                    <span class="project-arrow">↗</span>
+                                    <span class="project-arrow">
+                                        {project.href === "#" ? "—" : "↗"}
+                                    </span>
                                 </div>
                                 <div class="project-meta">
                                     <div class="project-title-row">
@@ -331,6 +340,14 @@ const projects = [
                                             ),
                                         )}
                                     </div>
+                                    {project.href === "#" && (
+                                        <p
+                                            class="project-status"
+                                            data-i18n="portfolio.linkUnavailable"
+                                        >
+                                            Link unavailable
+                                        </p>
+                                    )}
                                 </div>
                             </a>
                         ))
@@ -483,6 +500,7 @@ const projects = [
                     "portfolio.eyebrow": "A few things I have built",
                     "portfolio.heading": "Selected<br /><em>projects.</em>",
                     "portfolio.more": "And many more",
+                    "portfolio.linkUnavailable": "Link unavailable",
                     "skills.eyebrow": "Tools of the trade",
                     "skills.heading":
                         "Good tools.<br /><em>Better intent.</em>",
@@ -499,15 +517,14 @@ const projects = [
                     "project.avocado.type": "Custom website",
                     "project.avocado.description":
                         "A playful website experience with a bright visual and playful elements, designed to showcase pastry shop products and services.",
+                    "project.poslasticarnicaM.description":
+                        "A playful website experience with a bright visual and playful elements, designed to showcase pastry shop products and services.",
                     "project.quiz.type": "Interactive experience",
                     "project.quiz.description":
                         "A fast quiz interface designed around readable questions, clear feedback, and simple progression.",
                     "project.zlataraLetic.type": "Business website",
                     "project.zlataraLetic.description":
                         "Jewelry store website with a clean and elegant design, optimized for search engines and user experience.",
-                    "project.topliDom.type": "Business website",
-                    "project.topliDom.description":
-                        "A warm, practical web presence for a construction company, balancing trust with useful information.",
                     "project.stanNaDan.type": "Apartment rental website",
                     "project.stanNaDan.description":
                         "A simple and effective website for a short-term apartment rental business, with clear information and booking options.",
@@ -541,6 +558,7 @@ const projects = [
                     "portfolio.eyebrow": "Neki od mojih radova",
                     "portfolio.heading": "Odabrani<br /><em>projekti.</em>",
                     "portfolio.more": "I još mnogo toga",
+                    "portfolio.linkUnavailable": "Link nije dostupan",
                     "skills.eyebrow": "Alati zanata",
                     "skills.heading":
                         "Dobri alati.<br /><em>Bolja namera.</em>",
@@ -556,16 +574,15 @@ const projects = [
                         "Sajt o automobilima i car wrap uslugama zasnovan na prilagođenoj WordPress temi i ACF pluginu.",
                     "project.avocado.type": "Prilagođeni sajt",
                     "project.avocado.description":
-                        "Razigrano iskustvo surfovanja ovog sajta, sa živopisnim vizuelnim stilom i razigranim elementima, dizajnirano da predstavi proizvode i usluge poslastičarnice.",
-                    "project.quiz.type": "Interaktivno iskustvo",
+                        "Razigrano iskustvo surfovanja, sa živopisnim vizuelnim stilom i razigranim elementima, dizajnirano da predstavi proizvode i usluge poslastičarnice.",
+                    "project.poslasticarnicam.description":
+                        "Razigrano iskustvo surfovanja, sa živopisnim vizuelnim stilom i razigranim elementima, dizajnirano da predstavi proizvode i usluge poslastičarnice.",
+                    "project.quiz.type": "Interaktivna aplikacija",
                     "project.quiz.description":
                         "Brz kviz interfejs zasnovan na čitljivim pitanjima, jasnim povratnim informacijama i jednostavnom napretku.",
                     "project.zlataraLetic.type": "Poslovni sajt",
                     "project.zlataraLetic.description":
                         "Sajt zlatarske radnje sa čistim i elegantnim dizajnom, optimizovan za pretraživače i korisničko iskustvo.",
-                    "project.topliDom.type": "Poslovni sajt",
-                    "project.topliDom.description":
-                        "Toplo i praktično web prisustvo građevinske kompanije koje spaja poverenje sa korisnim informacijama.",
                     "project.stanNaDan.type": "Sajt za izdavanje apartmana",
                     "project.stanNaDan.description":
                         "Jednostavan i efikasan sajt za kratkoročno izdavanje apartmana, sa jasnim informacijama i opcijama za rezervaciju.",

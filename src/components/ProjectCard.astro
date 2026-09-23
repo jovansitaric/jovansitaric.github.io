@@ -1,0 +1,113 @@
+---
+type Project = {
+    title: string;
+    translationKey: string;
+    year: string;
+    type: string;
+    description: string;
+    technologies: string[];
+    image: string;
+    href: string;
+};
+
+const { project, index } = Astro.props as { project: Project; index: number };
+const unavailable = project.href === "#";
+const cardClass = `project-card${unavailable ? " is-unavailable" : ""}`;
+const cardAttributes = {
+    class: cardClass,
+    "data-project-card": true,
+    "data-project-skills": project.technologies.join("|"),
+    "data-project-year": project.year,
+    "data-reveal": true,
+    style: `--reveal-delay: ${Math.min(index, 5) * 90}ms`,
+};
+---
+
+{
+    unavailable ? (
+        <div {...cardAttributes}>
+            <div class="project-media">
+                <>
+                    <img src={project.image} alt={`${project.title} project`} />
+                    <span class="project-index">{index + 1}</span>
+                    <span class="project-arrow">-</span>
+                </>
+            </div>
+            <div class="project-meta">
+                <>
+                    <div class="project-title-row">
+                        <>
+                            <h3>{project.title}</h3>
+                            <span>{project.year}</span>
+                        </>
+                    </div>
+                    <p
+                        class="project-type"
+                        data-i18n={`project.${project.translationKey}.type`}
+                    >
+                        {project.type}
+                    </p>
+                    <p
+                        class="project-description"
+                        data-i18n={`project.${project.translationKey}.description`}
+                    >
+                        {project.description}
+                    </p>
+                    <div class="project-technologies">
+                        {project.technologies.map((technology) => (
+                            <span>{technology}</span>
+                        ))}
+                    </div>
+                    <p
+                        class="project-status"
+                        data-i18n="portfolio.linkUnavailable"
+                    >
+                        Link unavailable
+                    </p>
+                </>
+            </div>
+        </div>
+    ) : (
+        <a
+            {...cardAttributes}
+            href={project.href}
+            target="_blank"
+            rel="noreferrer"
+        >
+            <div class="project-media">
+                <>
+                    <img src={project.image} alt={`${project.title} project`} />
+                    <span class="project-index">{index + 1}</span>
+                    <span class="project-arrow">↗</span>
+                </>
+            </div>
+            <div class="project-meta">
+                <>
+                    <div class="project-title-row">
+                        <>
+                            <h3>{project.title}</h3>
+                            <span>{project.year}</span>
+                        </>
+                    </div>
+                    <p
+                        class="project-type"
+                        data-i18n={`project.${project.translationKey}.type`}
+                    >
+                        {project.type}
+                    </p>
+                    <p
+                        class="project-description"
+                        data-i18n={`project.${project.translationKey}.description`}
+                    >
+                        {project.description}
+                    </p>
+                    <div class="project-technologies">
+                        {project.technologies.map((technology) => (
+                            <span>{technology}</span>
+                        ))}
+                    </div>
+                </>
+            </div>
+        </a>
+    )
+}

@@ -112,6 +112,10 @@ Whenever new visible content is added, add its `data-i18n` key to both the Engli
 
 Technology labels live in `src/data/skills.ts`. The page and project data reference `skills.wordpress`, `skills.php`, and similar constants instead of typing display strings repeatedly. Add a new technology once to that registry, then use its key everywhere. This prevents visual inconsistencies such as `Wordpress` versus `WordPress`.
 
+### Portfolio links and controls
+
+Projects without a live URL use no `href` at all. They remain visible as portfolio work, but are rendered with a muted state and a translated `Link unavailable` status so clicking them cannot open or reload a placeholder page.
+
 ## Motion system
 
 The motion is deliberately small and physical rather than a collection of constant effects.
