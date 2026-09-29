@@ -446,7 +446,7 @@ img {
     border: 0;
     background: transparent;
     padding: 0 0 14px;
-    color: rgba(23, 43, 45, 0.5);
+    color: color-mix(in srgb, var(--ink) 50%, transparent);
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -487,12 +487,14 @@ img {
     border-left: 1px solid var(--line);
     padding: 20px 6vw 20px 5vw;
     min-height: 330px;
+    color: var(--ink);
 }
 .experience-detail h3 {
     font-family: var(--serif);
     font-size: clamp(37px, 4vw, 62px);
     line-height: 0.95;
     margin: 10px 0;
+    color: var(--ink);
 }
 .experience-company {
     color: var(--rust);
@@ -502,12 +504,13 @@ img {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    opacity: 0.6;
+    color: color-mix(in srgb, var(--ink) 65%, transparent);
 }
 .experience-detail
     p:not(.eyebrow):not(.experience-company):not(.experience-date) {
     max-width: 620px;
     font-size: 14px;
+    color: color-mix(in srgb, var(--ink) 85%, transparent);
 }
 .experience-detail strong {
     display: inline-block;
