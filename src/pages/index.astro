@@ -10,6 +10,17 @@ const socialLinks = [
 
 const projects = [
     {
+        translationKey: "leisureScroll",
+        title: "Leisure scroll",
+        type: "Library/Framework",
+        year: "2026",
+        description:
+            "A library from Leisure ecosystem. It brings animations when user scrolls with a goal of easy setup, lightweight and smooth performance.",
+        technologies: [skills.html, skills.css, skills.javascript],
+        image: "/assets/images/projects/leisure-devices.webp",
+        href: "https://jovansitaric.github.io/leisure-scroll/",
+    },
+    {
         translationKey: "portfolio",
         title: "Jovan Sitaric Portfolio",
         type: "Astro presentational website",
@@ -17,7 +28,7 @@ const projects = [
         description:
             "Portfolio website built with Astro, Vue, CSS and JS, showcasing my work and skills as a front-end developer and designer.",
         technologies: [skills.astro, skills.vue, skills.css, skills.javascript],
-        image: "/assets/images/projects/jovan-sitaric-portfolio.png",
+        image: "/assets/images/projects/jovan-sitaric-portfolio.webp",
         href: "https://jovansitaric.github.io/",
     },
     {
@@ -28,7 +39,7 @@ const projects = [
         description:
             "Automotive and car wrap experience website based on WordPress custom theme and ACF plugin.",
         technologies: [skills.wordpress, skills.php, skills.acf, skills.figma],
-        image: "/assets/images/projects/stopnwrap-devices.png",
+        image: "/assets/images/projects/stopnwrap-devices.webp",
         href: "https://stopnwrap.rs/",
     },
     {
@@ -45,7 +56,7 @@ const projects = [
             skills.wordpress,
             skills.acf,
         ],
-        image: "/assets/images/projects/poslasticarnica-m-devices.png",
+        image: "/assets/images/projects/poslasticarnica-m-devices.webp",
         href: "https://poslasticarnicam.com/",
     },
     {
@@ -61,7 +72,7 @@ const projects = [
             skills.javascript,
             skills.pixelPerfect,
         ],
-        image: "/assets/images/projects/slatkoteka-devices.png",
+        image: "/assets/images/projects/slatkoteka-devices.webp",
         href: "https://jovansitaric.github.io/Slatkoteka/",
     },
     {
@@ -72,7 +83,7 @@ const projects = [
         description:
             "A fast quiz interface designed around readable questions, clear feedback, and simple progression.",
         technologies: [skills.html, skills.javascript, skills.css],
-        image: "/assets/images/projects/simple-quiz-devices.png",
+        image: "/assets/images/projects/simple-quiz-devices.webp",
         href: "https://jovansitaric.github.io/simple-quiz/",
     },
     {
@@ -90,7 +101,7 @@ const projects = [
             skills.php,
             skills.seo,
         ],
-        image: "/assets/images/projects/stan-na-dan-project.png",
+        image: "/assets/images/projects/stan-na-dan-project.webp",
         href: "#",
     },
     {
@@ -101,7 +112,7 @@ const projects = [
         description:
             "Jewelry store website with a clean and elegant design, optimized for search engines and user experience.",
         technologies: [skills.wordpress, skills.php, skills.seo, skills.figma],
-        image: "/assets/images/projects/zlatara-letic-devices.png",
+        image: "/assets/images/projects/zlatara-letic-devices.webp",
         href: "https://zlataraletic.rs/",
     },
     {
@@ -112,7 +123,7 @@ const projects = [
         description:
             "A WordPress blog/website for a local entertainment company, featuring news, events, and multimedia content.",
         technologies: [skills.wordpress, skills.php, skills.seo],
-        image: "/assets/images/projects/dotkom-devices.png",
+        image: "/assets/images/projects/dotkom-devices.webp",
         href: "https://dotkomsite.wordpress.com/",
     },
 ];
@@ -187,6 +198,11 @@ const projects = [
                         Front-end developer / designer
                     </p>
                     <h1>Jovan<br /><em>Sitaric</em></h1>
+                    <!-- <p>Leisure ecosystem founder</p>
+                    <p>
+                        A collection of tools built for seamless code and
+                        effortless experiences.
+                    </p> -->
                     <p class="hero-intro" data-i18n="hero.intro">
                         I build thoughtful digital experiences where clear code
                         meets expressive visual design.
@@ -197,7 +213,7 @@ const projects = [
                 </div>
                 <div class="hero-image" data-parallax="0.12">
                     <img
-                        src="/assets/images/jovan-sitaric.jpg"
+                        src="/assets/images/jovan-sitaric.webp"
                         alt="Jovan Sitaric"
                     />
                 </div>
@@ -227,7 +243,7 @@ const projects = [
                     data-parallax="0.045"
                 >
                     <img
-                        src="/assets/images/about.jpg"
+                        src="/assets/images/about.webp"
                         alt="Jovan working at a desk"
                     />
                 </div>
@@ -508,6 +524,9 @@ const projects = [
                     "contact.heading":
                         "Let's make<br /><em>something real.</em>",
                     "footer.credit": "Designed & built with care",
+                    "project.leisureScroll.type": "Library/Framework",
+                    "project.leisureScroll.description":
+                        "A library from Leisure ecosystem. It brings animations when user scrolls with a goal of easy setup, lightweight and smooth performance.",
                     "project.portfolio.type": "Astro presentation website",
                     "project.portfolio.description":
                         "Portfolio website built with Astro, Vue, CSS and JavaScript, showcasing my work and skills as a front-end developer and designer.",
@@ -566,6 +585,9 @@ const projects = [
                     "contact.heading":
                         "Hajde da napravimo<br /><em>nešto stvarno.</em>",
                     "footer.credit": "Dizajnirano i izrađeno s pažnjom",
+                    "project.leisureScroll.type": "Biblioteka/Framework",
+                    "project.leisureScroll.description":
+                        "Biblioteka iz Leisure ekosistema. Omogućava animacije pri skrolovanju sa ciljem lakog podešavanja, male težine i glatkih performansi.",
                     "project.portfolio.type": "Prezentacioni Astro sajt",
                     "project.portfolio.description":
                         "Portfolio sajt napravljen uz Astro, Vue, CSS i JavaScript, koji prikazuje moj rad i veštine front-end developera i dizajnera.",
