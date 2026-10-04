@@ -920,7 +920,13 @@ const projectSkills = [
                 );
             });
             const storedTheme = localStorage.getItem("portfolio-theme");
-            setTheme(storedTheme === "dark" ? "dark" : "light");
+            setTheme(
+                storedTheme === "dark" || storedTheme === "light"
+                    ? storedTheme
+                    : window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "dark"
+                        : "light",
+            );
 
             const projectGrid =
                 document.querySelector<HTMLElement>(".project-grid");

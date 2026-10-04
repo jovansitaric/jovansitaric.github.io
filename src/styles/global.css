@@ -587,8 +587,7 @@ img {
     align-items: center;
     gap: 12px;
     min-width: 150px;
-    border: 1px solid
-        color-mix(in srgb, var(--portfolio-text) 30%, transparent);
+    border: 1px solid color-mix(in srgb, var(--portfolio-text) 30%, transparent);
     border-radius: 0;
     padding: 10px 12px;
     background: transparent;
@@ -632,8 +631,7 @@ img {
     top: calc(100% + 8px);
     right: 0;
     width: max(260px, 100%);
-    border: 1px solid
-        color-mix(in srgb, var(--portfolio-text) 30%, transparent);
+    border: 1px solid color-mix(in srgb, var(--portfolio-text) 30%, transparent);
     background: var(--portfolio-bg);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
@@ -669,14 +667,17 @@ img {
     grid-column: 1;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 28px;
+    column-gap: 28px;
+    row-gap: 0;
     margin-top: 0;
 }
 .project-card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-row: span 6; /* media, title, type, desc, tech, status */
+    grid-template-rows: subgrid;
+    row-gap: 0;
     min-width: 0;
-    height: 100%;
+    margin-bottom: 56px;
     border-top: 1px solid rgba(243, 239, 231, 0.35);
     padding-top: 14px;
 }
@@ -730,17 +731,14 @@ img {
     background: var(--rust);
 }
 .project-meta {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1 1 auto;
-    padding: 22px 0 8px;
+    display: contents; /* deca meta-e postaju redovi kartice (subgrid) */
 }
 .project-title-row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: 12px;
+    margin-top: 22px;
 }
 .project-title-row h3 {
     margin: 0;
@@ -748,6 +746,7 @@ img {
     font-family: var(--serif);
     font-size: clamp(28px, 3vw, 39px);
     line-height: 0.95;
+    text-wrap: balance;
 }
 .project-title-row > span {
     color: var(--rust);
@@ -762,7 +761,6 @@ img {
     text-transform: uppercase;
 }
 .project-description {
-    min-height: 73px;
     margin: 0 0 22px;
     color: color-mix(in srgb, var(--portfolio-text) 72%, transparent);
     font-size: 12px;
@@ -771,6 +769,7 @@ img {
 .project-technologies {
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     gap: 7px;
 }
 .project-technologies span {
@@ -780,6 +779,9 @@ img {
     font-size: 9px;
     letter-spacing: 0.8px;
     text-transform: uppercase;
+}
+.project-status {
+    margin: 14px 0 0;
 }
 .portfolio-more {
     margin: 58px 0 0;
@@ -1236,12 +1238,8 @@ footer {
         display: block;
         margin-top: 0;
     }
-    .project-card,
-    .project-large {
+    .project-card {
         margin-bottom: 35px;
-    }
-    .project-large img {
-        aspect-ratio: 1.2;
     }
     .skills {
         padding-top: 90px;
