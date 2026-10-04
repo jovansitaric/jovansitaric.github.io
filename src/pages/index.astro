@@ -127,6 +127,9 @@ const projects = [
         href: "https://dotkomsite.wordpress.com/",
     },
 ];
+const projectSkills = [
+    ...new Set(projects.flatMap((project) => project.technologies)),
+].sort((first, second) => first.localeCompare(second));
 ---
 
 <html lang="en">
@@ -138,6 +141,25 @@ const projects = [
             content="Portfolio of Jovan Sitaric, front-end developer and web designer."
         />
         <title>Jovan Sitaric | Front-end developer</title>
+        <link
+            rel="icon"
+            type="image/png"
+            href="./assets/images/icons/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="./assets/images/icons/favicon.svg"
+        />
+        <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/images/icons/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <link rel="manifest" href="./assets/images/icons/site.webmanifest" />
     </head>
     <body>
         <header class="site-header page-enter">
@@ -301,15 +323,81 @@ const projects = [
                         Selected<br /><em>projects.</em>
                     </h2>
                 </div>
+                <div class="project-controls" data-reveal="heading">
+                    <div class="project-control project-skill-filter">
+                        <button
+                            class="skill-filter-toggle"
+                            id="project-skill-filter-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="project-skill-filter-menu"
+                        >
+                            <span data-i18n="portfolio.filterLabel">Skills</span
+                            >
+                            <span
+                                class="skill-filter-count"
+                                data-selected-count
+                                aria-live="polite">0</span
+                            >
+                            <span
+                                class="skill-filter-chevron"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div
+                            class="skill-filter-menu"
+                            id="project-skill-filter-menu"
+                            role="group"
+                            aria-label="Filter by skill"
+                            data-i18n-aria-label="portfolio.filterBySkill"
+                            hidden
+                        >
+                            <div class="skill-filter-options">
+                                {
+                                    projectSkills.map((skill, index) => (
+                                        <label class="skill-filter-option">
+                                            <input
+                                                type="checkbox"
+                                                value={skill}
+                                                id={`project-skill-${index}`}
+                                            />
+                                            <span>{skill}</span>
+                                        </label>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <label class="project-control">
+                        <span data-i18n="portfolio.sortLabel">Sort by date</span
+                        >
+                        <select id="project-date-sort">
+                            <option
+                                value="newest"
+                                data-i18n="portfolio.newestFirst"
+                                >Newest first</option
+                            >
+                            <option
+                                value="oldest"
+                                data-i18n="portfolio.oldestFirst"
+                                >Oldest first</option
+                            >
+                        </select>
+                    </label>
+                </div>
                 <div class="project-grid">
                     {
                         projects.map((project, index) => (
                             <a
-                                class="project-card"
                                 class:list={[
                                     "project-card",
                                     { "is-unavailable": project.href === "#" },
                                 ]}
+                                data-project-card
+                                data-project-skills={project.technologies.join(
+                                    "|",
+                                )}
+                                data-project-year={project.year}
+                                data-project-order={index}
                                 data-reveal
                                 style={`--reveal-delay: ${Math.min(index, 5) * 90}ms`}
                                 href={
@@ -517,6 +605,11 @@ const projects = [
                     "portfolio.heading": "Selected<br /><em>projects.</em>",
                     "portfolio.more": "And many more",
                     "portfolio.linkUnavailable": "Link unavailable",
+                    "portfolio.filterLabel": "Skills",
+                    "portfolio.filterBySkill": "Filter by skill",
+                    "portfolio.sortLabel": "Sort by date",
+                    "portfolio.newestFirst": "Newest first",
+                    "portfolio.oldestFirst": "Oldest first",
                     "skills.eyebrow": "Tools of the trade",
                     "skills.heading":
                         "Good tools.<br /><em>Better intent.</em>",
@@ -578,6 +671,11 @@ const projects = [
                     "portfolio.heading": "Odabrani<br /><em>projekti.</em>",
                     "portfolio.more": "I još mnogo toga",
                     "portfolio.linkUnavailable": "Link nije dostupan",
+                    "portfolio.filterLabel": "Veštine",
+                    "portfolio.filterBySkill": "Filtriraj po veštini",
+                    "portfolio.sortLabel": "Sortiraj po datumu",
+                    "portfolio.newestFirst": "Prvo najnoviji",
+                    "portfolio.oldestFirst": "Prvo najstariji",
                     "skills.eyebrow": "Alati zanata",
                     "skills.heading":
                         "Dobri alati.<br /><em>Bolja namera.</em>",
@@ -624,10 +722,23 @@ const projects = [
                 document.documentElement.lang = language;
                 document.querySelectorAll("[data-i18n]").forEach((element) => {
                     const key = element.getAttribute("data-i18n");
-                    if (!key) return;
-                    const value = translations[language][key];
-                    if (value) element.innerHTML = value;
+                    if (key) {
+                        const value = translations[language][key];
+                        if (value) element.innerHTML = value;
+                    }
                 });
+                document
+                    .querySelectorAll("[data-i18n-aria-label]")
+                    .forEach((element) => {
+                        const ariaLabelKey = element.getAttribute(
+                            "data-i18n-aria-label",
+                        );
+                        const ariaLabel = ariaLabelKey
+                            ? translations[language][ariaLabelKey]
+                            : undefined;
+                        if (ariaLabel)
+                            element.setAttribute("aria-label", ariaLabel);
+                    });
                 if (languageToggle)
                     languageToggle.textContent = languageLabels[language];
                 localStorage.setItem("portfolio-language", language);
@@ -679,6 +790,158 @@ const projects = [
             });
             const storedTheme = localStorage.getItem("portfolio-theme");
             setTheme(storedTheme === "dark" ? "dark" : "light");
+
+            const projectGrid =
+                document.querySelector<HTMLElement>(".project-grid");
+            const projectSkillFilter = document.querySelector<HTMLElement>(
+                ".project-skill-filter",
+            );
+            const projectSkillToggle =
+                document.querySelector<HTMLButtonElement>(
+                    "#project-skill-filter-toggle",
+                );
+            const projectSkillMenu = document.querySelector<HTMLElement>(
+                "#project-skill-filter-menu",
+            );
+            const projectDateSort =
+                document.querySelector<HTMLSelectElement>("#project-date-sort");
+            if (
+                projectGrid &&
+                projectSkillFilter &&
+                projectSkillToggle &&
+                projectSkillMenu &&
+                projectDateSort
+            ) {
+                const projectCards = Array.from(
+                    projectGrid.querySelectorAll<HTMLElement>(
+                        "[data-project-card]",
+                    ),
+                );
+                const skillCheckboxes = Array.from(
+                    projectSkillMenu.querySelectorAll<HTMLInputElement>(
+                        'input[type="checkbox"]',
+                    ),
+                );
+                let selectedSkills: string[] = [];
+                const syncFilterMenu = () => {
+                    skillCheckboxes.forEach((checkbox) => {
+                        checkbox.checked = selectedSkills.includes(
+                            checkbox.value,
+                        );
+                    });
+                };
+                const updateFilterCount = () => {
+                    const count = selectedSkills.length;
+                    const countIndicator =
+                        projectSkillToggle.querySelector<HTMLElement>(
+                            "[data-selected-count]",
+                        );
+                    if (countIndicator)
+                        countIndicator.textContent = String(count);
+                    const language =
+                        document.documentElement.lang === "sr" ? "sr" : "en";
+                    const filterLabel =
+                        translations[language]["portfolio.filterLabel"];
+                    const selectedText =
+                        language === "sr" ? "izabrano" : "selected";
+                    projectSkillToggle.setAttribute(
+                        "aria-label",
+                        `${filterLabel}: ${count} ${selectedText}`,
+                    );
+                };
+                const closeFilterMenu = () => {
+                    const nextSelectedSkills = skillCheckboxes
+                        .filter((checkbox) => checkbox.checked)
+                        .map((checkbox) => checkbox.value);
+                    const selectionChanged =
+                        nextSelectedSkills.length !== selectedSkills.length ||
+                        nextSelectedSkills.some(
+                            (skill) => !selectedSkills.includes(skill),
+                        );
+                    if (selectionChanged) {
+                        selectedSkills = nextSelectedSkills;
+                        updateFilterCount();
+                        updateProjects();
+                    }
+                    projectSkillMenu.hidden = true;
+                    projectSkillToggle.setAttribute("aria-expanded", "false");
+                };
+                const updateProjects = () => {
+                    const direction =
+                        projectDateSort.value === "oldest" ? 1 : -1;
+                    const sortedCards = [...projectCards].sort(
+                        (first, second) => {
+                            const yearDifference =
+                                Number(first.dataset.projectYear) -
+                                Number(second.dataset.projectYear);
+                            return (
+                                yearDifference * direction ||
+                                Number(first.dataset.projectOrder) -
+                                    Number(second.dataset.projectOrder)
+                            );
+                        },
+                    );
+
+                    let visibleIndex = 0;
+                    sortedCards.forEach((card, index) => {
+                        const cardSkills =
+                            card.dataset.projectSkills?.split("|") ?? [];
+                        card.hidden =
+                            selectedSkills.length > 0 &&
+                            !selectedSkills.some((skill) =>
+                                cardSkills.includes(skill),
+                            );
+                        const projectIndex =
+                            card.querySelector<HTMLElement>(".project-index");
+                        if (!card.hidden) visibleIndex += 1;
+                        if (projectIndex) {
+                            projectIndex.textContent = card.hidden
+                                ? String(index + 1)
+                                : String(visibleIndex);
+                        }
+                        card.style.setProperty(
+                            "--reveal-delay",
+                            `${Math.min(index, 5) * 90}ms`,
+                        );
+                        projectGrid.append(card);
+                    });
+                };
+
+                projectSkillToggle.addEventListener("click", () => {
+                    const isOpen =
+                        projectSkillToggle.getAttribute("aria-expanded") ===
+                        "true";
+                    if (isOpen) {
+                        closeFilterMenu();
+                        return;
+                    }
+                    syncFilterMenu();
+                    projectSkillMenu.hidden = false;
+                    projectSkillToggle.setAttribute("aria-expanded", "true");
+                });
+                document.addEventListener("click", (event) => {
+                    if (
+                        !projectSkillMenu.hidden &&
+                        event.target instanceof Node &&
+                        !projectSkillFilter.contains(event.target)
+                    ) {
+                        closeFilterMenu();
+                    }
+                });
+                document.addEventListener("keydown", (event) => {
+                    if (event.key === "Escape" && !projectSkillMenu.hidden) {
+                        closeFilterMenu();
+                        projectSkillToggle.focus();
+                    }
+                });
+                projectDateSort.addEventListener("change", updateProjects);
+                updateFilterCount();
+                window.addEventListener(
+                    "portfolio-language-change",
+                    updateFilterCount,
+                );
+                updateProjects();
+            }
 
             const revealItems = document.querySelectorAll("[data-reveal]");
             const revealObserver = new IntersectionObserver(

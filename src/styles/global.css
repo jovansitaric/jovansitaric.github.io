@@ -542,6 +542,129 @@ img {
 .portfolio .section-heading h2 {
     color: var(--portfolio-text);
 }
+.project-controls {
+    grid-column: 1;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+    margin: -28px 0 34px;
+}
+.project-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: color-mix(in srgb, var(--portfolio-text) 72%, transparent);
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.project-control select {
+    min-width: 150px;
+    border: 1px solid color-mix(in srgb, var(--portfolio-text) 30%, transparent);
+    border-radius: 0;
+    padding: 10px 30px 10px 12px;
+    background: transparent;
+    color: var(--portfolio-text);
+    font: inherit;
+    letter-spacing: 0.4px;
+    text-transform: none;
+    cursor: pointer;
+}
+.project-control select:focus-visible {
+    outline: 1px solid var(--rust);
+    outline-offset: 3px;
+}
+.project-control option {
+    background: var(--portfolio-bg);
+    color: var(--portfolio-text);
+}
+.project-skill-filter {
+    position: relative;
+}
+.skill-filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 150px;
+    border: 1px solid
+        color-mix(in srgb, var(--portfolio-text) 30%, transparent);
+    border-radius: 0;
+    padding: 10px 12px;
+    background: transparent;
+    color: var(--portfolio-text);
+    font: inherit;
+    letter-spacing: 0.4px;
+    text-align: left;
+    cursor: pointer;
+}
+.skill-filter-toggle:focus-visible,
+.skill-filter-option input:focus-visible {
+    outline: 1px solid var(--rust);
+    outline-offset: 3px;
+}
+.skill-filter-chevron {
+    width: 7px;
+    height: 7px;
+    margin-left: auto;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.2s ease;
+}
+.skill-filter-toggle[aria-expanded="true"] .skill-filter-chevron {
+    transform: translateY(2px) rotate(225deg);
+}
+.skill-filter-count {
+    display: grid;
+    place-items: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    background: var(--rust);
+    color: var(--portfolio-text);
+    font-size: 9px;
+    line-height: 1;
+}
+.skill-filter-menu {
+    position: absolute;
+    z-index: 5;
+    top: calc(100% + 8px);
+    right: 0;
+    width: max(260px, 100%);
+    border: 1px solid
+        color-mix(in srgb, var(--portfolio-text) 30%, transparent);
+    background: var(--portfolio-bg);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+.skill-filter-menu[hidden] {
+    display: none;
+}
+.skill-filter-options {
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 8px 14px;
+}
+.skill-filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    color: var(--portfolio-text);
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+}
+.skill-filter-option + .skill-filter-option {
+    border-top: 1px solid
+        color-mix(in srgb, var(--portfolio-text) 12%, transparent);
+}
+.skill-filter-option input {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    accent-color: var(--rust);
+}
 .project-grid {
     grid-column: 1;
     display: grid;
@@ -556,6 +679,9 @@ img {
     height: 100%;
     border-top: 1px solid rgba(243, 239, 231, 0.35);
     padding-top: 14px;
+}
+.project-card[hidden] {
+    display: none;
 }
 .project-media {
     position: relative;
@@ -1086,6 +1212,25 @@ footer {
     }
     .portfolio .section-heading {
         margin-bottom: 50px;
+    }
+    .project-controls {
+        justify-content: flex-start;
+        gap: 16px;
+        margin: 0 0 30px;
+    }
+    .project-control {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+    .project-control select {
+        min-width: 0;
+        width: 100%;
+    }
+    .skill-filter-menu {
+        right: auto;
+        left: 0;
+        width: min(300px, calc(100vw - 16vw));
     }
     .project-grid {
         display: block;
