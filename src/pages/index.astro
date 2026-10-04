@@ -48,7 +48,7 @@ const projects = [
         type: "Custom WordPress website",
         year: "2021",
         description:
-            "A playful website experience with a bright visual and playful elements, designed to showcase pastry shop products and services.",
+            "A WordPress site for Pastry shop M, with a bright visual identity and product-focused layouts that make the bakery's offer easy to explore.",
         technologies: [
             skills.html,
             skills.css,
@@ -65,7 +65,7 @@ const projects = [
         type: "Custom website",
         year: "2024",
         description:
-            "A playful website experience with a bright visual and playful elements, designed to showcase pastry shop products and services.",
+            "A custom pastry-shop concept focused on a distinctive visual direction, responsive product presentation, and pixel-perfect front-end implementation.",
         technologies: [
             skills.html,
             skills.css,
@@ -140,6 +140,32 @@ const projectSkills = [
             name="description"
             content="Portfolio of Jovan Sitaric, front-end developer and web designer."
         />
+        <meta name="apple-mobile-web-app-title" content="Jovan Sitaric" />
+        <meta name="theme-color" content="#f3efe7" />
+        <link rel="canonical" href="https://jovansitaric.github.io/" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Jovan Sitaric | Front-end developer"
+        />
+        <meta
+            property="og:description"
+            content="Portfolio of Jovan Sitaric, front-end developer and web designer."
+        />
+        <meta property="og:url" content="https://jovansitaric.github.io/" />
+        <meta
+            property="og:image"
+            content="https://jovansitaric.github.io/assets/images/og-image.webp"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Jovan Sitaric | Front-end developer"
+        />
+        <meta
+            name="twitter:description"
+            content="Portfolio of Jovan Sitaric, front-end developer and web designer."
+        />
         <title>Jovan Sitaric | Front-end developer</title>
         <link
             rel="icon"
@@ -158,15 +184,51 @@ const projectSkills = [
             sizes="180x180"
             href="./assets/icons/apple-touch-icon.png"
         />
-        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
         <link rel="manifest" href="./assets/icons/site.webmanifest" />
+        <style is:inline>
+            html[data-language-pending] body {
+                visibility: hidden;
+            }
+        </style>
+        <script is:inline>
+            const root = document.documentElement;
+            const preferredLanguage =
+                localStorage.getItem("portfolio-language") === "sr"
+                    ? "sr"
+                    : "en";
+            root.lang = preferredLanguage;
+            root.dataset.theme =
+                localStorage.getItem("portfolio-theme") === "dark"
+                    ? "dark"
+                    : "light";
+            if (preferredLanguage === "sr") {
+                root.dataset.languagePending = "true";
+                window.setTimeout(() => {
+                    if (root.dataset.languagePending) {
+                        root.lang = "en";
+                        delete root.dataset.languagePending;
+                    }
+                }, 2000);
+            }
+        </script>
     </head>
     <body>
         <header class="site-header page-enter">
-            <a class="brand" href="#top" aria-label="Jovan Sitaric home"
-                ><span>JS</span><small>Jovan Sitaric</small></a
+            <a
+                class="brand"
+                href="#top"
+                data-i18n-aria-label="name.home"
+                aria-label="Jovan Sitaric home"
+                ><span>JS</span><small data-i18n="name.full"
+                    >Jovan Sitaric</small
+                ></a
             >
-            <nav class="desktop-nav" aria-label="Main navigation">
+            <nav
+                class="site-nav"
+                id="primary-navigation"
+                aria-label="Main navigation"
+                data-i18n-aria-label="nav.label"
+            >
                 <a href="#about" data-i18n="nav.about">About</a><a
                     href="#experience"
                     data-i18n="nav.experience">Experience</a
@@ -208,7 +270,10 @@ const projectSkills = [
             </div>
             <button
                 class="menu-toggle"
+                type="button"
                 aria-label="Open navigation"
+                data-i18n-aria-label="nav.open"
+                aria-controls="primary-navigation"
                 aria-expanded="false"><span></span><span></span></button
             >
         </header>
@@ -219,7 +284,7 @@ const projectSkills = [
                     <p class="eyebrow" data-i18n="hero.eyebrow">
                         Front-end developer / designer
                     </p>
-                    <h1>Jovan<br /><em>Sitaric</em></h1>
+                    <h1 data-i18n="hero.name">Jovan<br /><em>Sitaric</em></h1>
                     <!-- <p>Leisure ecosystem founder</p>
                     <p>
                         A collection of tools built for seamless code and
@@ -402,6 +467,11 @@ const projectSkills = [
                                         ? undefined
                                         : project.href
                                 }
+                                role={project.href === "#" ? "link" : undefined}
+                                aria-disabled={
+                                    project.href === "#" ? "true" : undefined
+                                }
+                                tabindex={project.href === "#" ? -1 : undefined}
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -515,24 +585,56 @@ const projectSkills = [
             </section>
         </main>
         <footer>
-            <span>© {new Date().getFullYear()} Jovan Sitaric</span><span
-                data-i18n="footer.credit">Designed & built with care</span
-            >
+            <span
+                >© {new Date().getFullYear()}
+                <span data-i18n="name.full">Jovan Sitaric</span></span
+            ><span data-i18n="footer.credit">Designed & built with care</span>
         </footer>
         <script>
-            const toggle = document.querySelector(".menu-toggle");
-            const nav = document.querySelector(".desktop-nav");
+            const toggle =
+                document.querySelector<HTMLButtonElement>(".menu-toggle");
+            const nav = document.querySelector<HTMLElement>(".site-nav");
+            const closeNavigation = () => {
+                toggle?.setAttribute("aria-expanded", "false");
+                nav?.classList.remove("open");
+                if (toggle) {
+                    const language =
+                        document.documentElement.lang === "sr" ? "sr" : "en";
+                    toggle.setAttribute(
+                        "aria-label",
+                        translations[language]["nav.open"],
+                    );
+                }
+            };
+            const openNavigation = () => {
+                toggle?.setAttribute("aria-expanded", "true");
+                nav?.classList.add("open");
+                if (toggle) {
+                    const language =
+                        document.documentElement.lang === "sr" ? "sr" : "en";
+                    toggle.setAttribute(
+                        "aria-label",
+                        translations[language]["nav.close"],
+                    );
+                }
+            };
             toggle?.addEventListener("click", () => {
                 const open = toggle.getAttribute("aria-expanded") === "true";
-                toggle.setAttribute("aria-expanded", String(!open));
-                nav?.classList.toggle("open", !open);
+                if (open) closeNavigation();
+                else openNavigation();
             });
             nav?.querySelectorAll("a").forEach((link) =>
-                link.addEventListener("click", () => {
-                    toggle?.setAttribute("aria-expanded", "false");
-                    nav.classList.remove("open");
-                }),
+                link.addEventListener("click", closeNavigation),
             );
+            document.addEventListener("keydown", (event) => {
+                if (
+                    event.key === "Escape" &&
+                    toggle?.getAttribute("aria-expanded") === "true"
+                ) {
+                    closeNavigation();
+                    toggle.focus();
+                }
+            });
 
             const header = document.querySelector(".site-header");
             const parallaxItems =
@@ -580,6 +682,12 @@ const projectSkills = [
                     "nav.experience": "Experience",
                     "nav.portfolio": "Portfolio",
                     "nav.contact": "Contact",
+                    "nav.label": "Main navigation",
+                    "nav.open": "Open navigation",
+                    "nav.close": "Close navigation",
+                    "name.full": "Jovan Sitaric",
+                    "name.home": "Jovan Sitaric home",
+                    "hero.name": "Jovan<br /><em>Sitaric</em>",
                     "hero.eyebrow": "Front-end developer / designer",
                     "hero.intro":
                         "I build thoughtful digital experiences where clear code meets expressive visual design.",
@@ -625,9 +733,10 @@ const projectSkills = [
                         "Automotive and car wrap experience website based on a custom WordPress theme and ACF plugin.",
                     "project.avocado.type": "Custom website",
                     "project.avocado.description":
-                        "A playful website experience with a bright visual and playful elements, designed to showcase pastry shop products and services.",
+                        "A custom pastry-shop concept focused on a distinctive visual direction, responsive product presentation, and pixel-perfect front-end implementation.",
+                    "project.poslasticarnicaM.type": "Custom WordPress website",
                     "project.poslasticarnicaM.description":
-                        "A playful website experience with a bright visual and playful elements, designed to showcase pastry shop products and services.",
+                        "A WordPress site for Pastry shop M, with a bright visual identity and product-focused layouts that make the bakery's offer easy to explore.",
                     "project.quiz.type": "Interactive experience",
                     "project.quiz.description":
                         "A fast quiz interface designed around readable questions, clear feedback, and simple progression.",
@@ -646,6 +755,12 @@ const projectSkills = [
                     "nav.experience": "Iskustvo",
                     "nav.portfolio": "Projekti",
                     "nav.contact": "Kontakt",
+                    "nav.label": "Glavna navigacija",
+                    "nav.open": "Otvori navigaciju",
+                    "nav.close": "Zatvori navigaciju",
+                    "name.full": "Jovan Štarić",
+                    "name.home": "Početna stranica Jovana Štarića",
+                    "hero.name": "Jovan<br /><em>Štarić</em>",
                     "hero.eyebrow": "Front-end developer / dizajner",
                     "hero.intro":
                         "Gradim promišljena digitalna iskustva u kojima se čist kod susreće sa izražajnim vizuelnim dizajnom.",
@@ -659,7 +774,7 @@ const projectSkills = [
                     "sections.contact": "05 / Kontakt",
                     "about.heading": "Radoznao po<br /><em>prirodi.</em>",
                     "about.intro":
-                        "Zdravo! Ja sam Jovan Štarić, front-end developer, web i grafički dizajner iz Srbije.",
+                        "Zdravo! Ja sam Jovan Sitarić, front-end developer, web i grafički dizajner iz Srbije.",
                     "about.detail":
                         "Zaljubljen sam u web development još od trenutka kada su mi crtani filmovi dosadili. Uvek sam spreman da odem korak dalje kako bi sajt bio uredniji, brži i lepši.",
                     "experience.eyebrow": "Istorija stvaranja",
@@ -691,9 +806,11 @@ const projectSkills = [
                         "Sajt o automobilima i car wrap uslugama zasnovan na prilagođenoj WordPress temi i ACF pluginu.",
                     "project.avocado.type": "Prilagođeni sajt",
                     "project.avocado.description":
-                        "Razigrano iskustvo surfovanja, sa živopisnim vizuelnim stilom i razigranim elementima, dizajnirano da predstavi proizvode i usluge poslastičarnice.",
-                    "project.poslasticarnicam.description":
-                        "Razigrano iskustvo surfovanja, sa živopisnim vizuelnim stilom i razigranim elementima, dizajnirano da predstavi proizvode i usluge poslastičarnice.",
+                        "Koncept sajta za poslastičarnicu sa prepoznatljivim vizuelnim pravcem, prilagodljivim prikazom proizvoda i preciznom front-end izradom.",
+                    "project.poslasticarnicaM.type":
+                        "Prilagođeni WordPress sajt",
+                    "project.poslasticarnicaM.description":
+                        "WordPress sajt za poslastičarnicu M, sa vedrim vizuelnim identitetom i prikazom ponude koji olakšava istraživanje proizvoda.",
                     "project.quiz.type": "Interaktivna aplikacija",
                     "project.quiz.description":
                         "Brz kviz interfejs zasnovan na čitljivim pitanjima, jasnim povratnim informacijama i jednostavnom napretku.",
@@ -738,7 +855,18 @@ const projectSkills = [
                     });
                 if (languageToggle)
                     languageToggle.textContent = languageLabels[language];
+                if (toggle) {
+                    const menuIsOpen =
+                        toggle.getAttribute("aria-expanded") === "true";
+                    toggle.setAttribute(
+                        "aria-label",
+                        translations[language][
+                            menuIsOpen ? "nav.close" : "nav.open"
+                        ],
+                    );
+                }
                 localStorage.setItem("portfolio-language", language);
+                delete document.documentElement.dataset.languagePending;
                 window.dispatchEvent(
                     new CustomEvent("portfolio-language-change", {
                         detail: language,
@@ -766,6 +894,12 @@ const projectSkills = [
             };
             const setTheme = (theme: Theme) => {
                 document.documentElement.dataset.theme = theme;
+                document
+                    .querySelector<HTMLMetaElement>('meta[name="theme-color"]')
+                    ?.setAttribute(
+                        "content",
+                        theme === "dark" ? "#172b2d" : "#f3efe7",
+                    );
                 themeToggle?.setAttribute(
                     "aria-pressed",
                     String(theme === "dark"),
@@ -959,6 +1093,7 @@ const projectSkills = [
                     card.addEventListener(
                         "pointermove",
                         (event: PointerEvent) => {
+                            if (reduceMotion.matches) return;
                             const bounds = card.getBoundingClientRect();
                             const x =
                                 (event.clientX - bounds.left) / bounds.width -
