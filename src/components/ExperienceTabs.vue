@@ -27,6 +27,15 @@ const experiences: Record<"work" | "internship", Experience[]> = {
             stack: "Angular · RxJS · JavaScript · REST API",
         },
         {
+            company: "Freelancing",
+            position: "Web Developer",
+            date: "November, 2024 - November, 2025",
+            summary:
+                "Delivered websites and custom web solutions for more than 10 clients through freelance projects.",
+            detail: "Built most projects with WordPress using ACF, Gutenberg and Elementor, alongside custom projects with Vue, React, Node.js and Laravel.",
+            stack: "WordPress · ACF · Gutenberg · Elementor · Vue · React · Node.js · Laravel",
+        },
+        {
             company: "Wireless Media Group",
             position: "Medior Front-end Developer",
             date: "November 2022 - November 2024",
@@ -126,6 +135,12 @@ const experienceTranslations: Record<
                 summary:
                     "Pridružio sam se timu kako bih razvijao i održavao jednu od najuspešnijih aplikacija za praćenje vremena, Clockify.",
                 detail: "Aktivno radim sa Angularom, RxJS-om, HTML-om, CSS-om i JavaScriptom. Svaki dan počinje dnevnim sastankom, a status zadataka pratimo u aplikaciji Plaky.",
+            },
+            {
+                position: "Web developer",
+                summary:
+                    "Kroz freelance projekte izradio sam sajtove i prilagođena web rešenja za više od 10 klijenata.",
+                detail: "Većinu projekata izradio sam u WordPressu koristeći ACF, Gutenberg i Elementor, uz prilagođene projekte u Vueu, Reactu, Node.js-u i Laravelu.",
             },
             {
                 position: "Medior front-end developer",
