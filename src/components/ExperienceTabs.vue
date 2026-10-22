@@ -32,8 +32,8 @@ const experiences: Record<"work" | "internship", Experience[]> = {
             date: "November, 2024 - November, 2025",
             summary:
                 "Delivered websites and custom web solutions for more than 10 clients through freelance projects.",
-            detail: "Built most projects with WordPress using ACF, Gutenberg and Elementor, alongside custom projects with Vue, React, Node.js and Laravel.",
-            stack: "WordPress · ACF · Gutenberg · Elementor · Vue · React · Node.js · Laravel",
+            detail: "Built most projects with WordPress using ACF, Gutenberg and Elementor, alongside custom projects with Vue, Vuex, Pinia, Vuetify, React, Node.js and Laravel.",
+            stack: "WordPress · ACF · Gutenberg · Elementor · Vue · Vuex · Pinia · Vuetify · React · Node.js · Laravel",
         },
         {
             company: "Wireless Media Group",
@@ -41,8 +41,8 @@ const experiences: Record<"work" | "internship", Experience[]> = {
             date: "November 2022 - November 2024",
             summary:
                 "Joined the OEC team to build and maintain ecommerce experiences for Telekom across B2B and B2C products.",
-            detail: "Worked daily with Vue, Vuex, HTML, CSS and JavaScript on products including mts.rs, mojasupernova.mts.rs, mtel.me and mtel.ba, backed by SAP Hybris.",
-            stack: "Vue · Vuex · JavaScript · Hybris",
+            detail: "Worked daily with HTML, CSS, JavaScript, TypeScript, Vue, Vuetify, Pinia, Vuex on products including mts.rs, mojasupernova.mts.rs, mtel.me and mtel.ba, backed by SAP Hybris.",
+            stack: "Vue · Vuetify · Pinia · Vuex · JavaScript · Hybris",
         },
         {
             company: "Ewasoft (ex. fSD)",
