@@ -586,7 +586,7 @@ const projectSkills = [
         </main>
         <footer>
             <span
-                >© {new Date().getFullYear()}
+                >© {new Date().getFullYear()} &nbsp;
                 <span data-i18n="name.full">Jovan Sitaric</span></span
             ><span data-i18n="footer.credit">Designed & built with care</span>
         </footer>
@@ -924,8 +924,8 @@ const projectSkills = [
                 storedTheme === "dark" || storedTheme === "light"
                     ? storedTheme
                     : window.matchMedia("(prefers-color-scheme: dark)").matches
-                        ? "dark"
-                        : "light",
+                      ? "dark"
+                      : "light",
             );
 
             const projectGrid =
